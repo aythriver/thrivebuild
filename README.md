@@ -26,7 +26,7 @@ Search for `[` or `EXAMPLE COPY` in `index.html` to find every customizable slot
 | *(Active)* | `assets/main.js` line 9 | Connected to `https://calendly.com/samthriver/workflow`. |
 | *(Active)* | `index.html` lines 1002, 1036, 1070 | Contact email connected to `aythriver@gmail.com`. |
 | *(Active)* | `index.html` line 1073 | LinkedIn profile connected to `https://www.linkedin.com/in/sam-adebayo`. |
-| *(Active)* | Line 590–666 | Case study connected to NE Tiny Homes (Chris A.). |
+| *(Active)* | Line 590–666 | Case study connected to NE Tiny Homes (Joe P. / Joe Pagnani). |
 | *(Active)* | Line 1076 | Location set to `Lagos, Nigeria`. |
 
 ---
