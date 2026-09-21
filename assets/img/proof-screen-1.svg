@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <rect x="0" y="0" width="600" height="450" rx="12" fill="#0B132B" stroke="#1E293B" stroke-width="1.5"/>
+  
+  <!-- Window Header -->
+  <rect x="0" y="0" width="600" height="38" rx="12" fill="#0F172A"/>
+  <circle cx="20" cy="19" r="5" fill="#EF4444"/>
+  <circle cx="36" cy="19" r="5" fill="#F59E0B"/>
+  <circle cx="52" cy="19" r="5" fill="#10B981"/>
+  <text x="76" y="23" font-family="Inter, sans-serif" font-size="11" fill="#94A3B8" font-weight="500">Automation Blueprint: Speed-to-Lead (< 3 Min Response)</text>
+  <rect x="490" y="8" width="94" height="22" rx="11" fill="#10B981" fill-opacity="0.2"/>
+  <text x="502" y="23" font-family="Inter, sans-serif" font-size="10" fill="#34D399" font-weight="600">● Real-time Sync</text>
+
+  <!-- Flow Diagrams -->
+  <!-- Step 1 -->
+  <rect x="36" y="60" width="528" height="68" rx="8" fill="#151F38" stroke="#1E293B"/>
+  <circle cx="68" cy="94" r="16" fill="#C2410C"/>
+  <text x="64" y="99" font-family="Inter, sans-serif" font-size="14" fill="#FFFFFF" font-weight="700">1</text>
+  <text x="100" y="86" font-family="Inter, sans-serif" font-size="13" fill="#FFFFFF" font-weight="600">New Website Lead Enters Intake Form</text>
+  <text x="100" y="104" font-family="Inter, sans-serif" font-size="11" fill="#94A3B8">Inquiry parsed from Houzz / Website: Kitchen &amp; Bath Remodel, $120k</text>
+  <rect x="440" y="82" width="108" height="24" rx="12" fill="#0F172A"/>
+  <text x="454" y="98" font-family="Inter, sans-serif" font-size="11" fill="#F59E0B" font-weight="600">T + 00:02 sec</text>
+
+  <!-- Arrow Down -->
+  <line x1="68" y1="128" x2="68" y2="150" stroke="#C2410C" stroke-width="2" stroke-dasharray="3 3"/>
+
+  <!-- Step 2 -->
+  <rect x="36" y="150" width="528" height="68" rx="8" fill="#151F38" stroke="#1E293B"/>
+  <circle cx="68" cy="184" r="16" fill="#C2410C"/>
+  <text x="63" y="189" font-family="Inter, sans-serif" font-size="14" fill="#FFFFFF" font-weight="700">2</text>
+  <text x="100" y="176" font-family="Inter, sans-serif" font-size="13" fill="#FFFFFF" font-weight="600">Personalized SMS &amp; Email Dispatched via Make.com</text>
+  <text x="100" y="194" font-family="Inter, sans-serif" font-size="11" fill="#94A3B8">"Hi Sarah, thanks for reaching out. Pick a quick 15-min discovery slot here..."</text>
+  <rect x="440" y="172" width="108" height="24" rx="12" fill="#0F172A"/>
+  <text x="454" y="188" font-family="Inter, sans-serif" font-size="11" fill="#10B981" font-weight="600">T + 00:44 sec</text>
+
+  <!-- Arrow Down -->
+  <line x1="68" y1="218" x2="68" y2="240" stroke="#C2410C" stroke-width="2" stroke-dasharray="3 3"/>
+
+  <!-- Step 3 -->
+  <rect x="36" y="240" width="528" height="68" rx="8" fill="#151F38" stroke="#1E293B"/>
+  <circle cx="68" cy="274" r="16" fill="#C2410C"/>
+  <text x="63" y="279" font-family="Inter, sans-serif" font-size="14" fill="#FFFFFF" font-weight="700">3</text>
+  <text x="100" y="266" font-family="Inter, sans-serif" font-size="13" fill="#FFFFFF" font-weight="600">Discovery Call Booked &amp; CRM Stage Updated</text>
+  <text x="100" y="284" font-family="Inter, sans-serif" font-size="11" fill="#94A3B8">Calendar synced, Google Meet generated, PM alert pinged in Slack</text>
+  <rect x="440" y="262" width="108" height="24" rx="12" fill="#0F172A"/>
+  <text x="454" y="278" font-family="Inter, sans-serif" font-size="11" fill="#38BDF8" font-weight="600">T + 02:15 min</text>
+
+  <!-- Result Banner Bottom -->
+  <rect x="36" y="336" width="528" height="74" rx="8" fill="#0F172A" stroke="#C2410C" stroke-width="1.5"/>
+  <text x="60" y="365" font-family="Inter, sans-serif" font-size="13" fill="#FDBA74" font-weight="700">RESULT: 68% FASTER FIRST CONTACT</text>
+  <text x="60" y="388" font-family="Inter, sans-serif" font-size="12" fill="#E2E8F0">Remodeling clients reach your calendar before your competitors open their inbox.</text>
+</svg>

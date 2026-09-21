@@ -1,0 +1,145 @@
+/* ==========================================================================
+   Thrivebuild.co — Core Stylesheet
+   Modern, conversion-focused styling with zero build step.
+   Edit colors in :root to change the site palette in one place.
+   ========================================================================== */
+
+:root {
+  /* Brand & Core Palette (Fallback: Trade-Native Burnt Orange & Slate) */
+  --ink: #0F172A;          /* Slate 900: headings, proof section background */
+  --body: #475569;         /* Slate 600: body copy */
+  --line: #E2E8F0;         /* Slate 200: borders, rules */
+  --surface: #FFFFFF;      /* Primary page background, card surfaces */
+  --surface-alt: #F8FAFC;  /* Slate 50: alternating section bands */
+  --surface-dark: #0B132B; /* Deep navy-slate for proof banner / dark accents */
+  --surface-dark-card: #151F38; /* Elevated dark card surface */
+  --brand: #C2410C;        /* Orange 700: primary accent, 4.9:1 white-on-brand contrast */
+  --brand-hover: #9A3412;  /* Orange 800: button hover/active */
+  --brand-tint: #FFF7ED;   /* Orange 50: light badge background */
+  --brand-glow: rgba(194, 65, 12, 0.08); /* Ambient glow */
+
+  /* UI Tokens */
+  --focus-ring: #C2410C;
+  --radius-card: 16px;
+  --radius-pill: 9999px;
+  --radius-btn: 8px;
+  --shadow-whisper: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+  --shadow-card: 0 10px 30px -4px rgba(15, 23, 42, 0.08);
+  --shadow-pop: 0 20px 40px -8px rgba(194, 65, 12, 0.18);
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Accounts for sticky header */
+}
+
+body {
+  color: var(--body);
+  background-color: var(--surface);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tabular figures for pricing, stats, and step numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Accessible focus visible treatment (never outline: none) */
+*:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Ambient Radial Glow Background Utilities (inspired by high-end enterprise SaaS) */
+.bg-radial-glow {
+  background-image: radial-gradient(800px 420px at 75% 35%, var(--brand-glow) 0%, transparent 70%);
+}
+
+.bg-radial-dark-glow {
+  background-image: radial-gradient(700px 350px at 50% 20%, rgba(194, 65, 12, 0.15) 0%, transparent 70%);
+}
+
+/* Sticky Header Scroll Treatment */
+header.is-scrolled {
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.06);
+}
+
+/* FAQ Details & Summary Animation */
+details {
+  border-color: var(--line);
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+details[open] {
+  border-color: #CBD5E1;
+  background-color: #FFFFFF;
+  box-shadow: var(--shadow-whisper);
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+details summary .faq-chevron {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+details[open] summary .faq-chevron {
+  transform: rotate(180deg);
+}
+
+details .faq-content {
+  animation: faqOpen 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes faqOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reduced Motion Override for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  details .faq-content {
+    animation: none;
+  }
+}
+
+/* Calendly Container styling */
+.calendly-inline-widget {
+  min-width: 320px;
+  height: 700px;
+}
+
+/* Mobile drawer scroll lock */
+body.nav-open {
+  overflow: hidden;
+}

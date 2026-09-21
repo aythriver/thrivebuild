@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Thrivebuild — Remodeling Systems Consultancy | Monday.com &amp; Make.com Automation</title>
+  <meta name="title" content="Thrivebuild — Remodeling Systems Consultancy | Monday.com &amp; Make.com Automation">
+  <meta name="description" content="Custom Monday.com and Make.com workflows for $1M–$10M residential remodelers. Instant automated lead response and seamless sale-to-job handoffs with zero dropped details.">
+  <link rel="canonical" href="https://thrivebuild.co/">
+  <meta name="theme-color" content="#C2410C">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thrivebuild.co/">
+  <meta property="og:title" content="Thrivebuild — Automated Remodeling Workflows on Monday.com">
+  <meta property="og:description" content="Turn lost leads and chaotic project handoffs into automated systems. Built for residential remodelers and design-build contractors.">
+  <meta property="og:image" content="assets/img/dashboard-preview.svg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://thrivebuild.co/">
+  <meta property="twitter:title" content="Thrivebuild — Automated Remodeling Workflows on Monday.com">
+  <meta property="twitter:description" content="Turn lost leads and chaotic project handoffs into automated systems. Built for residential remodelers and design-build contractors.">
+  <meta property="twitter:image" content="assets/img/dashboard-preview.svg">
+
+  <!-- Inline SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23C2410C'/><path d='M8 22V10l8-4 8 4v12l-8 4-8-4z' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linejoin='round'/><path d='M16 6v20' stroke='%23ffffff' stroke-width='2'/></svg>">
+
+  <!-- Typography: Inter font preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#C2410C', // orange-700
+              hover: '#9A3412',   // orange-800
+              tint: '#FFF7ED',    // orange-50
+            },
+            ink: {
+              DEFAULT: '#0F172A', // slate-900
+              light: '#1E293B',   // slate-800
+            },
+            body: '#475569',      // slate-600
+            line: '#E2E8F0',      // slate-200
+            surface: {
+              DEFAULT: '#FFFFFF',
+              alt: '#F8FAFC',     // slate-50
+              dark: '#0B132B',    // dark navy-slate
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Core Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <!-- ==========================================================================
+       TRACKING SCRIPTS PLACEHOLDER
+       Paste Google Tag (GA4), Meta Pixel, or LinkedIn Insight Tag here.
+       ========================================================================== -->
+  <!-- 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-[YOUR-ID]"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-[YOUR-ID]');
+  </script>
+  -->
+</head>
+<body class="bg-surface text-body font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Accessible Skip Link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand focus:text-white focus:rounded-md focus:shadow-lg">
+    Skip to main content
+  </a>
+
+  <!-- ==========================================================================
+       1. STICKY HEADER
+       Wordmark left, 4 anchor links center, high-converting CTA right (always visible).
+       ========================================================================== -->
+  <header class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md transition-all duration-200">
+    <nav class="max-w-6xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between" aria-label="Main Navigation">
+      <!-- Wordmark Logo -->
+      <a href="#" class="flex items-center gap-2 text-ink hover:text-brand transition-colors" aria-label="Thrivebuild Home">
+        <span class="w-8 h-8 rounded-lg bg-brand flex items-center justify-center text-white font-bold text-lg shadow-sm" aria-hidden="true">T</span>
+        <span class="text-xl font-bold tracking-tight text-ink">Thrivebuild<span class="text-brand">.</span></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-body">
+        <a href="#problem" class="hover:text-ink transition-colors">The Problem</a>
+        <a href="#what-i-build" class="hover:text-ink transition-colors">What I Build</a>
+        <a href="#how-it-works" class="hover:text-ink transition-colors">How It Works</a>
+        <a href="#faq" class="hover:text-ink transition-colors">FAQ</a>
+      </div>
+
+      <!-- Header Action & Mobile Toggle -->
+      <div class="flex items-center gap-3">
+        <!-- CTA Instance #1: Always visible on all screen sizes -->
+        <a href="#book" class="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 rounded-lg bg-brand hover:bg-brand-hover text-white text-xs sm:text-sm font-semibold transition-all duration-150 shadow-sm hover:shadow active:scale-[0.98]">
+          Book Workflow Map
+        </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg text-ink hover:bg-surface-alt transition-colors" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
+          <svg id="menu-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Drawer Panel -->
+    <div id="mobile-nav" class="hidden md:hidden border-b border-line bg-surface/98 px-5 py-6 flex-col gap-4 shadow-xl" role="region" aria-label="Mobile Navigation Drawer">
+      <a href="#problem" class="text-base font-medium text-ink py-2 hover:text-brand">The Problem</a>
+      <a href="#what-i-build" class="text-base font-medium text-ink py-2 hover:text-brand">What I Build</a>
+      <a href="#how-it-works" class="text-base font-medium text-ink py-2 hover:text-brand">How It Works</a>
+      <a href="#faq" class="text-base font-medium text-ink py-2 hover:text-brand">FAQ</a>
+      <div class="pt-4 border-t border-line">
+        <a href="#book" class="w-full flex items-center justify-center px-5 py-3 rounded-lg bg-brand hover:bg-brand-hover text-white text-sm font-semibold transition-colors">
+          Book 45-Min Workflow Map
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ==========================================================================
+         2. HERO SECTION
+         Two-column on desktop, stacked on mobile.
+         ========================================================================== -->
+    <section id="hero" class="relative overflow-hidden bg-radial-glow py-16 md:py-24" aria-labelledby="hero-heading">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+          
+          <!-- Hero Content Left (Expanded to 7 cols for optimal line length and breathing room) -->
+          <div class="lg:col-span-7 flex flex-col items-start text-left">
+            <!-- Eyebrow Audience Pill -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-tint border border-orange-200 text-xs sm:text-[13px] font-semibold text-brand tracking-wide mb-7">
+              <span class="text-base leading-none" aria-hidden="true">🏆</span>
+              <span>For $1M–$10M Residential Remodelers &amp; Design-Build Firms</span>
+            </div>
+
+            <!-- Single Page H1 with generous leading and balanced text wrap -->
+            <h1 id="hero-heading" class="text-3xl sm:text-4xl lg:text-[46px] xl:text-[48px] font-bold text-ink tracking-tight leading-[1.24] lg:leading-[1.2] mb-7" style="text-wrap: balance;">
+              Stop losing remodeling leads to slow follow-up and chaotic job handoffs.
+            </h1>
+
+            <!-- Supporting Pitch with increased breathing room -->
+            <p class="text-base sm:text-lg text-body leading-relaxed max-w-xl mb-9">
+              We build custom Monday.com and Make.com operating systems that respond to homeowner inquiries in under 3 minutes and hand off contracts to project managers with zero dropped details.
+            </p>
+
+            <!-- CTA Instance #2 + Secondary Jump Link -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-9">
+              <a href="#book" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-brand hover:bg-brand-hover text-white text-base font-semibold transition-all duration-150 shadow-md hover:shadow-lg active:scale-[0.98]">
+                Book a 45-Min Workflow Map
+              </a>
+              <a href="#what-i-build" class="inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-body hover:text-ink transition-colors">
+                See the three systems <span class="ml-1.5" aria-hidden="true">↓</span>
+              </a>
+            </div>
+
+            <!-- Trust Strip -->
+            <div class="flex items-center gap-3 pt-5 border-t border-line w-full text-xs text-body">
+              <span class="font-semibold text-ink">Built natively on:</span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface border border-line text-slate-700 font-medium">
+                <span class="w-2 h-2 rounded-full bg-red-500" aria-hidden="true"></span> Monday.com
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface border border-line text-slate-700 font-medium">
+                <span class="w-2 h-2 rounded-full bg-purple-600" aria-hidden="true"></span> Make.com
+              </span>
+              <span class="text-slate-400 hidden sm:inline">•</span>
+              <span class="text-slate-500 hidden sm:inline">Zero brittle custom code</span>
+            </div>
+          </div>
+
+          <!-- Hero Graphic Right: 16:10 Dashboard Screenshot Placeholder -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-2xl bg-surface p-2 shadow-2xl border border-slate-200/80 transition-transform duration-300 hover:scale-[1.01]">
+              <div class="aspect-[16/10] overflow-hidden rounded-xl bg-slate-50">
+                <img 
+                  src="assets/img/dashboard-preview.svg" 
+                  alt="Custom Monday.com and Make.com residential remodeling pipeline dashboard showing lead intake, estimating, and automated sale-to-job handoffs" 
+                  width="960" 
+                  height="600" 
+                  class="w-full h-full object-cover"
+                  loading="eager"
+                  fetchpriority="high"
+                >
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. PROBLEM SECTION
+         3-card grid: 1 odd card spans full width on tablet.
+         ========================================================================== -->
+    <section id="problem" class="py-16 md:py-24 bg-surface-alt border-y border-line" aria-labelledby="problem-heading">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-xs font-semibold text-brand tracking-wider uppercase mb-2">The Bottlenecks</p>
+          <h2 id="problem-heading" class="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink tracking-tight mb-4">
+            Where residential remodeling operations break down.
+          </h2>
+          <p class="text-base text-body">
+            When you run $1M–$10M in volume with 5–30 field staff, standard spreadsheets and email inboxes fail in three predictable places:
+          </p>
+        </div>
+
+        <!-- 3-Card Grid (sm:grid-cols-2 lg:grid-cols-3) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          
+          <!-- Card 1: Leads go cold -->
+          <div class="bg-surface rounded-xl p-6 sm:p-8 border border-line shadow-sm hover:shadow-md transition-shadow flex flex-col">
+            <div class="w-12 h-12 rounded-lg bg-orange-100/80 flex items-center justify-center text-brand mb-6" aria-hidden="true">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-ink mb-3">1. Leads go cold in hours.</h3>
+            <p class="text-sm sm:text-base text-body leading-relaxed">
+              Homeowners submitting kitchen or addition inquiries call 3 competitors. If your office takes 4 hours to call back while you're on a job site, you've already lost the bid to whoever answered in 5 minutes.
+            </p>
+          </div>
+
+          <!-- Card 2: Details dropped in handoff -->
+          <div class="bg-surface rounded-xl p-6 sm:p-8 border border-line shadow-sm hover:shadow-md transition-shadow flex flex-col">
+            <div class="w-12 h-12 rounded-lg bg-amber-100/80 flex items-center justify-center text-amber-700 mb-6" aria-hidden="true">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-ink mb-3">2. Scope vanishes between sales &amp; PMs.</h3>
+            <p class="text-sm sm:text-base text-body leading-relaxed">
+              Sales promises custom tile allowances, specific demolition dates, or parking rules. When the job signs, that context stays trapped in text messages, and your PM walks onto the job blind.
+            </p>
+          </div>
+
+          <!-- Card 3: Odd card spans full width at sm -->
+          <div class="bg-surface rounded-xl p-6 sm:p-8 border border-line shadow-sm hover:shadow-md transition-shadow sm:col-span-2 lg:col-span-1 flex flex-col">
+            <div class="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700 mb-6" aria-hidden="true">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-ink mb-3">3. The owner has zero single-screen visibility.</h3>
+            <p class="text-sm sm:text-base text-body leading-relaxed">
+              You are texting lead carpenters at 9:00 PM just to know if materials arrived or inspections passed. You have no single dashboard telling you pipeline value, live job margins, or project delays.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. WHAT I BUILD SECTION
+         Three pricing cards with mt-auto aligned buttons, clear one-time pricing.
+         ========================================================================== -->
+    <section id="what-i-build" class="py-16 md:py-24 bg-surface" aria-labelledby="systems-heading">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-xs font-semibold text-brand tracking-wider uppercase mb-2">The Systems</p>
+          <h2 id="systems-heading" class="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink tracking-tight mb-4">
+            Fixed-scope systems built inside your Monday.com workspace.
+          </h2>
+          <p class="text-base text-body">
+            No open-ended hourly retainers. We build, test, and hand over turnkey automations configured for remodeling workflows.
+          </p>
+        </div>
+
+        <!-- 3 Pricing Cards Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch pt-4">
+          
+          <!-- Package 1: Lead Follow-Up System ($1,500) -->
+          <div class="bg-surface rounded-2xl p-6 sm:p-8 border border-line shadow-sm flex flex-col transition-all duration-200 hover:shadow-md">
+            <div class="mb-6">
+              <h3 class="text-xl font-bold text-ink mb-1">Lead Follow-Up System</h3>
+              <p class="text-sm text-body">Sub-3-minute speed-to-lead automation.</p>
+            </div>
+
+            <!-- Price -->
+            <div class="mb-6 pb-6 border-b border-line">
+              <div class="flex items-baseline gap-1">
+                <span class="text-4xl font-bold text-ink tabular-nums">$1,500</span>
+              </div>
+              <span class="text-xs font-medium text-slate-500 uppercase tracking-wider">One-time build • No retainer</span>
+            </div>
+
+            <!-- Bullets -->
+            <ul class="space-y-3.5 text-sm text-body mb-8" role="list">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Instant automated SMS &amp; email auto-responder to every form inquiry</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Self-serve homeowner qualification &amp; phone consultation booking link</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Monday.com intake pipeline with auto-populated scope &amp; budget</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Instant owner SMS notification with lead recap and contact details</span>
+              </li>
+            </ul>
+
+            <!-- Button mt-auto -->
+            <div class="mt-auto pt-4">
+              <a href="#book" class="w-full inline-flex items-center justify-center px-5 py-3 rounded-lg border-2 border-ink hover:bg-ink hover:text-white text-ink text-sm font-semibold transition-colors duration-150">
+                Choose Lead System
+              </a>
+            </div>
+          </div>
+
+          <!-- Package 2: Sale-to-Job Handoff System ($2,500) — MOST POPULAR -->
+          <div class="relative bg-surface rounded-2xl p-6 sm:p-8 border-2 border-brand shadow-xl lg:-translate-y-4 flex flex-col">
+            <!-- Most Popular Badge -->
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-brand text-white text-xs font-bold uppercase tracking-wider shadow-sm">
+              Most Popular
+            </div>
+
+            <div class="mb-6 mt-1">
+              <h3 class="text-xl font-bold text-ink mb-1">Sale-to-Job Handoff System</h3>
+              <p class="text-sm text-body">Turn signed contracts into turnkey PM files.</p>
+            </div>
+
+            <!-- Price -->
+            <div class="mb-6 pb-6 border-b border-line">
+              <div class="flex items-baseline gap-1">
+                <span class="text-4xl font-bold text-ink tabular-nums">$2,500</span>
+              </div>
+              <span class="text-xs font-medium text-slate-500 uppercase tracking-wider">One-time build • No retainer</span>
+            </div>
+
+            <!-- Bullets -->
+            <ul class="space-y-3.5 text-sm text-body mb-8" role="list">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Automatic trigger on contract signature (DocuSign/PandaDoc/JobTread)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Automated Google Drive folder tree generation with drawings &amp; permits</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Production board item created in Monday with full allowance schedule</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Assigned PM alert + dedicated job communication channel populated</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Pre-construction checklist synced: trade invitations &amp; long-lead alerts</span>
+              </li>
+            </ul>
+
+            <!-- Button mt-auto (Solid Accent) -->
+            <div class="mt-auto pt-4">
+              <a href="#book" class="w-full inline-flex items-center justify-center px-5 py-3 rounded-lg bg-brand hover:bg-brand-hover text-white text-sm font-semibold transition-all duration-150 shadow-md hover:shadow-lg active:scale-[0.98]">
+                Choose Handoff System
+              </a>
+            </div>
+          </div>
+
+          <!-- Package 3: Full Company System ($5,000) -->
+          <div class="bg-surface rounded-2xl p-6 sm:p-8 border border-line shadow-sm flex flex-col transition-all duration-200 hover:shadow-md">
+            <div class="mb-6">
+              <h3 class="text-xl font-bold text-ink mb-1">Full Company Operating System</h3>
+              <p class="text-sm text-body">End-to-end pipeline from lead to final punch.</p>
+            </div>
+
+            <!-- Price -->
+            <div class="mb-6 pb-6 border-b border-line">
+              <div class="flex items-baseline gap-1">
+                <span class="text-4xl font-bold text-ink tabular-nums">$5,000</span>
+              </div>
+              <span class="text-xs font-medium text-slate-500 uppercase tracking-wider">One-time build • No retainer</span>
+            </div>
+
+            <!-- Bullets -->
+            <ul class="space-y-3.5 text-sm text-body mb-8" role="list">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Everything in the Lead Follow-Up System</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Everything in the Sale-to-Job Handoff System</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Executive Command Dashboard (pipeline revenue, margins, delays)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Subcontractor confirmation &amp; milestone sync automations</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Automated change-order tracking &amp; client sign-off board</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>60 minutes of live team training + 30 days direct Slack support</span>
+              </li>
+            </ul>
+
+            <!-- Button mt-auto -->
+            <div class="mt-auto pt-4">
+              <a href="#book" class="w-full inline-flex items-center justify-center px-5 py-3 rounded-lg border-2 border-ink hover:bg-ink hover:text-white text-ink text-sm font-semibold transition-colors duration-150">
+                Choose Full System
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CTA Instance #3: Centered Band below Packages -->
+        <div class="mt-14 p-8 rounded-2xl bg-surface-alt border border-line text-center max-w-3xl mx-auto flex flex-col items-center">
+          <p class="text-base sm:text-lg font-semibold text-ink mb-2">
+            Not sure which system your remodeling company needs first?
+          </p>
+          <p class="text-sm text-body mb-6">
+            The free 45-minute Workflow Map call pinpoints your highest-leverage operational leak in minutes.
+          </p>
+          <a href="#book" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-brand hover:bg-brand-hover text-white text-sm sm:text-base font-semibold transition-all duration-150 shadow-md hover:shadow-lg active:scale-[0.98]">
+            Book Your 45-Min Workflow Map
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. HOW IT WORKS SECTION
+         4 steps as semantic <ol>, horizontal desktop rail + vertical mobile rail.
+         ========================================================================== -->
+    <section id="how-it-works" class="py-16 md:py-24 bg-surface-alt border-y border-line" aria-labelledby="steps-heading">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-2xl mx-auto text-center mb-16">
+          <p class="text-xs font-semibold text-brand tracking-wider uppercase mb-2">The Process</p>
+          <h2 id="steps-heading" class="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink tracking-tight mb-4">
+            How we take you from spreadsheet chaos to automated flow.
+          </h2>
+          <p class="text-base text-body">
+            Four clear steps. Every phase produces a concrete deliverable so you never wonder what was built.
+          </p>
+        </div>
+
+        <!-- 4 Steps Semantic <ol> -->
+        <ol class="relative grid grid-cols-1 md:grid-cols-4 gap-8 list-none" role="list">
+          
+          <!-- Step 1 -->
+          <li class="relative flex flex-col">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="w-12 h-12 rounded-xl bg-brand text-white flex items-center justify-center text-xl font-bold tabular-nums shadow-sm shrink-0">1</span>
+              <span class="hidden md:block flex-1 h-0.5 bg-line" aria-hidden="true"></span>
+            </div>
+            <h3 class="text-lg font-bold text-ink mb-1">Free Workflow Map</h3>
+            <p class="text-xs text-brand font-semibold mb-2">45-minute deep dive</p>
+            <p class="text-sm text-body leading-relaxed mb-3">
+              We audit how leads enter your business, how bids get approved, and how contracts transfer to the field.
+            </p>
+            <div class="mt-auto pt-2 text-xs font-medium text-slate-700 bg-surface p-2.5 rounded-lg border border-line">
+              <strong class="text-ink">What you get:</strong> Bottleneck teardown map showing your highest-cost delay.
+            </div>
+          </li>
+
+          <!-- Step 2 -->
+          <li class="relative flex flex-col">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="w-12 h-12 rounded-xl bg-ink text-white flex items-center justify-center text-xl font-bold tabular-nums shadow-sm shrink-0">2</span>
+              <span class="hidden md:block flex-1 h-0.5 bg-line" aria-hidden="true"></span>
+            </div>
+            <h3 class="text-lg font-bold text-ink mb-1">Fixed-Price Scope</h3>
+            <p class="text-xs text-slate-500 font-semibold mb-2">Clear delivery blueprint</p>
+            <p class="text-sm text-body leading-relaxed mb-3">
+              You receive a written blueprint detailing board architecture, triggers, email templates, and calendar links.
+            </p>
+            <div class="mt-auto pt-2 text-xs font-medium text-slate-700 bg-surface p-2.5 rounded-lg border border-line">
+              <strong class="text-ink">What you get:</strong> Guaranteed fixed price and an exact 14-day delivery schedule.
+            </div>
+          </li>
+
+          <!-- Step 3 -->
+          <li class="relative flex flex-col">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="w-12 h-12 rounded-xl bg-ink text-white flex items-center justify-center text-xl font-bold tabular-nums shadow-sm shrink-0">3</span>
+              <span class="hidden md:block flex-1 h-0.5 bg-line" aria-hidden="true"></span>
+            </div>
+            <h3 class="text-lg font-bold text-ink mb-1">Phased Build &amp; Test</h3>
+            <p class="text-xs text-slate-500 font-semibold mb-2">Weekly progress reviews</p>
+            <p class="text-sm text-body leading-relaxed mb-3">
+              We construct your boards in Monday.com and connect Make.com webhooks using real past remodeling project data.
+            </p>
+            <div class="mt-auto pt-2 text-xs font-medium text-slate-700 bg-surface p-2.5 rounded-lg border border-line">
+              <strong class="text-ink">What you get:</strong> End-to-end stress tested boards ready for live homeowner inquiries.
+            </div>
+          </li>
+
+          <!-- Step 4 -->
+          <li class="relative flex flex-col">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="w-12 h-12 rounded-xl bg-ink text-white flex items-center justify-center text-xl font-bold tabular-nums shadow-sm shrink-0">4</span>
+            </div>
+            <h3 class="text-lg font-bold text-ink mb-1">Training &amp; Support</h3>
+            <p class="text-xs text-slate-500 font-semibold mb-2">30-day hypercare</p>
+            <p class="text-sm text-body leading-relaxed mb-3">
+              We train your estimators and PMs over Loom and Zoom so your entire field team actually uses the system.
+            </p>
+            <div class="mt-auto pt-2 text-xs font-medium text-slate-700 bg-surface p-2.5 rounded-lg border border-line">
+              <strong class="text-ink">What you get:</strong> Recorded staff SOPs + 30 days of direct Slack fine-tuning.
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. PROOF SECTION
+         Inverted ink-dark band. Wrapped in EXAMPLE COPY — REPLACE BEFORE LAUNCH.
+         ========================================================================== -->
+    <!-- EXAMPLE COPY — REPLACE BEFORE LAUNCH -->
+    <section id="proof" class="py-16 md:py-24 bg-surface-dark text-white relative overflow-hidden bg-radial-dark-glow" aria-labelledby="proof-heading">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-xs font-semibold text-brand tracking-wider uppercase mb-2">Operational Case Study</p>
+          <h2 id="proof-heading" class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">
+            How an Austin design-builder reclaimed 14 hours a week.
+          </h2>
+          <p class="text-sm sm:text-base text-slate-300">
+            <!-- EXAMPLE COPY — REPLACE -->
+            A $4.2M residential remodeling firm was dropping 1 in 4 inquiries during peak season and holding 2-hour Monday morning catch-up meetings just to coordinate PM schedules.
+            <!-- END EXAMPLE COPY -->
+          </p>
+        </div>
+
+        <!-- 3-Stat Metric Row -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-14 text-center">
+          <div class="bg-surface-dark-card border border-slate-800 rounded-xl p-6 shadow-sm">
+            <p class="text-4xl sm:text-5xl font-bold text-brand mb-2 tabular-nums">&lt; 3 min</p>
+            <p class="text-xs sm:text-sm font-medium text-slate-300">Average Lead Response Speed</p>
+            <span class="text-[11px] text-slate-400">Down from 5.4 hours</span>
+          </div>
+
+          <div class="bg-surface-dark-card border border-slate-800 rounded-xl p-6 shadow-sm">
+            <p class="text-4xl sm:text-5xl font-bold text-brand mb-2 tabular-nums">100%</p>
+            <p class="text-xs sm:text-sm font-medium text-slate-300">Handoff Completeness</p>
+            <span class="text-[11px] text-slate-400">Zero dropped allowance specs</span>
+          </div>
+
+          <div class="bg-surface-dark-card border border-slate-800 rounded-xl p-6 shadow-sm">
+            <p class="text-4xl sm:text-5xl font-bold text-brand mb-2 tabular-nums">14 hrs/wk</p>
+            <p class="text-xs sm:text-sm font-medium text-slate-300">Owner Time Reclaimed</p>
+            <span class="text-[11px] text-slate-400">Offloaded to automated triggers</span>
+          </div>
+        </div>
+
+        <!-- Pull Quote Blockquote -->
+        <div class="max-w-3xl mx-auto bg-surface-dark-card border border-slate-800 rounded-2xl p-8 mb-14">
+          <!-- EXAMPLE COPY — REPLACE -->
+          <blockquote class="text-base sm:text-lg text-slate-200 italic leading-relaxed mb-6">
+            "Before Thrivebuild, our handoff from sales to production was three loose Google Docs and a frantic text thread. Now when a homeowner signs, the entire job folder, budget schedule, and PM board are generated before I close my laptop. Our PMs actually trust the paperwork again."
+          </blockquote>
+          <cite class="not-italic flex items-center gap-3">
+            <span class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center font-bold text-sm text-white" aria-hidden="true">[MR]</span>
+            <div>
+              <p class="text-sm font-bold text-white">[MICHAEL R.]</p>
+              <p class="text-xs text-slate-400">Managing Partner, [APEX DESIGN-BUILD] — $4.2M Residential Remodeler, [AUSTIN, TX]</p>
+            </div>
+          </cite>
+          <!-- END EXAMPLE COPY -->
+        </div>
+
+        <!-- Three 4:3 Screenshot Mockup Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="rounded-xl overflow-hidden border border-slate-800 bg-surface-dark-card shadow-lg">
+            <img src="assets/img/proof-screen-1.svg" alt="Speed to lead automated workflow sequence diagram" width="600" height="450" class="w-full h-auto" loading="lazy">
+            <div class="p-3 bg-slate-900/90 text-center border-t border-slate-800">
+              <span class="text-xs font-medium text-slate-300">Speed-to-Lead Sequence</span>
+            </div>
+          </div>
+
+          <div class="rounded-xl overflow-hidden border border-slate-800 bg-surface-dark-card shadow-lg">
+            <img src="assets/img/proof-screen-2.svg" alt="Sale to job handoff trigger automation flow" width="600" height="450" class="w-full h-auto" loading="lazy">
+            <div class="p-3 bg-slate-900/90 text-center border-t border-slate-800">
+              <span class="text-xs font-medium text-slate-300">Turnkey Sale-to-Job Handoff</span>
+            </div>
+          </div>
+
+          <div class="rounded-xl overflow-hidden border border-slate-800 bg-surface-dark-card shadow-lg">
+            <img src="assets/img/proof-screen-3.svg" alt="Executive remodeler visibility command dashboard" width="600" height="450" class="w-full h-auto" loading="lazy">
+            <div class="p-3 bg-slate-900/90 text-center border-t border-slate-800">
+              <span class="text-xs font-medium text-slate-300">Owner Command Center</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- END EXAMPLE COPY — REPLACE BEFORE LAUNCH -->
+
+    <!-- ==========================================================================
+         7. WHO THIS IS FOR SECTION
+         2 columns: Fit (5 checks) vs Not a Fit (4 neutral dashes).
+         ========================================================================== -->
+    <section id="fit" class="py-16 md:py-24 bg-surface" aria-labelledby="fit-heading">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-xs font-semibold text-brand tracking-wider uppercase mb-2">Fit Criteria</p>
+          <h2 id="fit-heading" class="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink tracking-tight mb-4">
+            Is this the right fit for your remodeling company?
+          </h2>
+          <p class="text-base text-body">
+            We specialize specifically in residential remodeling operations. We filter out businesses that aren't ready so nobody wastes 45 minutes.
+          </p>
+        </div>
+
+        <!-- 2-Column Grid (md:grid-cols-2) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+          
+          <!-- Column 1: This IS a fit if... -->
+          <div class="bg-emerald-50/50 rounded-2xl p-6 sm:p-8 border border-emerald-200 flex flex-col">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-base" aria-hidden="true">✓</span>
+              <h3 class="text-xl font-bold text-ink">This is a fit if...</h3>
+            </div>
+
+            <ul class="space-y-4 text-sm sm:text-base text-body" role="list">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>You are the owner or ops manager of a residential remodeling or design-build firm.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Your annual revenue is between $1M and $10M with a team of 5 to 30 people.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>You are dropping leads or feeling the pain of miscommunication between sales and production.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>You want systems built on dependable platforms (Monday.com &amp; Make.com) that your team actually adopts.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>The business owner wants to step back from everyday field fires and gain clear dashboard oversight.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 2: This ISN'T a fit if... (Neutral dash icons) -->
+          <div class="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-line flex flex-col">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="w-8 h-8 rounded-full bg-slate-300 text-slate-700 flex items-center justify-center font-bold text-base" aria-hidden="true">—</span>
+              <h3 class="text-xl font-bold text-ink">This isn't a fit if...</h3>
+            </div>
+
+            <ul class="space-y-4 text-sm sm:text-base text-body" role="list">
+              <li class="flex items-start gap-3">
+                <span class="text-slate-400 font-bold text-lg leading-none shrink-0 mt-0.5" aria-hidden="true">—</span>
+                <span>You are a commercial general contractor or speculative subdivision homebuilder with multi-year commercial contracts.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-slate-400 font-bold text-lg leading-none shrink-0 mt-0.5" aria-hidden="true">—</span>
+                <span>You are a solo handyman or sub-$500k contractor without dedicated sales or project management staff.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-slate-400 font-bold text-lg leading-none shrink-0 mt-0.5" aria-hidden="true">—</span>
+                <span>You are looking for cheap offshore virtual assistants to do manual data entry rather than true software automation.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-slate-400 font-bold text-lg leading-none shrink-0 mt-0.5" aria-hidden="true">—</span>
+                <span>You are unwilling to give your project managers access to modern cloud software on their phones or tablets.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         8. FAQ SECTION
+         6 items, native <details> with keyboard accessibility and progressive animation.
+         ========================================================================== -->
+    <section id="faq" class="py-16 md:py-24 bg-surface-alt border-y border-line" aria-labelledby="faq-heading">
+      <div class="max-w-4xl mx-auto px-5 sm:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center mb-14">
+          <p class="text-xs font-semibold text-brand tracking-wider uppercase mb-2">Common Questions</p>
+          <h2 id="faq-heading" class="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink tracking-tight mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-base text-body">
+            Everything you need to know about our implementations, tooling, and pricing.
+          </p>
+        </div>
+
+        <!-- 6 FAQ Accordion Items -->
+        <div class="space-y-4">
+          
+          <!-- FAQ 1 -->
+          <details class="group rounded-xl border bg-surface p-5 sm:p-6 transition-all duration-200">
+            <summary class="flex items-center justify-between font-semibold text-ink text-base sm:text-lg cursor-pointer">
+              <span>Does this replace Buildertrend or JobTread?</span>
+              <span class="faq-chevron ml-4 shrink-0 text-slate-400 group-hover:text-ink transition-transform" aria-hidden="true">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-content mt-4 pt-4 border-t border-line text-sm sm:text-base text-body leading-relaxed">
+              No, it enhances them. Construction management platforms like Buildertrend or JobTread are great for daily logs and purchase orders, but their CRM intake and custom sales-to-PM triggers are rigid. We bridge the front-end intake and job kickoff using Monday.com and Make.com, then sync cleanly to your construction software.
+            </div>
+          </details>
+
+          <!-- FAQ 2 -->
+          <details class="group rounded-xl border bg-surface p-5 sm:p-6 transition-all duration-200">
+            <summary class="flex items-center justify-between font-semibold text-ink text-base sm:text-lg cursor-pointer">
+              <span>How long does a typical implementation take?</span>
+              <span class="faq-chevron ml-4 shrink-0 text-slate-400 group-hover:text-ink transition-transform" aria-hidden="true">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-content mt-4 pt-4 border-t border-line text-sm sm:text-base text-body leading-relaxed">
+              Single packages (like the Lead Follow-Up System or Handoff System) are built, tested, and handed over in 7 to 10 business days. The Full Company Operating System typically takes 2 to 3 weeks including team training and live testing with active jobs.
+            </div>
+          </details>
+
+          <!-- FAQ 3 -->
+          <details class="group rounded-xl border bg-surface p-5 sm:p-6 transition-all duration-200">
+            <summary class="flex items-center justify-between font-semibold text-ink text-base sm:text-lg cursor-pointer">
+              <span>Do I need to set up Monday.com and Make.com accounts beforehand?</span>
+              <span class="faq-chevron ml-4 shrink-0 text-slate-400 group-hover:text-ink transition-transform" aria-hidden="true">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-content mt-4 pt-4 border-t border-line text-sm sm:text-base text-body leading-relaxed">
+              No. On the 45-minute Workflow Map call, we evaluate your existing licenses. If you already have Monday.com, we build inside your existing account. If not, we advise you on the exact tier needed (usually Monday Pro and Make Core) so you don't overspend on enterprise licenses.
+            </div>
+          </details>
+
+          <!-- FAQ 4 -->
+          <details class="group rounded-xl border bg-surface p-5 sm:p-6 transition-all duration-200">
+            <summary class="flex items-center justify-between font-semibold text-ink text-base sm:text-lg cursor-pointer">
+              <span>Are there ongoing retainer fees or hidden costs?</span>
+              <span class="faq-chevron ml-4 shrink-0 text-slate-400 group-hover:text-ink transition-transform" aria-hidden="true">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-content mt-4 pt-4 border-t border-line text-sm sm:text-base text-body leading-relaxed">
+              Zero consulting retainers. Our systems are flat-rate, one-time project fees ($1,500, $2,500, or $5,000). You own the boards, scenarios, and documentation completely. You only pay your standard software subscription fees directly to Monday and Make.
+            </div>
+          </details>
+
+          <!-- FAQ 5 -->
+          <details class="group rounded-xl border bg-surface p-5 sm:p-6 transition-all duration-200">
+            <summary class="flex items-center justify-between font-semibold text-ink text-base sm:text-lg cursor-pointer">
+              <span>Do you work with commercial general contractors?</span>
+              <span class="faq-chevron ml-4 shrink-0 text-slate-400 group-hover:text-ink transition-transform" aria-hidden="true">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-content mt-4 pt-4 border-t border-line text-sm sm:text-base text-body leading-relaxed">
+              No. Commercial construction involves AIA billing, complex lien waivers, and multi-tier submittals that require specialized enterprise ERPs. We stay 100% focused on residential kitchen, bath, whole-home, and outdoor living remodeling firms where fast homeowner response and rapid trade handoff win jobs.
+            </div>
+          </details>
+
+          <!-- FAQ 6 -->
+          <details class="group rounded-xl border bg-surface p-5 sm:p-6 transition-all duration-200">
+            <summary class="flex items-center justify-between font-semibold text-ink text-base sm:text-lg cursor-pointer">
+              <span>Can we build just the lead follow-up system first?</span>
+              <span class="faq-chevron ml-4 shrink-0 text-slate-400 group-hover:text-ink transition-transform" aria-hidden="true">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-content mt-4 pt-4 border-t border-line text-sm sm:text-base text-body leading-relaxed">
+              Absolutely. Many remodelers start with the $1,500 Lead Follow-Up package to capture immediate ROI on missed inquiries. Once your speed-to-lead is locked down and consultations are consistently booking, we can add the Sale-to-Job Handoff System anytime without redoing past work.
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         9. FINAL CTA SECTION (#book)
+         Headline, copy, and Calendly inline embed with guaranteed fallback.
+         ========================================================================== -->
+    <section id="book" class="py-16 md:py-24 bg-surface" aria-labelledby="book-heading">
+      <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center">
+        
+        <!-- Section Header -->
+        <p class="text-xs font-semibold text-brand tracking-wider uppercase mb-2">Schedule Your Session</p>
+        <h2 id="book-heading" class="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink tracking-tight mb-4">
+          Map your remodeling workflows in 45 minutes.
+        </h2>
+        <p class="text-base text-body max-w-xl mx-auto mb-10">
+          Pick a time below for a 45-minute Workflow Map call. We'll identify your single biggest operational delay and show you what it looks like automated.
+        </p>
+
+        <!-- Calendly Inline Container with Smart Demo Mode -->
+        <div class="relative w-full rounded-2xl border border-line bg-surface shadow-lg overflow-hidden min-h-[640px] flex flex-col justify-center items-center">
+          
+          <!-- Calendly Native Inline Embed Div (Used when real CALENDLY_URL is provided) -->
+          <div 
+            class="calendly-inline-widget w-full h-[700px]" 
+            data-url="https://calendly.com/samthriver/workflow"
+          ></div>
+
+          <!-- Interactive Demo Scheduler Preview (Shown when CALENDLY_URL is still a placeholder) -->
+          <div id="calendly-demo-preview" class="w-full text-left p-6 sm:p-10 flex flex-col">
+            
+            <!-- Setup Notice Pill -->
+            <div class="mb-8 p-3.5 rounded-xl bg-orange-50 border border-orange-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+              <div class="flex items-center gap-2 text-brand font-medium">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand animate-pulse" aria-hidden="true"></span>
+                <span><strong>Scheduler Demo Mode:</strong> To connect your real booking calendar, provide your Calendly link to plug in or update <code class="bg-orange-100 px-1.5 py-0.5 rounded text-orange-900 font-mono">CALENDLY_URL</code> in <code class="bg-orange-100 px-1.5 py-0.5 rounded text-orange-900 font-mono">assets/main.js</code>.</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              
+              <!-- Left Side: Meeting Details -->
+              <div class="lg:col-span-5 border-b lg:border-b-0 lg:border-r border-line pb-6 lg:pb-0 lg:pr-8">
+                <div class="flex items-center gap-2 mb-4">
+                  <span class="w-7 h-7 rounded-md bg-brand flex items-center justify-center text-white font-bold text-sm" aria-hidden="true">T</span>
+                  <span class="text-sm font-bold text-ink tracking-tight">Thrivebuild.</span>
+                </div>
+
+                <h3 class="text-2xl font-bold text-ink mb-3 leading-snug">
+                  45-Min Remodeling Workflow Map
+                </h3>
+
+                <div class="space-y-2.5 text-sm text-body mb-6">
+                  <div class="flex items-center gap-2.5 text-slate-700">
+                    <svg class="w-4 h-4 text-brand shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span>45 minutes</span>
+                  </div>
+                  <div class="flex items-center gap-2.5 text-slate-700">
+                    <svg class="w-4 h-4 text-brand shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                    </svg>
+                    <span>Google Meet video call (link provided upon booking)</span>
+                  </div>
+                </div>
+
+                <p class="text-xs text-body leading-relaxed mb-6">
+                  We review your current inquiry intake speed, estimating handover pipeline, and PM communication bottlenecks. You'll leave with a clear bottleneck map showing your highest-cost delay.
+                </p>
+
+                <div class="p-3 bg-surface-alt rounded-lg border border-line text-xs text-slate-600">
+                  🔒 <strong>Guaranteed:</strong> 100% free consultation. No high-pressure sales pitch. Built for residential remodelers doing $1M–$10M.
+                </div>
+              </div>
+
+              <!-- Right Side: Interactive Slot Selector -->
+              <div class="lg:col-span-7 lg:pl-4">
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Select a Day &amp; Time (Demo Preview)</p>
+                
+                <!-- Day Pills -->
+                <div class="grid grid-cols-3 gap-2.5 mb-5">
+                  <button type="button" class="demo-day-btn p-3 rounded-xl border border-brand bg-brand-tint text-brand text-center font-medium text-xs transition-all shadow-sm" data-day="Tomorrow">
+                    <span class="block text-[11px] text-slate-500 uppercase">Wed</span>
+                    <span class="block text-sm font-bold text-ink mt-0.5">Tomorrow</span>
+                  </button>
+                  <button type="button" class="demo-day-btn p-3 rounded-xl border border-line bg-surface hover:bg-surface-alt text-slate-700 text-center font-medium text-xs transition-all" data-day="Thursday">
+                    <span class="block text-[11px] text-slate-500 uppercase">Thu</span>
+                    <span class="block text-sm font-bold text-ink mt-0.5">Sep 24</span>
+                  </button>
+                  <button type="button" class="demo-day-btn p-3 rounded-xl border border-line bg-surface hover:bg-surface-alt text-slate-700 text-center font-medium text-xs transition-all" data-day="Friday">
+                    <span class="block text-[11px] text-slate-500 uppercase">Fri</span>
+                    <span class="block text-sm font-bold text-ink mt-0.5">Sep 25</span>
+                  </button>
+                </div>
+
+                <!-- Time Slot Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-2 gap-3 mb-6">
+                  <button type="button" class="demo-time-slot p-3 rounded-lg border border-line hover:border-brand hover:bg-orange-50/50 text-slate-800 text-xs sm:text-sm font-semibold text-center transition-colors">
+                    9:30 AM EST
+                  </button>
+                  <button type="button" class="demo-time-slot p-3 rounded-lg border border-line hover:border-brand hover:bg-orange-50/50 text-slate-800 text-xs sm:text-sm font-semibold text-center transition-colors">
+                    11:00 AM EST
+                  </button>
+                  <button type="button" class="demo-time-slot p-3 rounded-lg border border-line hover:border-brand hover:bg-orange-50/50 text-slate-800 text-xs sm:text-sm font-semibold text-center transition-colors">
+                    1:30 PM EST
+                  </button>
+                  <button type="button" class="demo-time-slot p-3 rounded-lg border border-line hover:border-brand hover:bg-orange-50/50 text-slate-800 text-xs sm:text-sm font-semibold text-center transition-colors">
+                    3:45 PM EST
+                  </button>
+                </div>
+
+                <!-- Interactive Feedback Toast Area -->
+                <div id="demo-slot-alert" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs mb-5 transition-all">
+                  <div class="flex items-start gap-2.5">
+                    <span class="text-base leading-none">✓</span>
+                    <div>
+                      <p class="font-bold mb-1" id="demo-slot-text">Slot selected!</p>
+                      <p class="text-emerald-800">In production, this syncs instantly with your live Calendly. To activate, provide your Calendly link or paste it into line 9 of <code class="bg-emerald-100 px-1 py-0.5 rounded font-mono">assets/main.js</code>.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Direct Email Action -->
+                <div class="pt-4 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+                  <span class="text-slate-500">Need a custom time or prefer email?</span>
+                  <a href="mailto:aythriver@gmail.com?subject=Remodeling%20Workflow%20Map%20Booking" class="inline-flex items-center gap-1.5 font-semibold text-brand hover:text-brand-hover transition-colors">
+                    <span>Email directly (aythriver@gmail.com)</span>
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Fallback Panel (Displayed if adblockers block scripts entirely) -->
+          <div id="calendly-fallback" class="p-8 sm:p-12 text-center max-w-lg mx-auto hidden">
+            <div class="w-12 h-12 rounded-full bg-brand-tint border border-orange-200 text-brand flex items-center justify-center mx-auto mb-4" aria-hidden="true">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-ink mb-2">Book Your Call Directly</h3>
+            <p class="text-sm text-body mb-6">
+              If the interactive calendar does not load in your browser, open the scheduling calendar directly or send a quick email.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a 
+                id="fallback-booking-link" 
+                href="https://calendly.com/samthriver/workflow" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-lg bg-brand hover:bg-brand-hover text-white text-sm font-semibold transition-colors"
+              >
+                Open Booking Calendar ↗
+              </a>
+              <a 
+                href="mailto:aythriver@gmail.com?subject=Remodeling%20Workflow%20Map%20Call" 
+                class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 rounded-lg border border-line text-ink hover:bg-surface-alt text-sm font-semibold transition-colors"
+              >
+                Email aythriver@gmail.com
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       10. FOOTER
+       Wordmark, email mailto:, LinkedIn, physical address placeholder, copyright.
+       ========================================================================== -->
+  <footer class="mt-auto border-t border-line bg-surface-alt py-12 text-body text-xs">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <!-- Left: Branding & Descriptor -->
+        <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+          <a href="#" class="font-bold text-sm text-ink hover:text-brand transition-colors">
+            Thrivebuild<span class="text-brand">.</span>
+          </a>
+          <span class="hidden sm:inline text-slate-300">|</span>
+          <span class="text-slate-500">Remodeling Systems Consultancy • Built on Monday.com &amp; Make.com</span>
+        </div>
+
+        <!-- Center / Right: Contact Links & Address -->
+        <div class="flex flex-wrap items-center justify-center gap-6">
+          <a href="mailto:aythriver@gmail.com" class="hover:text-ink transition-colors">
+            aythriver@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/sam-adebayo" target="_blank" rel="noopener noreferrer" class="hover:text-ink transition-colors">
+            LinkedIn ↗
+          </a>
+          <span class="text-slate-400">[CITY, STATE]</span>
+        </div>
+
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-line text-center text-slate-400">
+        <p>© 2026 Thrivebuild. All rights reserved. Zero retainers • Fixed-scope builds.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/main.js"></script>
+</body>
+</html>
