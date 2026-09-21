@@ -26,11 +26,7 @@ Search for `[` or `EXAMPLE COPY` in `index.html` to find every customizable slot
 | *(Active)* | `assets/main.js` line 9 | Connected to `https://calendly.com/samthriver/workflow`. |
 | *(Active)* | `index.html` lines 1002, 1036, 1070 | Contact email connected to `aythriver@gmail.com`. |
 | *(Active)* | `index.html` line 1073 | LinkedIn profile connected to `https://www.linkedin.com/in/sam-adebayo`. |
-| `<!-- EXAMPLE COPY — REPLACE -->` | Lines 600, 629 | Proof section case-study background narrative & quote. |
-| `[MR]` | Line 634 | Client avatar initials in case-study quote. |
-| `[MICHAEL R.]` | Line 636 | Client name attribution in case-study quote. |
-| `[APEX DESIGN-BUILD]` | Line 637 | Client company name in case-study quote. |
-| `[AUSTIN, TX]` | Line 637 | Client city and state in case-study quote. |
+| *(Active)* | Line 590–666 | Case study connected to NE Tiny Homes (Chris A.). |
 | *(Active)* | Line 1076 | Location set to `Lagos, Nigeria`. |
 
 ---
