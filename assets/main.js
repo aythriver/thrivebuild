@@ -1,17 +1,26 @@
 /**
  * Thrivebuild.co — Client-side Scripts
- * Mobile menu, single-open FAQ accordion, smooth scrolling, and Calendly embed handling.
+ * Configuration, sticky header, mobile drawer menu, single-open FAQ accordion,
+ * and reliable Calendly inline embed management.
  */
 
 // ==========================================================================
-// 1. CONFIGURATION — SWAP YOUR BOOKING URL HERE
+// 1. CONFIGURATION OBJECT
+// Centralized settings. Edit here to update links across the site.
 // ==========================================================================
-const CALENDLY_URL = "https://calendly.com/samthriver/workflow";
+const CONFIG = {
+  SITE_URL: "https://thrivebuild.vercel.app", // change to https://thrivebuild.co once custom domain is connected
+  CALENDLY_URL: "https://calendly.com/samthriver/workflow",
+  CONTACT_EMAIL: "aythriver@gmail.com",
+  FORM_URL: "#intake",
+  FOOTER_LOCATION: "Remote · Serving US remodelers · Available US Eastern hours",
+};
 
 // ==========================================================================
 // 2. DOM INITIALIZATION
 // ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
+  initConfigHydration();
   initStickyHeader();
   initMobileMenu();
   initAccordion();
@@ -19,7 +28,36 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==========================================================================
-// 3. STICKY HEADER SCROLL TREATMENT
+// 3. CONFIG HYDRATION
+// Injects CONFIG values into elements with data-config attributes
+// ==========================================================================
+function initConfigHydration() {
+  document.querySelectorAll("[data-config]").forEach((el) => {
+    const key = el.getAttribute("data-config");
+    if (!CONFIG[key]) return;
+
+    if (el.tagName === "A") {
+      if (key === "CONTACT_EMAIL") {
+        const subject = el.getAttribute("data-config-subject");
+        el.href = `mailto:${CONFIG[key]}${subject ? `?subject=${encodeURIComponent(subject)}` : ""}`;
+      } else if (key === "CALENDLY_URL" || key === "FORM_URL" || key === "SITE_URL") {
+        el.href = CONFIG[key];
+      }
+    } else {
+      el.textContent = CONFIG[key];
+    }
+  });
+
+  // Hide form link triggers if FORM_URL is not yet connected to a live form
+  if (CONFIG.FORM_URL === "#intake" || !CONFIG.FORM_URL) {
+    document.querySelectorAll("[data-hide-if-no-form]").forEach((el) => {
+      el.classList.add("hidden");
+    });
+  }
+}
+
+// ==========================================================================
+// 4. STICKY HEADER SCROLL TREATMENT
 // ==========================================================================
 function initStickyHeader() {
   const header = document.querySelector("header");
@@ -38,7 +76,7 @@ function initStickyHeader() {
 }
 
 // ==========================================================================
-// 4. ACCESSIBLE MOBILE MENU CONTROLLER
+// 5. ACCESSIBLE MOBILE MENU CONTROLLER
 // ==========================================================================
 function initMobileMenu() {
   const menuBtn = document.getElementById("mobile-menu-btn");
@@ -91,7 +129,7 @@ function initMobileMenu() {
 }
 
 // ==========================================================================
-// 5. ACCORDION ENHANCEMENT (Progressive: keeps native <details> intact)
+// 6. ACCORDION ENHANCEMENT (Progressive: keeps native <details> intact)
 // ==========================================================================
 function initAccordion() {
   const allDetails = document.querySelectorAll("#faq details");
@@ -111,41 +149,21 @@ function initAccordion() {
 }
 
 // ==========================================================================
-// 6. CALENDLY EMBED MANAGER & DEMO SCHEDULER
+// 7. CALENDLY EMBED MANAGER (Reliable loading & non-destructive fallback)
 // ==========================================================================
 function initCalendlyEmbed() {
   const widgetContainer = document.querySelector(".calendly-inline-widget");
   const fallbackPanel = document.getElementById("calendly-fallback");
-  const demoPreview = document.getElementById("calendly-demo-preview");
 
   if (!widgetContainer) return;
 
-  // Initialize interactive demo buttons regardless of mode
-  initDemoSchedulerInteractions();
-
-  // Check if a real Calendly link is configured or still a placeholder
-  const isPlaceholder = !CALENDLY_URL || 
-                        CALENDLY_URL.includes("[YOUR-USERNAME]") || 
-                        CALENDLY_URL.includes("[YOUR") || 
-                        CALENDLY_URL.includes("[") ||
-                        !CALENDLY_URL.startsWith("https://calendly.com/");
-
-  if (isPlaceholder) {
-    // Keep clean demo preview visible; do not load Calendly's 404 iframe
-    widgetContainer.classList.add("hidden");
-    if (demoPreview) demoPreview.classList.remove("hidden");
-    if (fallbackPanel) fallbackPanel.classList.add("hidden");
-    return;
-  }
-
-  // Live Mode: A valid Calendly URL is provided
-  if (demoPreview) demoPreview.classList.add("hidden");
-  widgetContainer.classList.remove("hidden");
-  widgetContainer.setAttribute("data-url", CALENDLY_URL);
+  // Build full Calendly embed URL with clean display parameters
+  const embedUrl = `${CONFIG.CALENDLY_URL}?hide_gdpr_banner=1&primary_color=c2410c`;
+  widgetContainer.setAttribute("data-url", embedUrl);
 
   const fallbackLink = document.getElementById("fallback-booking-link");
   if (fallbackLink) {
-    fallbackLink.setAttribute("href", CALENDLY_URL);
+    fallbackLink.setAttribute("href", CONFIG.CALENDLY_URL);
   }
 
   // Inject Calendly's script dynamically
@@ -153,12 +171,9 @@ function initCalendlyEmbed() {
   script.src = "https://assets.calendly.com/assets/external/widget.js";
   script.async = true;
 
-  let loaded = false;
+  let scriptLoaded = false;
   script.onload = () => {
-    loaded = true;
-    if (fallbackPanel) {
-      fallbackPanel.classList.add("hidden");
-    }
+    scriptLoaded = true;
   };
 
   script.onerror = () => {
@@ -167,54 +182,17 @@ function initCalendlyEmbed() {
 
   document.head.appendChild(script);
 
+  // Generous 10-second safety check for slow mobile networks.
+  // Never hide the widget if an iframe has already been spawned.
   setTimeout(() => {
-    if (!loaded) {
+    const hasIframe = widgetContainer.querySelector("iframe");
+    if (!scriptLoaded && !hasIframe) {
       showCalendlyFallback(widgetContainer, fallbackPanel);
     }
-  }, 4000);
+  }, 10000);
 }
 
 function showCalendlyFallback(widgetContainer, fallbackPanel) {
   if (widgetContainer) widgetContainer.classList.add("hidden");
-  if (fallbackPanel) {
-    fallbackPanel.classList.remove("hidden");
-  }
-}
-
-function initDemoSchedulerInteractions() {
-  const dayButtons = document.querySelectorAll(".demo-day-btn");
-  const timeButtons = document.querySelectorAll(".demo-time-slot");
-  const alertBox = document.getElementById("demo-slot-alert");
-  const alertText = document.getElementById("demo-slot-text");
-
-  let selectedDay = "Tomorrow";
-
-  dayButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      dayButtons.forEach((b) => {
-        b.classList.remove("border-brand", "bg-brand-tint", "text-brand");
-        b.classList.add("border-line", "bg-surface", "text-slate-700");
-      });
-      btn.classList.remove("border-line", "bg-surface", "text-slate-700");
-      btn.classList.add("border-brand", "bg-brand-tint", "text-brand");
-      selectedDay = btn.getAttribute("data-day") || "Selected Day";
-    });
-  });
-
-  timeButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      timeButtons.forEach((b) => {
-        b.classList.remove("border-brand", "bg-brand", "text-white");
-        b.classList.add("border-line", "text-slate-800");
-      });
-      btn.classList.remove("border-line", "text-slate-800");
-      btn.classList.add("border-brand", "bg-brand", "text-white");
-
-      const time = btn.innerText.trim();
-      if (alertBox && alertText) {
-        alertText.innerText = `Demo Slot Selected: ${selectedDay} at ${time}`;
-        alertBox.classList.remove("hidden");
-      }
-    });
-  });
+  if (fallbackPanel) fallbackPanel.classList.remove("hidden");
 }

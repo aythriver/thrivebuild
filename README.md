@@ -23,27 +23,31 @@ Search for `[` or `EXAMPLE COPY` in `index.html` to find every customizable slot
 | Placeholder | Location in `index.html` | Purpose / Description |
 | :--- | :--- | :--- |
 | `[YOUR-ID]` | Line ~67 | Google Analytics 4 (GA4) measurement ID (e.g. `G-XXXXXXXXXX`). |
-| *(Active)* | `assets/main.js` line 9 | Connected to `https://calendly.com/samthriver/workflow`. |
-| *(Active)* | `index.html` lines 1002, 1036, 1070 | Contact email connected to `aythriver@gmail.com`. |
-| *(Active)* | `index.html` line 1073 | LinkedIn profile connected to `https://www.linkedin.com/in/sam-adebayo`. |
-| *(Active)* | Line 590–666 | Case study connected to NE Tiny Homes (Joe P. / Joe Pagnani). |
-| *(Active)* | Line 1076 | Location set to `Lagos, Nigeria`. |
+| *(Active)* | `assets/main.js` (`CONFIG.CALENDLY_URL`) | Connected to `https://calendly.com/samthriver/workflow`. |
+| *(Active)* | `assets/main.js` (`CONFIG.CONTACT_EMAIL`) | Contact email connected to `aythriver@gmail.com`. |
+| *(Active)* | `index.html` line 976 | LinkedIn profile connected to `https://www.linkedin.com/in/sam-adebayo`. |
+| *(Active)* | `index.html` Lines 590–666 | Case study connected to NE Tiny Homes (Joe P. / Joe Pagnani). |
+| *(Active)* | `assets/main.js` (`CONFIG.FOOTER_LOCATION`) | Location set to `Remote · Serving US remodelers · Available US Eastern hours`. |
 
 ---
 
-## How to Swap Your Booking Link
+## Centralized Configuration (`assets/main.js`)
 
-Open `assets/main.js` and edit the single constant at the very top (Line 9):
+All dynamic links and contact defaults are now governed by the `CONFIG` object at the top of `assets/main.js`:
 
 ```javascript
-const CALENDLY_URL = "https://calendly.com/samthriver/workflow";
+const CONFIG = {
+  SITE_URL: "https://thrivebuild.vercel.app", // change to https://thrivebuild.co once custom domain is connected
+  CALENDLY_URL: "https://calendly.com/samthriver/workflow",
+  CONTACT_EMAIL: "aythriver@gmail.com",
+  FORM_URL: "#intake",
+  FOOTER_LOCATION: "Remote · Serving US remodelers · Available US Eastern hours",
+};
 ```
 
-### Using Another Scheduler (HubSpot Meetings, Cal.com, Acuity)
-If you switch to Cal.com or HubSpot Meetings:
-1. Update `CALENDLY_URL` in `assets/main.js` to your new link.
-2. In `index.html`, replace the `.calendly-inline-widget` container in `#book` with your scheduler's embed iframe or script.
-3. The fallback panel automatically picks up the URL from `CALENDLY_URL`.
+> **When Connecting a Custom Domain (`thrivebuild.co`):**
+> 1. Update `SITE_URL` in `assets/main.js`.
+> 2. Update `<link rel="canonical">`, `<meta property="og:url">`, `<meta property="og:image">`, and `<meta name="twitter:image">` inside `<head>` of `index.html`. Social crawlers (LinkedIn, Facebook, X) do not run JavaScript, so these tags must be synced manually.
 
 ---
 

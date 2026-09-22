@@ -136,7 +136,13 @@ details .faq-content {
 /* Calendly Container styling */
 .calendly-inline-widget {
   min-width: 320px;
-  height: 700px;
+  height: 1000px;
+}
+
+@media (min-width: 768px) {
+  .calendly-inline-widget {
+    height: 700px;
+  }
 }
 
 /* Mobile drawer scroll lock */
