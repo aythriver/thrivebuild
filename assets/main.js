@@ -1,5 +1,5 @@
 /**
- * Thrivebuild.co — Client-side Scripts
+ * Thrivebuild.co - Client-side Scripts
  * Configuration, sticky header, mobile drawer menu, single-open FAQ accordion,
  * and reliable Calendly inline embed management.
  */

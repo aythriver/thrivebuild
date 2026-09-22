@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service | Thrivebuild</title>
+  <meta name="description" content="Terms of service for Thrivebuild remodeling systems and consulting.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://thrivebuild.vercel.app/terms">
+  <meta name="theme-color" content="#C2410C">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#C2410C',
+              hover: '#9A3412',
+              tint: '#FFF7ED',
+            },
+            ink: {
+              DEFAULT: '#0F172A',
+              light: '#1E293B',
+            },
+            body: '#475569',
+            line: '#E2E8F0',
+            surface: {
+              DEFAULT: '#FFFFFF',
+              alt: '#F8FAFC',
+              dark: '#0B132B',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="bg-surface text-body font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Accessible Skip Link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand focus:text-white focus:rounded-md focus:shadow-lg">
+    Skip to main content
+  </a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md transition-all duration-200 border-b border-line">
+    <nav class="max-w-6xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between" aria-label="Main Navigation">
+      <a href="/" class="flex items-center gap-2 text-ink hover:text-brand transition-colors" aria-label="Thrivebuild Home">
+        <span class="w-8 h-8 rounded-lg bg-brand flex items-center justify-center text-white font-bold text-lg shadow-sm" aria-hidden="true">T</span>
+        <span class="text-xl font-bold tracking-tight text-ink">Thrivebuild<span class="text-brand">.</span></span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-body">
+        <a href="/#problem" class="hover:text-ink transition-colors">The Problem</a>
+        <a href="/#how-it-fits" class="hover:text-ink transition-colors">How It Fits</a>
+        <a href="/#what-we-build" class="hover:text-ink transition-colors">What We Build</a>
+        <a href="/#how-it-works" class="hover:text-ink transition-colors">How It Works</a>
+        <a href="/#faq" class="hover:text-ink transition-colors">FAQ</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="/#book" class="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 rounded-lg bg-brand hover:bg-brand-hover text-white text-xs sm:text-sm font-semibold transition-all duration-150 shadow-sm hover:shadow active:scale-[0.98]">
+          Book Workflow Map
+        </a>
+        <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg text-body hover:text-ink hover:bg-surface-alt transition-colors focus-visible:outline-brand" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+          <svg id="menu-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobile-nav" class="hidden md:hidden fixed inset-x-0 top-20 bg-surface border-b border-line shadow-xl flex-col p-6 gap-4 z-40 transition-all duration-200">
+      <a href="/#problem" class="text-base font-medium text-ink hover:text-brand py-2 transition-colors">The Problem</a>
+      <a href="/#how-it-fits" class="text-base font-medium text-ink hover:text-brand py-2 transition-colors">How It Fits</a>
+      <a href="/#what-we-build" class="text-base font-medium text-ink hover:text-brand py-2 transition-colors">What We Build</a>
+      <a href="/#how-it-works" class="text-base font-medium text-ink hover:text-brand py-2 transition-colors">How It Works</a>
+      <a href="/#faq" class="text-base font-medium text-ink hover:text-brand py-2 transition-colors">FAQ</a>
+      <div class="pt-4 border-t border-line">
+        <a href="/#book" class="flex items-center justify-center w-full px-5 py-3 rounded-lg bg-brand hover:bg-brand-hover text-white text-sm font-semibold transition-colors shadow-sm">
+          Book Workflow Map
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="flex-grow max-w-4xl mx-auto px-5 sm:px-8 py-12 sm:py-16">
+    <div class="space-y-8">
+      <div>
+        <div class="inline-block bg-amber-50 border border-amber-200 text-amber-800 px-3 py-1 rounded text-xs font-semibold uppercase tracking-wider mb-4">
+          [DRAFT: replace with reviewed terms before publishing]
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-ink">Terms of Service</h1>
+        <p class="text-sm text-body mt-2">Last updated: September 2026</p>
+      </div>
+
+      <div class="prose prose-slate max-w-none space-y-6 text-body leading-relaxed">
+        <h2 class="text-xl font-bold text-ink pt-4 border-t border-line">Services</h2>
+        <p>
+          Thrivebuild provides custom workflow design, setup, integration, and ongoing operational maintenance for residential remodeling and design-build firms. All implementation projects are governed by a written, fixed-price scope detailing deliverables, milestones, and timelines agreed upon prior to project kickoff.
+        </p>
+
+        <h2 class="text-xl font-bold text-ink pt-4 border-t border-line">Payment</h2>
+        <p>
+          Fixed-price setup fees are billed according to the milestone schedule outlined in your proposal. Work begins once the initial setup deposit is received. All invoices are due upon receipt unless otherwise stated in writing.
+        </p>
+
+        <h2 class="text-xl font-bold text-ink pt-4 border-t border-line">Monthly Plans and Cancellation</h2>
+        <p>
+          Ongoing monthly plans cover platform access, automated text messaging infrastructure, routine maintenance, workflow updates, and bug fixes. Monthly subscriptions are billed on a recurring 30-day cycle. You may cancel your monthly maintenance plan at any time with 14 days written notice prior to your next renewal date.
+        </p>
+
+        <h2 class="text-xl font-bold text-ink pt-4 border-t border-line">Ownership of Work</h2>
+        <p>
+          Your Monday.com workspaces, boards, templates, and Make.com scenarios created within your accounts remain your sole property. Any GoHighLevel account configured under our agency provides full data export capability. If you cancel service, we will export your contacts, records, and pipeline history directly to you.
+        </p>
+
+        <h2 class="text-xl font-bold text-ink pt-4 border-t border-line">Limitation of Liability</h2>
+        <p>
+          Thrivebuild strives to provide reliable and resilient automated systems. However, we are not liable for indirect, incidental, or consequential damages resulting from third-party platform downtime, API deprecations, carrier SMS delivery delays, or user misconfiguration. Our total liability is limited to the fees paid for services rendered within the preceding three months.
+        </p>
+
+        <h2 class="text-xl font-bold text-ink pt-4 border-t border-line">Contact</h2>
+        <p>
+          For any questions concerning these terms or your service agreement, please contact us by email:
+        </p>
+        <p>
+          <a href="mailto:aythriver@gmail.com" data-config="CONTACT_EMAIL" class="text-brand font-semibold hover:underline">aythriver@gmail.com</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface border-t border-line py-12">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 space-y-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-line text-center sm:text-left">
+        <a href="/" class="flex items-center gap-2 text-ink hover:text-brand transition-colors">
+          <span class="w-7 h-7 rounded-md bg-brand flex items-center justify-center text-white font-bold text-sm shadow-sm" aria-hidden="true">T</span>
+          <span class="text-lg font-bold tracking-tight text-ink">Thrivebuild<span class="text-brand">.</span></span>
+        </a>
+        <p class="text-xs text-body">
+          Thrivebuild | Lead follow-up and job handoff systems for residential remodelers
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-body/80">
+        <p data-config="FOOTER_LOCATION">Remote · Serving US remodelers · Available US Eastern hours</p>
+        <div class="flex items-center gap-6">
+          <a href="/privacy" class="hover:text-ink transition-colors">Privacy Policy</a>
+          <a href="/terms" class="hover:text-ink transition-colors font-medium text-ink">Terms of Service</a>
+          <a href="mailto:aythriver@gmail.com" data-config="CONTACT_EMAIL" class="hover:text-ink transition-colors">Email Us</a>
+        </div>
+      </div>
+
+      <div class="pt-2 text-center text-xs text-body/60">
+        <p>© 2026 Thrivebuild. All rights reserved. Fixed-price builds.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-# Thrivebuild.co — Remodeling Systems Consultancy
+# Thrivebuild.co - Remodeling Systems Consultancy
 
 A high-converting, single-page marketing website built from scratch to turn residential remodeling and design-build contractors ($1M–$10M revenue) arriving from LinkedIn and cold outreach into booked 45-minute "Workflow Map" calls.
 
