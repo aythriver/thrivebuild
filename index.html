@@ -7,7 +7,7 @@
   <!-- Primary Meta Tags -->
   <title>Thrivebuild | Lead Follow-Up and Job Handoff Systems for Residential Remodelers</title>
   <meta name="title" content="Thrivebuild | Lead Follow-Up and Job Handoff Systems for Residential Remodelers">
-  <meta name="description" content="Lead follow-up and sale-to-job handoff systems for $1M to $10M residential remodelers and design-build firms. Every lead answered in minutes. Every signed job handed off clean.">
+  <meta name="description" content="Lead follow-up and sale-to-job handoff systems for residential remodelers and design-build firms. Every lead answered in minutes. Every signed job handed off clean.">
   <!-- change to https://thrivebuild.co once that domain is connected -->
   <link rel="canonical" href="https://thrivebuild.vercel.app">
   <meta name="theme-color" content="#C2410C">
@@ -17,7 +17,7 @@
   <!-- change to https://thrivebuild.co once that domain is connected -->
   <meta property="og:url" content="https://thrivebuild.vercel.app">
   <meta property="og:title" content="Thrivebuild | Systems for Residential Remodelers">
-  <meta property="og:description" content="Lead follow-up and sale-to-job handoff systems for $1M to $10M residential remodelers and design-build firms. Every lead answered in minutes. Every signed job handed off clean.">
+  <meta property="og:description" content="Lead follow-up and sale-to-job handoff systems for residential remodelers and design-build firms. Every lead answered in minutes. Every signed job handed off clean.">
   <meta property="og:image" content="https://thrivebuild.vercel.app/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -28,13 +28,12 @@
   <!-- change to https://thrivebuild.co once that domain is connected -->
   <meta name="twitter:url" content="https://thrivebuild.vercel.app">
   <meta name="twitter:title" content="Thrivebuild | Systems for Residential Remodelers">
-  <meta name="twitter:description" content="Lead follow-up and sale-to-job handoff systems for $1M to $10M residential remodelers and design-build firms. Every lead answered in minutes. Every signed job handed off clean.">
+  <meta name="twitter:description" content="Lead follow-up and sale-to-job handoff systems for residential remodelers and design-build firms. Every lead answered in minutes. Every signed job handed off clean.">
   <meta name="twitter:image" content="https://thrivebuild.vercel.app/assets/img/og-image.png">
 
   <!-- Favicons -->
-  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="assets/img/logo-mark.png">
+  <link rel="apple-touch-icon" href="assets/img/logo-mark.png">
 
   <!-- Typography: Inter font preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -100,25 +99,25 @@
   </noscript>
   -->
 
-  <!-- 
-  Meta Pixel Placeholder:
-  To install, paste your Meta Pixel ID into the script below and uncomment.
+  <!-- Meta Pixel Code -->
+  <!-- TODO: replace YOUR_PIXEL_ID with real Meta Pixel ID -->
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', 'PASTE_META_PIXEL_ID_HERE');
-  fbq('track', 'PageView');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
   </script>
   <noscript>
-  <img height="1" width="1" style="display:none;" src="https://www.facebook.com/tr?id=PASTE_META_PIXEL_ID_HERE&ev=PageView&noscript=1" />
+    <img height="1" width="1" style="display:none" 
+         src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" alt="" />
   </noscript>
-  -->
+  <!-- End Meta Pixel Code -->
 </head>
 <body class="bg-surface text-body font-sans antialiased min-h-screen flex flex-col">
 
@@ -133,9 +132,8 @@
   <header class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md transition-all duration-200">
     <nav class="max-w-6xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between" aria-label="Main Navigation">
       <!-- Wordmark Logo -->
-      <a href="#" class="flex items-center gap-2 text-ink hover:text-brand transition-colors" aria-label="Thrivebuild Home">
-        <span class="w-8 h-8 rounded-lg bg-brand flex items-center justify-center text-white font-bold text-lg shadow-sm" aria-hidden="true">T</span>
-        <span class="text-xl font-bold tracking-tight text-ink">Thrivebuild<span class="text-brand">.</span></span>
+      <a href="#" class="flex items-center" aria-label="Thrivebuild">
+        <img src="assets/img/logo-horizontal-light.png" alt="Thrivebuild" class="h-8 w-auto">
       </a>
 
       <!-- Desktop Nav Links: The Problem, How It Fits, What We Build, How It Works, FAQ -->
@@ -193,7 +191,7 @@
           <div class="lg:col-span-7 flex flex-col items-start text-left">
             <!-- Eyebrow Audience Pill: No emoji -->
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-tint border border-orange-200 text-xs sm:text-[13px] font-semibold text-brand tracking-wide mb-7">
-              <span>For $1M to $10M residential remodelers and design-build firms</span>
+              <span>For residential remodelers and design-build firms</span>
             </div>
 
             <!-- Single Page H1 -->
@@ -207,12 +205,19 @@
             </p>
 
             <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-9">
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-4">
               <a href="#book" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-brand hover:bg-brand-hover text-white text-base font-semibold transition-all duration-150 shadow-md hover:shadow-lg active:scale-[0.98]">
                 Book a 45-Min Workflow Map
               </a>
               <a href="#what-we-build" class="inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-body hover:text-ink transition-colors">
                 See the three systems <span class="ml-1.5" aria-hidden="true">↓</span>
+              </a>
+            </div>
+
+            <!-- Low-friction intake alternative -->
+            <div class="mb-9">
+              <a href="#intake" data-config="FORM_URL" class="inline-flex items-center text-xs sm:text-sm text-body hover:text-ink transition-colors font-medium">
+                Prefer not to call? Get a recorded walkthrough instead <span class="ml-1.5" aria-hidden="true">→</span>
               </a>
             </div>
 
@@ -258,7 +263,7 @@
             Where residential remodeling operations break down.
           </h2>
           <p class="text-base text-body">
-            When you run $1M to $10M in volume with 5 to 30 field staff, standard spreadsheets and email inboxes fail in three predictable places:
+            When you're running several jobs at once with a team of 5 to 30, spreadsheets and email inboxes break down in three predictable places:
           </p>
         </div>
 
@@ -1096,6 +1101,7 @@
          Official Calendly inline widget, min-height 700px, fallback links
          ========================================================================== -->
     <section id="book" class="py-16 md:py-24 bg-surface" aria-labelledby="book-heading">
+      <div id="intake" class="scroll-mt-24"></div>
       <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center">
         
         <!-- Section Header -->
@@ -1174,9 +1180,8 @@
   <footer class="mt-auto border-t border-line bg-surface-alt py-12 text-body text-xs">
     <div class="max-w-6xl mx-auto px-5 sm:px-8 space-y-6">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-line text-center sm:text-left">
-        <a href="#" class="flex items-center gap-2 text-ink hover:text-brand transition-colors">
-          <span class="w-7 h-7 rounded-md bg-brand flex items-center justify-center text-white font-bold text-sm shadow-sm" aria-hidden="true">T</span>
-          <span class="text-lg font-bold tracking-tight text-ink">Thrivebuild<span class="text-brand">.</span></span>
+        <a href="#" class="flex items-center" aria-label="Thrivebuild">
+          <img src="assets/img/logo-horizontal-light.png" alt="Thrivebuild" class="h-7 w-auto">
         </a>
         <p class="text-xs text-body">
           Thrivebuild | Lead follow-up and job handoff systems for residential remodelers

@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initAccordion();
   initCalendlyEmbed();
+  initMetaPixelEvents();
 });
 
 // ==========================================================================
@@ -195,4 +196,51 @@ function initCalendlyEmbed() {
 function showCalendlyFallback(widgetContainer, fallbackPanel) {
   if (widgetContainer) widgetContainer.classList.add("hidden");
   if (fallbackPanel) fallbackPanel.classList.remove("hidden");
+}
+
+// ==========================================================================
+// 8. META (FACEBOOK) PIXEL EVENT TRACKING
+// Tracks 'Lead' on booking calendar button clicks, intake form submissions,
+// and Calendly schedule confirmations.
+// ==========================================================================
+function initMetaPixelEvents() {
+  const fireLeadEvent = () => {
+    if (typeof window.fbq === "function") {
+      window.fbq("track", "Lead");
+    }
+  };
+
+  // 1. Fire 'Lead' when clicking any booking / choose system / workflow map button
+  document.addEventListener("click", (e) => {
+    const target = e.target.closest("a, button");
+    if (!target) return;
+
+    const href = (target.getAttribute("href") || "").toLowerCase();
+    const text = (target.textContent || "").trim();
+
+    const isBookingButton =
+      href === "#book" ||
+      href === "#intake" ||
+      href.includes("calendly.com") ||
+      /book/i.test(text) ||
+      /choose.*system/i.test(text) ||
+      /workflow map/i.test(text) ||
+      /walkthrough/i.test(text);
+
+    if (isBookingButton) {
+      fireLeadEvent();
+    }
+  });
+
+  // 2. Fire 'Lead' when short intake form is submitted
+  document.addEventListener("submit", () => {
+    fireLeadEvent();
+  });
+
+  // 3. Fire 'Lead' if an appointment is confirmed inside Calendly inline widget
+  window.addEventListener("message", (e) => {
+    if (e.data && e.data.event === "calendly.event_scheduled") {
+      fireLeadEvent();
+    }
+  });
 }
