@@ -9,7 +9,7 @@
 // Centralized settings. Edit here to update links across the site.
 // ==========================================================================
 const CONFIG = {
-  SITE_URL: "https://thrivebuild.vercel.app", // change to https://thrivebuild.co once custom domain is connected
+  SITE_URL: "https://thrivebuild.co",
   CALENDLY_URL: "https://calendly.com/samthriver/workflow",
   CONTACT_EMAIL: "aythriver@gmail.com",
   FORM_URL: "#intake",
