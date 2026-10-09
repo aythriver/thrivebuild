@@ -132,7 +132,7 @@
   <header class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md transition-all duration-200">
     <nav class="max-w-6xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between" aria-label="Main Navigation">
       <!-- Wordmark Logo -->
-      <a href="#" class="flex items-center" aria-label="Thrivebuild">
+      <a href="#main" class="flex items-center" aria-label="Thrivebuild">
         <img src="assets/img/logo-horizontal-light.png" alt="Thrivebuild" class="h-9 md:h-10 w-auto">
       </a>
 
@@ -253,7 +253,7 @@
     <!-- ==========================================================================
          3. PROBLEM SECTION
          ========================================================================== -->
-    <section id="problem" class="py-16 md:py-24 bg-surface-alt border-y border-line" aria-labelledby="problem-heading">
+    <section id="problem" class="scroll-mt-20 py-16 md:py-24 bg-surface-alt border-y border-line" aria-labelledby="problem-heading">
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
         
         <!-- Section Header -->
@@ -317,7 +317,7 @@
          NEW SECTION: HOW IT FITS (#how-it-fits)
          Three-card layout with connector arrows in accent color.
          ========================================================================== -->
-    <section id="how-it-fits" class="py-16 md:py-24 bg-surface" aria-labelledby="how-it-fits-heading">
+    <section id="how-it-fits" class="scroll-mt-20 py-16 md:py-24 bg-surface" aria-labelledby="how-it-fits-heading">
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
         
         <!-- Section Header -->
@@ -410,7 +410,7 @@
     <!-- ==========================================================================
          4. SYSTEMS SECTION (#what-we-build)
          ========================================================================== -->
-    <section id="what-we-build" class="py-16 md:py-24 bg-surface-alt border-t border-line" aria-labelledby="systems-heading">
+    <section id="what-we-build" class="scroll-mt-20 py-16 md:py-24 bg-surface-alt border-t border-line" aria-labelledby="systems-heading">
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
         
         <!-- Section Header -->
@@ -675,7 +675,7 @@
          5. PROCESS SECTION (#how-it-works)
          4 steps, semantic <ol>
          ========================================================================== -->
-    <section id="how-it-works" class="py-16 md:py-24 bg-surface border-y border-line" aria-labelledby="steps-heading">
+    <section id="how-it-works" class="scroll-mt-20 py-16 md:py-24 bg-surface border-y border-line" aria-labelledby="steps-heading">
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
         
         <!-- Section Header -->
@@ -706,10 +706,10 @@
             <div class="mt-auto pt-2 text-xs font-medium text-slate-700 bg-surface-alt p-2.5 rounded-lg border border-line">
               <strong class="text-ink">What you get:</strong> A one-page map of your current flow with your three biggest gaps marked, sent within 24 hours.
             </div>
-            <!-- Optional intake link: hidden if FORM_URL is #intake -->
-            <div data-hide-if-no-form class="mt-3 hidden">
-              <a href="#intake" data-config="FORM_URL" class="text-xs text-brand hover:underline font-medium">
-                Prefer not to call? Fill in a short form and get a recorded walkthrough instead.
+            <!-- Low-friction intake link -->
+            <div class="mt-3">
+              <a href="#intake" class="text-xs text-brand hover:underline font-medium">
+                Prefer not to call? Get a recorded walkthrough instead →
               </a>
             </div>
           </li>
@@ -940,7 +940,7 @@
          8. FAQ SECTION (#faq)
          9 exact questions in exact order
          ========================================================================== -->
-    <section id="faq" class="py-16 md:py-24 bg-surface-alt border-y border-line" aria-labelledby="faq-heading">
+    <section id="faq" class="scroll-mt-20 py-16 md:py-24 bg-surface-alt border-y border-line" aria-labelledby="faq-heading">
       <div class="max-w-4xl mx-auto px-5 sm:px-8">
         
         <!-- Section Header -->
@@ -1097,11 +1097,180 @@
     </section>
 
     <!-- ==========================================================================
+         8.5. RECORDED WALKTHROUGH INTAKE SECTION (#intake)
+         Low-friction alternative to live booking call
+         ========================================================================== -->
+    <section id="intake" class="scroll-mt-20 py-16 md:py-24 bg-surface-alt border-t border-line" aria-labelledby="intake-heading">
+      <div class="max-w-3xl mx-auto px-5 sm:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <p class="text-xs font-semibold text-brand tracking-wider uppercase mb-2">No Call Needed</p>
+          <h2 id="intake-heading" class="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink tracking-tight mb-4">
+            Prefer not to call? Get a recorded walkthrough.
+          </h2>
+          <p class="text-base text-body leading-relaxed">
+            Answer 5 quick questions and we'll send you a short recorded video walking through your biggest workflow gap. No call needed.
+          </p>
+        </div>
+
+        <!-- Intake Form Card -->
+        <div class="bg-surface border border-line rounded-2xl p-6 sm:p-10 shadow-sm">
+          
+          <!-- Success State Notice (hidden initially) -->
+          <div id="intake-success" class="hidden p-6 sm:p-8 rounded-xl bg-emerald-50 border border-emerald-200 text-center">
+            <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-ink mb-1">Got it!</h3>
+            <p class="text-sm sm:text-base text-emerald-900 font-medium">
+              Your walkthrough will land in your inbox within 2 business days.
+            </p>
+          </div>
+
+          <!-- 
+            ======================================================================
+            FORM SUBMISSION ENDPOINT (FORMSPREE / WEB3FORMS):
+            Submissions are routed to your email: aythriver@gmail.com
+            
+            HOW TO ACTIVATE:
+            1. Go to https://formspree.io (or https://web3forms.com), create a free form 
+               pointing to aythriver@gmail.com.
+            2. Replace 'https://formspree.io/f/YOUR_FORMSPREE_ID' below with your endpoint URL.
+            ======================================================================
+          -->
+          <form id="intake-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
+            <!-- Hidden destination helpers -->
+            <input type="hidden" name="_to" value="aythriver@gmail.com">
+            <input type="hidden" name="_subject" value="New Thrivebuild Walkthrough Request">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <!-- Name -->
+              <div>
+                <label for="intake-name" class="block text-xs font-semibold text-ink uppercase tracking-wider mb-2">
+                  Name <span class="text-brand">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="intake-name" 
+                  name="name" 
+                  required 
+                  placeholder="First and last name" 
+                  class="w-full px-4 py-3 rounded-lg border border-line bg-surface-alt text-ink text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all"
+                >
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label for="intake-email" class="block text-xs font-semibold text-ink uppercase tracking-wider mb-2">
+                  Email <span class="text-brand">*</span>
+                </label>
+                <input 
+                  type="email" 
+                  id="intake-email" 
+                  name="email" 
+                  required 
+                  placeholder="you@company.com" 
+                  class="w-full px-4 py-3 rounded-lg border border-line bg-surface-alt text-ink text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all"
+                >
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <!-- Company Name -->
+              <div>
+                <label for="intake-company" class="block text-xs font-semibold text-ink uppercase tracking-wider mb-2">
+                  Company name <span class="text-brand">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="intake-company" 
+                  name="company" 
+                  required 
+                  placeholder="e.g. Apex Remodeling & Design" 
+                  class="w-full px-4 py-3 rounded-lg border border-line bg-surface-alt text-ink text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all"
+                >
+              </div>
+
+              <!-- Website (optional) -->
+              <div>
+                <label for="intake-website" class="block text-xs font-semibold text-ink uppercase tracking-wider mb-2">
+                  Website <span class="text-xs font-normal text-slate-400 normal-case">(optional)</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="intake-website" 
+                  name="website" 
+                  placeholder="e.g. apexremodel.com" 
+                  class="w-full px-4 py-3 rounded-lg border border-line bg-surface-alt text-ink text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all"
+                >
+              </div>
+            </div>
+
+            <!-- Question: How do new leads reach you today? -->
+            <div>
+              <label for="intake-lead-source" class="block text-xs font-semibold text-ink uppercase tracking-wider mb-2">
+                How do new leads reach you today? <span class="text-brand">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="intake-lead-source" 
+                name="lead_source" 
+                required 
+                placeholder="e.g. Website contact form, Houzz, word-of-mouth, referrals..." 
+                class="w-full px-4 py-3 rounded-lg border border-line bg-surface-alt text-ink text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all"
+              >
+            </div>
+
+            <!-- Question: What's your biggest headache right now? -->
+            <div>
+              <label for="intake-headache" class="block text-xs font-semibold text-ink uppercase tracking-wider mb-2">
+                What's your biggest headache right now? <span class="text-brand">*</span>
+              </label>
+              <div class="relative">
+                <select 
+                  id="intake-headache" 
+                  name="headache" 
+                  required 
+                  class="w-full px-4 py-3 rounded-lg border border-line bg-surface-alt text-ink text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all appearance-none cursor-pointer pr-10"
+                >
+                  <option value="" disabled selected>Select an option...</option>
+                  <option value="Leads go cold">Leads go cold</option>
+                  <option value="Scope gets lost between sales and PMs">Scope gets lost between sales and PMs</option>
+                  <option value="No clear view of jobs and pipeline">No clear view of jobs and pipeline</option>
+                  <option value="Other">Other</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="pt-2">
+              <button 
+                type="submit" 
+                id="intake-submit-btn"
+                class="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-brand hover:bg-brand-hover text-white text-base font-semibold transition-all duration-150 shadow-md hover:shadow-lg active:scale-[0.98] cursor-pointer"
+              >
+                Send me my walkthrough
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
          9. FINAL CTA SECTION (#book)
          Official Calendly inline widget, min-height 700px, fallback links
          ========================================================================== -->
-    <section id="book" class="py-16 md:py-24 bg-surface" aria-labelledby="book-heading">
-      <div id="intake" class="scroll-mt-24"></div>
+    <section id="book" class="scroll-mt-20 py-16 md:py-24 bg-surface" aria-labelledby="book-heading">
       <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center">
         
         <!-- Section Header -->
@@ -1180,7 +1349,7 @@
   <footer class="mt-auto border-t border-line bg-surface-alt py-12 text-body text-xs">
     <div class="max-w-6xl mx-auto px-5 sm:px-8 space-y-6">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-line text-center sm:text-left">
-        <a href="#" class="flex items-center" aria-label="Thrivebuild">
+        <a href="#main" class="flex items-center" aria-label="Thrivebuild">
           <img src="assets/img/logo-horizontal-light.png" alt="Thrivebuild" class="h-8 w-auto">
         </a>
         <p class="text-xs text-body">

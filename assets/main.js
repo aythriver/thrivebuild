@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initAccordion();
   initCalendlyEmbed();
   initMetaPixelEvents();
+  initIntakeForm();
 });
 
 // ==========================================================================
@@ -241,6 +242,68 @@ function initMetaPixelEvents() {
   window.addEventListener("message", (e) => {
     if (e.data && e.data.event === "calendly.event_scheduled") {
       fireLeadEvent();
+    }
+  });
+}
+
+// ==========================================================================
+// 9. INTAKE FORM HANDLER
+// Manages AJAX submission, displays confirmation notice, and fires Meta Pixel Lead event.
+// ==========================================================================
+function initIntakeForm() {
+  const form = document.getElementById("intake-form");
+  const successPanel = document.getElementById("intake-success");
+  const submitBtn = document.getElementById("intake-submit-btn");
+  if (!form) return;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Fire Meta Pixel Lead event on submit
+    if (typeof window.fbq === "function") {
+      window.fbq("track", "Lead");
+    }
+
+    const action = form.getAttribute("action");
+    const isPlaceholder = !action || action.includes("YOUR_FORMSPREE_ID") || action === "#";
+
+    if (isPlaceholder) {
+      // In preview/placeholder mode, smoothly transition to success state
+      form.classList.add("hidden");
+      if (successPanel) {
+        successPanel.classList.remove("hidden");
+        successPanel.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      return;
+    }
+
+    // Live endpoint submission
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+    }
+
+    try {
+      const formData = new FormData(form);
+      const res = await fetch(action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" }
+      });
+
+      if (res.ok) {
+        form.classList.add("hidden");
+        if (successPanel) {
+          successPanel.classList.remove("hidden");
+          successPanel.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      } else {
+        // Fallback standard submit if endpoint requires redirect
+        form.submit();
+      }
+    } catch (err) {
+      // Fallback submit
+      form.submit();
     }
   });
 }
