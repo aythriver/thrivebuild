@@ -14,7 +14,7 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thrivebuild.co">
-  <meta property="og:title" content="Thrivebuild | Systems for Residential Remodelers">
+  <meta property="og:title" content="Thrivebuild | Lead Follow-Up and Job Handoff Systems for Residential Remodelers">
   <meta property="og:description" content="Lead follow-up and sale-to-job handoff systems for residential remodelers and design-build firms. Every lead answered in minutes. Every signed job handed off clean.">
   <meta property="og:image" content="https://thrivebuild.co/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -24,7 +24,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://thrivebuild.co">
-  <meta name="twitter:title" content="Thrivebuild | Systems for Residential Remodelers">
+  <meta name="twitter:title" content="Thrivebuild | Lead Follow-Up and Job Handoff Systems for Residential Remodelers">
   <meta name="twitter:description" content="Lead follow-up and sale-to-job handoff systems for residential remodelers and design-build firms. Every lead answered in minutes. Every signed job handed off clean.">
   <meta name="twitter:image" content="https://thrivebuild.co/assets/img/og-image.png">
 
@@ -145,8 +145,7 @@
       <!-- Header Action & Mobile Toggle -->
       <div class="flex items-center gap-2 sm:gap-3 shrink-0">
         <a href="#book" class="inline-flex items-center justify-center px-3 py-1.5 sm:px-5 sm:py-2.5 rounded-lg bg-brand hover:bg-brand-hover text-white text-xs sm:text-sm font-semibold transition-all duration-150 shadow-sm hover:shadow active:scale-[0.98] whitespace-nowrap">
-          <span class="sm:hidden">Book Call</span>
-          <span class="hidden sm:inline">Book Workflow Map</span>
+          Book Workflow Map
         </a>
 
         <!-- Mobile Hamburger Button -->
@@ -645,7 +644,7 @@
           </div>
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-line">
             <p class="text-sm font-medium text-ink">
-              Already answering leads well? We can build the handoff system on Monday.com alone for $2,000, one time, with no monthly fee.
+              Already answering leads well? We can build the handoff system on Monday.com alone for $2,000, one time, with no monthly fee from us (you pay Monday.com directly for your own subscription).
             </p>
           </div>
           <p class="text-xs text-slate-500">
@@ -750,7 +749,7 @@
               <span class="w-12 h-12 rounded-xl bg-ink text-white flex items-center justify-center text-xl font-bold tabular-nums shadow-sm shrink-0">4</span>
             </div>
             <h3 class="text-lg font-bold text-ink mb-1">Training and Support</h3>
-            <p class="text-xs text-slate-500 font-semibold mb-2">30 days of support</p>
+            <p class="text-xs text-slate-500 font-semibold mb-2">30 days of direct support (priority support on the Full Company System).</p>
             <p class="text-sm text-body leading-relaxed mb-3">
               We train your team live and on recorded video so the system actually gets used.
             </p>
@@ -1128,20 +1127,27 @@
             </p>
           </div>
 
+          <!-- Error State Notice (hidden initially) -->
+          <div id="intake-error" class="hidden p-4 sm:p-5 rounded-xl bg-red-50 border border-red-200 text-center mb-6">
+            <p class="text-sm font-medium text-red-800">
+              Something went wrong. Please email <a href="mailto:sam@thrivebuild.co" class="text-brand font-semibold underline hover:text-brand-hover">sam@thrivebuild.co</a> instead.
+            </p>
+          </div>
+
           <!-- 
             ======================================================================
             FORM SUBMISSION ENDPOINT (FORMSPREE / WEB3FORMS):
-            Submissions are routed to your email: aythriver@gmail.com
+            Submissions are delivered to: sam@thrivebuild.co
             
             HOW TO ACTIVATE:
             1. Go to https://formspree.io (or https://web3forms.com), create a free form 
-               pointing to aythriver@gmail.com.
+               pointing to sam@thrivebuild.co.
             2. Replace 'https://formspree.io/f/YOUR_FORMSPREE_ID' below with your endpoint URL.
             ======================================================================
           -->
           <form id="intake-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
             <!-- Hidden destination helpers -->
-            <input type="hidden" name="_to" value="aythriver@gmail.com">
+            <input type="hidden" name="_to" value="sam@thrivebuild.co">
             <input type="hidden" name="_subject" value="New Thrivebuild Walkthrough Request">
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -1257,6 +1263,9 @@
               >
                 Send me my walkthrough
               </button>
+              <p class="text-xs text-body text-center mt-3">
+                By submitting, you agree to be contacted by email about your request. See our <a href="/privacy" class="text-brand hover:underline font-medium">Privacy Policy</a>.
+              </p>
             </div>
           </form>
 
@@ -1317,12 +1326,12 @@
                 Open Booking Calendar ↗
               </a>
               <a 
-                href="mailto:aythriver@gmail.com?subject=Remodeling%20Workflow%20Map%20Call" 
+                href="mailto:sam@thrivebuild.co?subject=Remodeling%20Workflow%20Map%20Call" 
                 data-config="CONTACT_EMAIL"
                 data-config-subject="Remodeling Workflow Map Call"
                 class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 rounded-lg border border-line text-ink hover:bg-surface-alt text-sm font-semibold transition-colors"
               >
-                Email aythriver@gmail.com
+                Email sam@thrivebuild.co
               </a>
             </div>
           </div>
@@ -1333,7 +1342,7 @@
         <p class="text-xs text-slate-500 mt-4">
           Calendar not loading? 
           <a href="https://calendly.com/samthriver/workflow" target="_blank" rel="noopener noreferrer" data-config="CALENDLY_URL" class="text-brand hover:underline font-medium">Open it in a new tab</a>, 
-          or email <a href="mailto:aythriver@gmail.com" data-config="CONTACT_EMAIL" class="text-brand hover:underline font-medium">aythriver@gmail.com</a>.
+          or email <a href="mailto:sam@thrivebuild.co" data-config="CONTACT_EMAIL" class="text-brand hover:underline font-medium">sam@thrivebuild.co</a>.
         </p>
 
       </div>
@@ -1360,7 +1369,7 @@
         <div class="flex items-center gap-6">
           <a href="/privacy" class="hover:text-ink transition-colors">Privacy Policy</a>
           <a href="/terms" class="hover:text-ink transition-colors">Terms of Service</a>
-          <a href="mailto:aythriver@gmail.com" data-config="CONTACT_EMAIL" class="hover:text-ink transition-colors">Email Us</a>
+          <a href="mailto:sam@thrivebuild.co" data-config="CONTACT_EMAIL" class="hover:text-ink transition-colors">Email Us</a>
         </div>
       </div>
 

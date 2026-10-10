@@ -24,7 +24,7 @@ Search for `[` or `EXAMPLE COPY` in `index.html` to find every customizable slot
 | :--- | :--- | :--- |
 | `[YOUR-ID]` | Line ~67 | Google Analytics 4 (GA4) measurement ID (e.g. `G-XXXXXXXXXX`). |
 | *(Active)* | `assets/main.js` (`CONFIG.CALENDLY_URL`) | Connected to `https://calendly.com/samthriver/workflow`. |
-| *(Active)* | `assets/main.js` (`CONFIG.CONTACT_EMAIL`) | Contact email connected to `aythriver@gmail.com`. |
+| *(Active)* | `assets/main.js` (`CONFIG.CONTACT_EMAIL`) | Contact email connected to `sam@thrivebuild.co`. |
 | *(Active)* | `index.html` line 976 | LinkedIn profile connected to `https://www.linkedin.com/in/sam-adebayo`. |
 | *(Active)* | `index.html` Lines 590–666 | Case study connected to NE Tiny Homes (Joe P. / Joe Pagnani). |
 | *(Active)* | `assets/main.js` (`CONFIG.FOOTER_LOCATION`) | Location set to `Remote · Serving US remodelers · Available US Eastern hours`. |
@@ -37,9 +37,9 @@ All dynamic links and contact defaults are now governed by the `CONFIG` object a
 
 ```javascript
 const CONFIG = {
-  SITE_URL: "https://thrivebuild.vercel.app", // change to https://thrivebuild.co once custom domain is connected
+  SITE_URL: "https://thrivebuild.co",
   CALENDLY_URL: "https://calendly.com/samthriver/workflow",
-  CONTACT_EMAIL: "aythriver@gmail.com",
+  CONTACT_EMAIL: "sam@thrivebuild.co",
   FORM_URL: "#intake",
   FOOTER_LOCATION: "Remote · Serving US remodelers · Available US Eastern hours",
 };

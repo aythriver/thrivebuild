@@ -11,7 +11,7 @@
 const CONFIG = {
   SITE_URL: "https://thrivebuild.co",
   CALENDLY_URL: "https://calendly.com/samthriver/workflow",
-  CONTACT_EMAIL: "aythriver@gmail.com",
+  CONTACT_EMAIL: "sam@thrivebuild.co",
   FORM_URL: "#intake",
   FOOTER_LOCATION: "Remote · Serving US remodelers · Available US Eastern hours",
 };
@@ -297,11 +297,17 @@ function initMetaPixelEvents() {
 function initIntakeForm() {
   const form = document.getElementById("intake-form");
   const successPanel = document.getElementById("intake-success");
+  const errorPanel = document.getElementById("intake-error");
   const submitBtn = document.getElementById("intake-submit-btn");
   if (!form) return;
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    // Reset error state
+    if (errorPanel) {
+      errorPanel.classList.add("hidden");
+    }
 
     // Fire Meta Pixel Lead event on submit
     if (typeof window.fbq === "function") {
@@ -311,20 +317,29 @@ function initIntakeForm() {
     const action = form.getAttribute("action");
     const isPlaceholder = !action || action.includes("YOUR_FORMSPREE_ID") || action === "#";
 
-    if (isPlaceholder) {
-      // In preview/placeholder mode, smoothly transition to success state
-      form.classList.add("hidden");
-      if (successPanel) {
-        successPanel.classList.remove("hidden");
-        successPanel.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-      return;
-    }
-
-    // Live endpoint submission
+    const originalBtnText = submitBtn ? submitBtn.textContent : "Send me my walkthrough";
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.textContent = "Sending...";
+    }
+
+    const showError = () => {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+      }
+      if (successPanel) {
+        successPanel.classList.add("hidden");
+      }
+      if (errorPanel) {
+        errorPanel.classList.remove("hidden");
+        errorPanel.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    };
+
+    if (isPlaceholder) {
+      showError();
+      return;
     }
 
     try {
@@ -337,17 +352,16 @@ function initIntakeForm() {
 
       if (res.ok) {
         form.classList.add("hidden");
+        if (errorPanel) errorPanel.classList.add("hidden");
         if (successPanel) {
           successPanel.classList.remove("hidden");
           successPanel.scrollIntoView({ behavior: "smooth", block: "center" });
         }
       } else {
-        // Fallback standard submit if endpoint requires redirect
-        form.submit();
+        showError();
       }
     } catch (err) {
-      // Fallback submit
-      form.submit();
+      showError();
     }
   });
 }
