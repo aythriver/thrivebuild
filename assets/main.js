@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initConfigHydration();
   initStickyHeader();
   initMobileMenu();
+  initLogoNavigation();
   initAccordion();
   initCalendlyEmbed();
   initMetaPixelEvents();
@@ -127,6 +128,49 @@ function initMobileMenu() {
       toggleMenu(false);
       menuBtn.focus();
     }
+  });
+}
+
+// ==========================================================================
+// 5b. LOGO CLICK / TAP NAVIGATION
+// Ensures clicking or tapping the logo navigates to homepage or scrolls cleanly to top
+// ==========================================================================
+function initLogoNavigation() {
+  document.querySelectorAll('a[aria-label="Thrivebuild"]').forEach((logoLink) => {
+    logoLink.addEventListener("click", (e) => {
+      const pathname = window.location.pathname.replace(/\/$/, "");
+      const isHomePage =
+        pathname === "" ||
+        pathname === "/" ||
+        pathname.endsWith("/index.html") ||
+        pathname === "/index.html";
+
+      if (isHomePage) {
+        // If already on the homepage, scroll smoothly to the top and reset hash
+        e.preventDefault();
+        if (window.location.hash) {
+          history.pushState(null, "", window.location.pathname);
+        }
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        // Close mobile menu if currently open
+        const mobileNav = document.getElementById("mobile-nav");
+        const menuBtn = document.getElementById("mobile-menu-btn");
+        if (mobileNav && !mobileNav.classList.contains("hidden")) {
+          mobileNav.classList.add("hidden");
+          mobileNav.classList.remove("flex");
+          document.body.classList.remove("nav-open");
+          if (menuBtn) {
+            menuBtn.setAttribute("aria-expanded", "false");
+            const menuIcon = document.getElementById("menu-icon");
+            const closeIcon = document.getElementById("close-icon");
+            if (menuIcon) menuIcon.classList.remove("hidden");
+            if (closeIcon) closeIcon.classList.add("hidden");
+            menuBtn.focus();
+          }
+        }
+      }
+    });
   });
 }
 
