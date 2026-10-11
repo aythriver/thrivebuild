@@ -1366,14 +1366,13 @@
         </p>
 
         <!-- Calendly Inline Container -->
-        <div class="relative w-full rounded-2xl border border-line bg-surface shadow-lg overflow-hidden min-h-[700px] flex flex-col justify-center items-center">
+        <div class="relative w-full rounded-2xl border border-line bg-surface shadow-sm overflow-hidden">
           
           <!-- Calendly Native Inline Embed Div -->
           <div 
             class="calendly-inline-widget w-full" 
             data-url="https://calendly.com/samthriver/workflow?hide_gdpr_banner=1&amp;primary_color=c2410c"
-            data-config="CALENDLY_URL"
-            style="min-height: 700px;"
+            style="min-width: 320px; height: 700px;"
           ></div>
 
           <!-- Fallback Panel -->
@@ -1411,6 +1410,9 @@
 
         </div>
 
+        <!-- Official Calendly widget script -->
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
         <!-- Always-Visible Calendar Help Line -->
         <p class="text-xs text-slate-500 mt-4">
           Calendar not loading? 
@@ -1427,28 +1429,35 @@
        10. FOOTER
        ========================================================================== -->
   <footer class="mt-auto border-t border-line bg-surface-alt py-12 text-body text-xs">
-    <div class="max-w-6xl mx-auto px-5 sm:px-8 space-y-6">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-line text-center sm:text-left">
-        <a href="/" class="flex items-center" aria-label="Thrivebuild">
-          <img src="assets/img/logo-horizontal-light.png" alt="Thrivebuild" class="h-8 w-auto">
-        </a>
-        <p class="text-xs text-body">
-          Thrivebuild | Lead follow-up and job handoff systems for residential remodelers
-        </p>
+    <div class="max-w-4xl mx-auto px-5 sm:px-8 flex flex-col items-center text-center space-y-4">
+      <!-- Logo -->
+      <a href="/" class="inline-flex items-center" aria-label="Thrivebuild">
+        <img src="assets/img/logo-horizontal-light.png" alt="Thrivebuild" class="h-8 w-auto">
+      </a>
+
+      <!-- Tagline -->
+      <p class="text-xs text-body max-w-md mx-auto">
+        Lead follow-up and job handoff systems for residential remodelers
+      </p>
+
+      <!-- Location line -->
+      <p data-config="FOOTER_LOCATION" class="text-xs text-body/80">
+        Remote · Serving US remodelers · Available US Eastern hours
+      </p>
+
+      <!-- Links row with dot separator -->
+      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs">
+        <a href="/privacy" class="hover:text-ink transition-colors">Privacy Policy</a>
+        <span class="text-slate-300" aria-hidden="true">·</span>
+        <a href="/terms" class="hover:text-ink transition-colors">Terms of Service</a>
+        <span class="text-slate-300" aria-hidden="true">·</span>
+        <a href="mailto:sam@thrivebuild.co" data-config="CONTACT_EMAIL" class="hover:text-ink transition-colors">Email Us</a>
       </div>
 
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-body/80">
-        <p data-config="FOOTER_LOCATION">Remote · Serving US remodelers · Available US Eastern hours</p>
-        <div class="flex items-center gap-6">
-          <a href="/privacy" class="hover:text-ink transition-colors">Privacy Policy</a>
-          <a href="/terms" class="hover:text-ink transition-colors">Terms of Service</a>
-          <a href="mailto:sam@thrivebuild.co" data-config="CONTACT_EMAIL" class="hover:text-ink transition-colors">Email Us</a>
-        </div>
-      </div>
-
-      <div class="pt-2 text-center text-xs text-body/60">
-        <p>© 2026 Thrivebuild. All rights reserved. Fixed-price builds.</p>
-      </div>
+      <!-- Copyright -->
+      <p class="text-xs text-body/60 pt-2 border-t border-line/60 w-full max-w-md">
+        © 2026 Thrivebuild. All rights reserved. Fixed-price builds.
+      </p>
     </div>
   </footer>
 

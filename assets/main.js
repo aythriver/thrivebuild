@@ -46,6 +46,9 @@ function initConfigHydration() {
       } else if (key === "CALENDLY_URL" || key === "FORM_URL" || key === "SITE_URL") {
         el.href = CONFIG[key];
       }
+    } else if (el.classList.contains("calendly-inline-widget")) {
+      // Never insert text into Calendly widgets
+      return;
     } else {
       el.textContent = CONFIG[key];
     }
@@ -212,21 +215,23 @@ function initCalendlyEmbed() {
     fallbackLink.setAttribute("href", CONFIG.CALENDLY_URL);
   }
 
-  // Inject Calendly's script dynamically
-  const script = document.createElement("script");
-  script.src = "https://assets.calendly.com/assets/external/widget.js";
-  script.async = true;
-
+  // Inject Calendly's script if not already present
   let scriptLoaded = false;
-  script.onload = () => {
+  const existingScript = document.querySelector('script[src*="calendly.com/assets/external/widget.js"]');
+  if (!existingScript) {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    script.onload = () => {
+      scriptLoaded = true;
+    };
+    script.onerror = () => {
+      showCalendlyFallback(widgetContainer, fallbackPanel);
+    };
+    document.head.appendChild(script);
+  } else {
     scriptLoaded = true;
-  };
-
-  script.onerror = () => {
-    showCalendlyFallback(widgetContainer, fallbackPanel);
-  };
-
-  document.head.appendChild(script);
+  }
 
   // Generous 10-second safety check for slow mobile networks.
   // Never hide the widget if an iframe has already been spawned.
