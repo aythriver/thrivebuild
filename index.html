@@ -204,7 +204,7 @@
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-4">
               <a href="#book" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-brand hover:bg-brand-hover text-white text-base font-semibold transition-all duration-150 shadow-md hover:shadow-lg active:scale-[0.98]">
-                Book a 45-Min Workflow Map
+                Book a 20-Min Workflow Map
               </a>
               <a href="#what-we-build" class="inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-body hover:text-ink transition-colors">
                 See the three systems <span class="ml-1.5" aria-hidden="true">↓</span>
@@ -658,10 +658,10 @@
             Not sure which system your remodeling company needs first?
           </p>
           <p class="text-sm text-body mb-6">
-            The free 45-minute Workflow Map call pinpoints your highest-leverage operational leak in minutes.
+            The free 20-minute Workflow Map call pinpoints your highest-leverage operational leak in minutes.
           </p>
           <a href="#book" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-brand hover:bg-brand-hover text-white text-sm sm:text-base font-semibold transition-all duration-150 shadow-md hover:shadow-lg active:scale-[0.98]">
-            Book Your 45-Min Workflow Map
+            Book Your 20-Min Workflow Map
           </a>
         </div>
 
@@ -696,7 +696,7 @@
               <span class="hidden md:block flex-1 h-0.5 bg-line" aria-hidden="true"></span>
             </div>
             <h3 class="text-lg font-bold text-ink mb-1">Free Workflow Map</h3>
-            <p class="text-xs text-brand font-semibold mb-2">45-minute call</p>
+            <p class="text-xs text-brand font-semibold mb-2">20-minute call</p>
             <p class="text-sm text-body leading-relaxed mb-3">
               We walk through how leads come in, how jobs get sold, and how they reach your project manager.
             </p>
@@ -854,7 +854,7 @@
             Is this the right fit for your remodeling company?
           </h2>
           <p class="text-base text-body">
-            We specialize specifically in residential remodeling operations. We filter out businesses that are not ready so nobody wastes 45 minutes.
+            We specialize specifically in residential remodeling operations. We filter out businesses that are not ready so nobody wastes their time.
           </p>
         </div>
 
@@ -1107,7 +1107,7 @@
             Prefer not to call? Get a recorded walkthrough.
           </h2>
           <p class="text-base text-body leading-relaxed">
-            Answer 5 quick questions and we'll send you a short recorded video walking through your biggest workflow gap. No call needed.
+            Answer a few quick questions and we'll send you a short recorded video walking through your biggest workflow gap. No call needed.
           </p>
         </div>
 
@@ -1198,18 +1198,63 @@
                 >
               </div>
 
-              <!-- Website (optional) -->
+              <!-- Website -->
               <div>
                 <label for="intake-website" class="block text-xs font-semibold text-ink uppercase tracking-wider mb-2">
-                  Website <span class="text-xs font-normal text-slate-400 normal-case">(optional)</span>
+                  Website <span class="text-brand">*</span>
                 </label>
                 <input 
                   type="text" 
                   id="intake-website" 
                   name="website" 
+                  required 
                   placeholder="e.g. apexremodel.com" 
                   class="w-full px-4 py-3 rounded-lg border border-line bg-surface-alt text-ink text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all"
                 >
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <!-- City and State -->
+              <div>
+                <label for="intake-location" class="block text-xs font-semibold text-ink uppercase tracking-wider mb-2">
+                  City and state <span class="text-brand">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="intake-location" 
+                  name="location" 
+                  required 
+                  placeholder="e.g. Austin, TX" 
+                  class="w-full px-4 py-3 rounded-lg border border-line bg-surface-alt text-ink text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all"
+                >
+              </div>
+
+              <!-- Team Size -->
+              <div>
+                <label for="intake-team-size" class="block text-xs font-semibold text-ink uppercase tracking-wider mb-2">
+                  Team size <span class="text-brand">*</span>
+                </label>
+                <div class="relative">
+                  <select 
+                    id="intake-team-size" 
+                    name="team_size" 
+                    required 
+                    class="w-full px-4 py-3 rounded-lg border border-line bg-surface-alt text-ink text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all appearance-none cursor-pointer pr-10"
+                  >
+                    <option value="" disabled selected>Select team size...</option>
+                    <option value="Just me">Just me</option>
+                    <option value="2 to 4">2 to 4</option>
+                    <option value="5 to 15">5 to 15</option>
+                    <option value="16 to 30">16 to 30</option>
+                    <option value="30+">30+</option>
+                  </select>
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500" aria-hidden="true">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -1254,6 +1299,34 @@
               </div>
             </div>
 
+            <!-- Phone (optional) -->
+            <div>
+              <label for="intake-phone" class="block text-xs font-semibold text-ink uppercase tracking-wider mb-2">
+                Phone <span class="text-xs font-normal text-slate-400 normal-case">(optional)</span>
+              </label>
+              <input 
+                type="tel" 
+                id="intake-phone" 
+                name="phone" 
+                placeholder="e.g. (512) 555-0198" 
+                class="w-full px-4 py-3 rounded-lg border border-line bg-surface-alt text-ink text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all"
+              >
+            </div>
+
+            <!-- Anything else I should know? (optional) -->
+            <div>
+              <label for="intake-notes" class="block text-xs font-semibold text-ink uppercase tracking-wider mb-2">
+                Anything else I should know? <span class="text-xs font-normal text-slate-400 normal-case">(optional)</span>
+              </label>
+              <textarea 
+                id="intake-notes" 
+                name="notes" 
+                rows="3" 
+                placeholder="Any specific tools, software, or workflow bottlenecks you want to mention..." 
+                class="w-full px-4 py-3 rounded-lg border border-line bg-surface-alt text-ink text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all resize-y"
+              ></textarea>
+            </div>
+
             <!-- Submit Button -->
             <div class="pt-2">
               <button 
@@ -1283,10 +1356,10 @@
         <!-- Section Header -->
         <p class="text-xs font-semibold text-brand tracking-wider uppercase mb-2">Schedule Your Session</p>
         <h2 id="book-heading" class="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink tracking-tight mb-4">
-          Map your remodeling workflows in 45 minutes.
+          Map your remodeling workflows in 20 minutes.
         </h2>
         <p class="text-base text-body max-w-xl mx-auto mb-2">
-          Pick a time below for a 45-minute Workflow Map call. We will identify your single biggest operational delay and show you what it looks like automated.
+          Pick a time below for a 20-minute Workflow Map call. We will identify your single biggest operational delay and show you what it looks like automated.
         </p>
         <p class="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto mb-10">
           100% free consultation, no high-pressure sales pitch.
