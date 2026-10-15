@@ -27,7 +27,8 @@ Search for `[` or `EXAMPLE COPY` in `index.html` to find every customizable slot
 | *(Active)* | `assets/main.js` (`CONFIG.CONTACT_EMAIL`) | Contact email connected to `sam@thrivebuild.co`. |
 | *(Active)* | `index.html` line 976 | LinkedIn profile connected to `https://www.linkedin.com/in/sam-adebayo`. |
 | *(Active)* | `index.html` Lines 590–666 | Case study connected to NE Tiny Homes (Joe P. / Joe Pagnani). |
-| *(Active)* | `assets/main.js` (`CONFIG.FOOTER_LOCATION`) | Location set to `Remote · Serving US remodelers · Available US Eastern hours`. |
+| *(Active)* | `assets/main.js` (`CONFIG.FOOTER_LOCATION`) | Location set to `Remote · Serving remodelers in the US, Canada, UK and Australia`. |
+| *(Active)* | `assets/main.js` (`CONFIG.LINKEDIN_URL`) | Company LinkedIn connected to `https://www.linkedin.com/company/thrivebuild-co`. |
 
 ---
 
@@ -41,7 +42,8 @@ const CONFIG = {
   CALENDLY_URL: "https://calendly.com/samthriver/workflow",
   CONTACT_EMAIL: "sam@thrivebuild.co",
   FORM_URL: "#intake",
-  FOOTER_LOCATION: "Remote · Serving US remodelers · Available US Eastern hours",
+  FOOTER_LOCATION: "Remote · Serving remodelers in the US, Canada, UK and Australia",
+  LINKEDIN_URL: "https://www.linkedin.com/company/thrivebuild-co",
 };
 ```
 

@@ -13,6 +13,21 @@
   <link rel="icon" type="image/png" href="assets/img/logo-mark.png">
   <link rel="apple-touch-icon" href="assets/img/logo-mark.png">
 
+  <!-- Structured Data (Schema.org Organization) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Thrivebuild",
+    "url": "https://thrivebuild.co",
+    "logo": "https://thrivebuild.co/assets/img/logo-mark.png",
+    "email": "sam@thrivebuild.co",
+    "sameAs": [
+      "https://www.linkedin.com/company/thrivebuild-co"
+    ]
+  }
+  </script>
+
   <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -161,16 +176,22 @@
 
       <!-- Location line -->
       <p data-config="FOOTER_LOCATION" class="text-xs text-body/80">
-        Remote · Serving US remodelers · Available US Eastern hours
+        Remote · Serving remodelers in the US, Canada, UK and Australia
       </p>
 
       <!-- Links row with dot separator -->
-      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs">
+      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs">
         <a href="/privacy" class="hover:text-ink transition-colors">Privacy Policy</a>
         <span class="text-slate-300" aria-hidden="true">·</span>
         <a href="/terms" class="hover:text-ink transition-colors font-medium text-ink">Terms of Service</a>
         <span class="text-slate-300" aria-hidden="true">·</span>
         <a href="mailto:sam@thrivebuild.co" data-config="CONTACT_EMAIL" class="hover:text-ink transition-colors">Email Us</a>
+        <span class="text-slate-300" aria-hidden="true">·</span>
+        <a href="https://www.linkedin.com/company/thrivebuild-co" target="_blank" rel="noopener noreferrer" aria-label="Thrivebuild on LinkedIn" class="inline-flex items-center text-body hover:text-brand transition-colors">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </a>
       </div>
 
       <!-- Copyright -->

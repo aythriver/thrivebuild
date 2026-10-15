@@ -13,7 +13,8 @@ const CONFIG = {
   CALENDLY_URL: "https://calendly.com/samthriver/workflow",
   CONTACT_EMAIL: "sam@thrivebuild.co",
   FORM_URL: "#intake",
-  FOOTER_LOCATION: "Remote · Serving US remodelers · Available US Eastern hours",
+  FOOTER_LOCATION: "Remote · Serving remodelers in the US, Canada, UK and Australia",
+  LINKEDIN_URL: "https://www.linkedin.com/company/thrivebuild-co",
 };
 
 // ==========================================================================
@@ -43,7 +44,7 @@ function initConfigHydration() {
       if (key === "CONTACT_EMAIL") {
         const subject = el.getAttribute("data-config-subject");
         el.href = `mailto:${CONFIG[key]}${subject ? `?subject=${encodeURIComponent(subject)}` : ""}`;
-      } else if (key === "CALENDLY_URL" || key === "FORM_URL" || key === "SITE_URL") {
+      } else if (key === "CALENDLY_URL" || key === "FORM_URL" || key === "SITE_URL" || key === "LINKEDIN_URL") {
         el.href = CONFIG[key];
       }
     } else if (el.classList.contains("calendly-inline-widget")) {
