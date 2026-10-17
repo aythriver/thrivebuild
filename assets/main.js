@@ -275,6 +275,7 @@ function initMetaPixelEvents() {
       href.includes("calendly.com") ||
       /book/i.test(text) ||
       /choose.*system/i.test(text) ||
+      /scope.*system/i.test(text) ||
       /workflow map/i.test(text) ||
       /walkthrough/i.test(text);
 
@@ -306,6 +307,24 @@ function initIntakeForm() {
   const errorPanel = document.getElementById("intake-error");
   const submitBtn = document.getElementById("intake-submit-btn");
   if (!form) return;
+
+  const softwareSelect = document.getElementById("intake-software");
+  const softwareOtherWrapper = document.getElementById("intake-software-other-wrapper");
+  const softwareOtherInput = document.getElementById("intake-software-other");
+
+  if (softwareSelect && softwareOtherWrapper && softwareOtherInput) {
+    softwareSelect.addEventListener("change", () => {
+      if (softwareSelect.value === "Other") {
+        softwareOtherWrapper.classList.remove("hidden");
+        softwareOtherInput.required = true;
+        softwareOtherInput.focus();
+      } else {
+        softwareOtherWrapper.classList.add("hidden");
+        softwareOtherInput.required = false;
+        softwareOtherInput.value = "";
+      }
+    });
+  }
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -350,6 +369,10 @@ function initIntakeForm() {
 
     try {
       const formData = new FormData(form);
+      if (softwareSelect && softwareSelect.value === "Other" && softwareOtherInput && softwareOtherInput.value.trim()) {
+        formData.set("software", `Other: ${softwareOtherInput.value.trim()}`);
+      }
+
       const res = await fetch(action, {
         method: "POST",
         body: formData,
