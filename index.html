@@ -1319,19 +1319,13 @@
 
           <!-- 
             ======================================================================
-            FORM SUBMISSION ENDPOINT (FORMSPREE / WEB3FORMS):
-            Submissions are delivered to: sam@thrivebuild.co
-            
-            HOW TO ACTIVATE:
-            1. Go to https://formspree.io (or https://web3forms.com), create a free form 
-               pointing to sam@thrivebuild.co.
-            2. Replace 'https://formspree.io/f/YOUR_FORMSPREE_ID' below with your endpoint URL.
+            FORM SUBMISSION ENDPOINT (FORMSUBMIT):
+            Submissions are delivered to: sam@thrivebuild.co & aythriver@gmail.com
             ======================================================================
           -->
-          <form id="intake-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
-            <!-- Hidden destination helpers -->
-            <input type="hidden" name="_to" value="sam@thrivebuild.co">
-            <input type="hidden" name="_subject" value="New Thrivebuild Walkthrough Request">
+          <form id="intake-form" action="https://formsubmit.co/ajax/sam@thrivebuild.co" method="POST" class="space-y-6">
+            <!-- FormSubmit built-in honeypot spam trap (invisible to human visitors) -->
+            <input type="text" name="_honey" style="display:none" class="hidden" tabindex="-1" autocomplete="off">
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <!-- Name -->

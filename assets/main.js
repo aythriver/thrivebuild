@@ -298,8 +298,8 @@ function initMetaPixelEvents() {
 }
 
 // ==========================================================================
-// 9. INTAKE FORM HANDLER
-// Manages AJAX submission, displays confirmation notice, and fires Meta Pixel Lead event.
+// 9. INTAKE FORM HANDLER (FormSubmit AJAX)
+// Posts JSON to FormSubmit, shows confirmation, and fires Meta Pixel Lead on success.
 // ==========================================================================
 function initIntakeForm() {
   const form = document.getElementById("intake-form");
@@ -334,13 +334,22 @@ function initIntakeForm() {
       errorPanel.classList.add("hidden");
     }
 
-    // Fire Meta Pixel Lead event on submit
-    if (typeof window.fbq === "function") {
-      window.fbq("track", "Lead");
+    // FormSubmit honeypot spam trap
+    const honeyInput = form.querySelector('input[name="_honey"]');
+    const honeyValue = honeyInput ? honeyInput.value.trim() : "";
+    if (honeyValue) {
+      // Spam detected: silently simulate success without submitting
+      form.reset();
+      if (softwareOtherWrapper) {
+        softwareOtherWrapper.classList.add("hidden");
+      }
+      form.classList.add("hidden");
+      if (successPanel) {
+        successPanel.classList.remove("hidden");
+        successPanel.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      return;
     }
-
-    const action = form.getAttribute("action");
-    const isPlaceholder = !action || action.includes("YOUR_FORMSPREE_ID") || action === "#";
 
     const originalBtnText = submitBtn ? submitBtn.textContent : "Send me my walkthrough";
     if (submitBtn) {
@@ -362,33 +371,90 @@ function initIntakeForm() {
       }
     };
 
-    if (isPlaceholder) {
-      showError();
-      return;
-    }
+    // Extract submitted field values
+    const nameVal = document.getElementById("intake-name")?.value.trim() || "";
+    const emailVal = document.getElementById("intake-email")?.value.trim() || "";
+    const companyVal = document.getElementById("intake-company")?.value.trim() || "";
+    const websiteVal = document.getElementById("intake-website")?.value.trim() || "";
+    const locationVal = document.getElementById("intake-location")?.value.trim() || "";
+    const teamSizeVal = document.getElementById("intake-team-size")?.value || "";
+    const leadSourceVal = document.getElementById("intake-lead-source")?.value.trim() || "";
+    const headacheVal = document.getElementById("intake-headache")?.value || "";
+
+    const rawSoftware = softwareSelect ? softwareSelect.value : "";
+    const otherSoftware = softwareOtherInput ? softwareOtherInput.value.trim() : "";
+    const softwareVal = (rawSoftware === "Other" && otherSoftware)
+      ? `Other: ${otherSoftware}`
+      : (rawSoftware === "Other" ? "Other" : rawSoftware);
+
+    const phoneVal = document.getElementById("intake-phone")?.value.trim() || "";
+    const notesVal = document.getElementById("intake-notes")?.value.trim() || "";
+
+    const payload = {
+      "_honey": honeyValue,
+      "_cc": "aythriver@gmail.com",
+      "_subject": `New Thrivebuild lead: ${companyVal} (${softwareVal})`,
+      "_replyto": emailVal,
+      "_template": "table",
+      "_captcha": "false",
+      "Name": nameVal,
+      "Email": emailVal,
+      "Company": companyVal,
+      "Website": websiteVal,
+      "City and state": locationVal,
+      "Team size": teamSizeVal,
+      "How leads reach them": leadSourceVal,
+      "Biggest headache": headacheVal,
+      "Software": softwareVal,
+      "Phone": phoneVal,
+      "Notes": notesVal,
+      "Page URL": window.location.href
+    };
 
     try {
-      const formData = new FormData(form);
-      if (softwareSelect && softwareSelect.value === "Other" && softwareOtherInput && softwareOtherInput.value.trim()) {
-        formData.set("software", `Other: ${softwareOtherInput.value.trim()}`);
-      }
-
-      const res = await fetch(action, {
+      const res = await fetch("https://formsubmit.co/ajax/sam@thrivebuild.co", {
         method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" }
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(payload)
       });
 
-      if (res.ok) {
-        form.classList.add("hidden");
-        if (errorPanel) errorPanel.classList.add("hidden");
-        if (successPanel) {
-          successPanel.classList.remove("hidden");
-          successPanel.scrollIntoView({ behavior: "smooth", block: "center" });
+      if (res.status === 200) {
+        const data = await res.json().catch(() => ({}));
+        if (data && (data.success === true || data.success === "true")) {
+          // Success: reset form, show confirmation notice
+          form.reset();
+          if (softwareOtherWrapper) {
+            softwareOtherWrapper.classList.add("hidden");
+          }
+          if (softwareOtherInput) {
+            softwareOtherInput.required = false;
+            softwareOtherInput.value = "";
+          }
+          form.classList.add("hidden");
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+          }
+          if (errorPanel) {
+            errorPanel.classList.add("hidden");
+          }
+          if (successPanel) {
+            successPanel.classList.remove("hidden");
+            successPanel.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+
+          // Fire Meta Pixel Lead event ONLY after a successful response
+          if (typeof window.fbq === "function") {
+            window.fbq("track", "Lead");
+          }
+          return;
         }
-      } else {
-        showError();
       }
+
+      showError();
     } catch (err) {
       showError();
     }
