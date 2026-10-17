@@ -412,7 +412,7 @@ function initIntakeForm() {
     };
 
     try {
-      const res = await fetch("https://formsubmit.co/ajax/sam@thrivebuild.co", {
+      const res = await fetch("https://formsubmit.co/ajax/PASTE_CODE_HERE", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
