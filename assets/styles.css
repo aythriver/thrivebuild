@@ -151,3 +151,15 @@ details .faq-content {
 body.nav-open {
   overflow: hidden;
 }
+
+/* Mobile sticky CTA: reserve space so it never covers the footer */
+@media (max-width: 767px) {
+  body.has-sticky-cta {
+    padding-bottom: 68px;
+  }
+}
+
+#mobile-sticky-cta.is-hidden {
+  transform: translateY(110%);
+  pointer-events: none;
+}

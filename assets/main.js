@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initCalendlyEmbed();
   initMetaPixelEvents();
   initIntakeForm();
+  initMobileStickyCta();
 });
 
 // ==========================================================================
@@ -313,17 +314,21 @@ function initIntakeForm() {
   const softwareOtherInput = document.getElementById("intake-software-other");
 
   if (softwareSelect && softwareOtherWrapper && softwareOtherInput) {
-    softwareSelect.addEventListener("change", () => {
+    // "Which one?" is only shown and required when "Other" is selected
+    const syncSoftwareOther = (focus) => {
       if (softwareSelect.value === "Other") {
         softwareOtherWrapper.classList.remove("hidden");
         softwareOtherInput.required = true;
-        softwareOtherInput.focus();
+        if (focus) softwareOtherInput.focus();
       } else {
         softwareOtherWrapper.classList.add("hidden");
         softwareOtherInput.required = false;
         softwareOtherInput.value = "";
       }
-    });
+    };
+    softwareSelect.addEventListener("change", () => syncSoftwareOther(true));
+    // Covers browsers restoring a previously selected "Other" on back navigation
+    syncSoftwareOther(false);
   }
 
   form.addEventListener("submit", async (e) => {
@@ -459,4 +464,33 @@ function initIntakeForm() {
       showError();
     }
   });
+}
+
+// ==========================================================================
+// 10. MOBILE STICKY CTA
+// Slim "Book a 20-Min Workflow Map" bar on mobile. Hidden while the hero button,
+// booking calendar or intake form is on screen, so it never duplicates the hero
+// CTA or covers the calendar, form or keyboard.
+// ==========================================================================
+function initMobileStickyCta() {
+  const bar = document.getElementById("mobile-sticky-cta");
+  if (!bar) return;
+  document.body.classList.add("has-sticky-cta");
+
+  const targets = ["hero-cta", "book", "intake"].map((id) => document.getElementById(id)).filter(Boolean);
+  // Bar starts hidden in the markup; show it straight away if we can't observe
+  if (!targets.length || !("IntersectionObserver" in window)) {
+    bar.classList.remove("is-hidden");
+    return;
+  }
+
+  const visible = new Set();
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) visible.add(entry.target);
+      else visible.delete(entry.target);
+    });
+    bar.classList.toggle("is-hidden", visible.size > 0);
+  });
+  targets.forEach((el) => observer.observe(el));
 }
