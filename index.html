@@ -36,18 +36,124 @@
   <link rel="icon" type="image/png" href="assets/img/logo-mark.png">
   <link rel="apple-touch-icon" href="assets/img/logo-mark.png">
 
-  <!-- Structured Data (Schema.org Organization) -->
+  <!-- Structured Data (Schema.org Organization + ProfessionalService) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "ProfessionalService"],
+    "@id": "https://thrivebuild.co/#organization",
     "name": "Thrivebuild",
     "url": "https://thrivebuild.co",
     "logo": "https://thrivebuild.co/assets/img/logo-mark.png",
-    "description": "Lead follow-up and job handoff systems for residential remodelers. Built on the tools you already use, or on GoHighLevel and Monday.com. Fixed-price builds.",
+    "image": "https://thrivebuild.co/assets/img/thrivebuild-featured-thumbnail.png",
+    "description": "Lead follow-up and job handoff systems for residential remodelers, built on the tools they already use or on GoHighLevel and Monday.com.",
     "email": "sam@thrivebuild.co",
     "sameAs": [
       "https://www.linkedin.com/company/thrivebuild-co"
+    ],
+    "areaServed": [
+      { "@type": "Country", "name": "United States" },
+      { "@type": "Country", "name": "Canada" },
+      { "@type": "Country", "name": "United Kingdom" },
+      { "@type": "Country", "name": "Australia" }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data (Schema.org FAQPage, generated from the FAQ section) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does this replace Buildertrend or JobTread?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. If your jobs already run well there, keep it. We add the lead follow-up system in front of it, and connect the two where the software allows. We confirm exactly what's possible on your Workflow Map call before we quote."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "We pay for Buildertrend but the team barely uses it. Can you help?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, and it's common. On the call, we look at why the team isn't using it. Sometimes a simpler back office built on Monday.com, around how your team already works, is the better fit. Sometimes keeping it and fixing the lead side is. We'll tell you honestly which one makes sense."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why use more than one platform?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each does one job well. GoHighLevel is built for answering and following up with homeowners by text, email and phone. Monday.com is built for running projects. Smart automation moves the job details from one to the other the moment a deal is won. Your office staff and project managers each work in the part that fits their role."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the monthly fee cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your GoHighLevel account, texting and phone setup including the carrier registration required to send business texts in the US, plus updates, fixes and small changes. Text message and call usage is billed at cost based on your volume."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who owns the system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your Monday.com boards and automations live in your own accounts and stay yours. Your GoHighLevel account runs under our agency. If you ever cancel, we export your contacts and pipeline data to you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Lead Follow-Up System goes live in 7 to 10 business days. The Sale-to-Job Handoff System takes 2 to 3 weeks. The Full Company System takes 4 to 6 weeks, including training and testing with live jobs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need accounts set up beforehand?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. We set up GoHighLevel for you. For Monday.com, we build inside your existing accounts, or recommend the right plan if you do not have one yet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can we start with just lead follow-up?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Many remodelers start with the Lead Follow-Up System. When you are ready, we add the handoff system on top without rebuilding anything."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you quote something that isn't one of the packages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Book a free 20-minute Workflow Map call, and we'll send one fixed quote within 48 hours. Custom builds start from $1,500."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the AI receptionist a real person?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. It is an AI voice agent that answers when your team cannot, collects the project details, and either books the estimate or passes the call to you. You decide what it says and when it hands off."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with commercial contractors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our systems are built for residential remodeling and design-build firms. Commercial work involves different billing and submittal processes. If you are a commercial contractor, email us and we will tell you honestly whether we can help."
+        }
+      }
     ]
   }
   </script>
@@ -318,6 +424,10 @@
               Homeowners asking about a kitchen or an addition usually contact more than one contractor. If your office
               calls back four hours later from a job site, the homeowner may already have booked with someone else.
             </p>
+            <a href="/lead-follow-up-for-remodelers"
+              class="inline-flex items-center mt-4 text-sm font-semibold text-brand hover:text-brand-hover transition-colors">
+              Why leads go cold, plus 5 free texts <span class="ml-1.5" aria-hidden="true">→</span>
+            </a>
           </div>
 
           <!-- Card 2: Details dropped in handoff -->
@@ -391,6 +501,10 @@
                 Every inquiry from your website, ads, Google profile and phone lands in one place. Homeowners get an
                 instant text and email, book their own estimate, and get followed up until they reply.
               </p>
+              <a href="/gohighlevel-for-remodelers"
+                class="inline-flex items-center mt-4 text-sm font-semibold text-brand hover:text-brand-hover transition-colors">
+                GoHighLevel setup for remodelers <span class="ml-1.5" aria-hidden="true">→</span>
+              </a>
             </div>
             <!-- Desktop Connector Arrow: Card 1 to Card 2 -->
             <div
@@ -457,6 +571,10 @@
                 The signed job becomes a project with its checklist, folder, selections, permits, subcontractors and
                 change orders in one place, plus a dashboard for the owner.
               </p>
+              <a href="/monday-com-for-remodelers"
+                class="inline-flex items-center mt-4 text-sm font-semibold text-brand hover:text-brand-hover transition-colors">
+                Monday.com back office for remodelers <span class="ml-1.5" aria-hidden="true">→</span>
+              </a>
             </div>
           </div>
 
@@ -1792,6 +1910,19 @@
       <p data-config="FOOTER_LOCATION" class="text-xs text-body/80">
         Remote · Serving remodelers in the US, Canada, UK and Australia
       </p>
+
+      <!-- Systems pages -->
+      <nav class="pt-2" aria-label="Systems">
+        <p class="text-xs font-semibold text-ink uppercase tracking-wider mb-2">Systems</p>
+        <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs">
+          <a href="/gohighlevel-for-remodelers" class="hover:text-ink transition-colors">GoHighLevel for Remodelers</a>
+          <span class="text-slate-300" aria-hidden="true">·</span>
+          <a href="/monday-com-for-remodelers" class="hover:text-ink transition-colors">Monday.com for Remodelers</a>
+          <span class="text-slate-300" aria-hidden="true">·</span>
+          <a href="/lead-follow-up-for-remodelers" class="hover:text-ink transition-colors">Lead Follow-Up for
+            Remodelers</a>
+        </div>
+      </nav>
 
       <!-- Links row with dot separator -->
       <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs">
