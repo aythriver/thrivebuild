@@ -13,7 +13,7 @@ const CONFIG = {
   CALENDLY_URL: "https://calendly.com/samthriver/workflow",
   CONTACT_EMAIL: "sam@thrivebuild.co",
   FORM_URL: "#intake",
-  FOOTER_LOCATION: "Remote · Serving remodelers in the US, Canada, UK and Australia",
+  FOOTER_LOCATION: "Remote · Serving home improvement companies in the US, Canada, UK and Australia",
   LINKEDIN_URL: "https://www.linkedin.com/company/thrivebuild-co",
 };
 
