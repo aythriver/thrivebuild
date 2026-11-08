@@ -13,7 +13,7 @@ const CONFIG = {
   CALENDLY_URL: "https://calendly.com/samthriver/workflow",
   CONTACT_EMAIL: "sam@thrivebuild.co",
   FORM_URL: "#intake",
-  FOOTER_LOCATION: "Remote · Serving remodelers in the US, Canada, UK and Australia",
+  FOOTER_LOCATION: "Remote · Serving home improvement companies in the US, Canada, UK and Australia",
   LINKEDIN_URL: "https://www.linkedin.com/company/thrivebuild-co",
 };
 
@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMetaPixelEvents();
   initIntakeForm();
   initMobileStickyCta();
+  initCarousels();
 });
 
 // ==========================================================================
@@ -494,3 +495,74 @@ function initMobileStickyCta() {
   });
   targets.forEach((el) => observer.observe(el));
 }
+
+// ==========================================================================
+// TESTIMONIAL SLIDER
+// Swipe, drag-scroll or use the arrows and dots. Add a slide by adding an
+// <article> inside [data-carousel-track]. Controls hide when there is 1 slide.
+// ==========================================================================
+function initCarousels() {
+  document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+    const track = carousel.querySelector("[data-carousel-track]");
+    const slides = Array.from(track ? track.children : []);
+    const controls = carousel.querySelector("[data-carousel-controls]");
+    const dotsWrap = carousel.querySelector("[data-carousel-dots]");
+    const prev = carousel.querySelector("[data-carousel-prev]");
+    const next = carousel.querySelector("[data-carousel-next]");
+    if (!track || !slides.length) return;
+    if (slides.length < 2) {
+      if (controls) controls.classList.add("hidden");
+      return;
+    }
+
+    slides.forEach((slide, i) => slide.setAttribute("aria-label", `${i + 1} of ${slides.length}`));
+
+    const dots = slides.map((_, i) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "h-2.5 rounded-full transition-all duration-200 bg-slate-600 w-2.5";
+      dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+      dot.addEventListener("click", () => goTo(i));
+      dotsWrap && dotsWrap.appendChild(dot);
+      return dot;
+    });
+
+    const maxScroll = () => track.scrollWidth - track.clientWidth;
+    const current = () => {
+      if (track.scrollLeft >= maxScroll() - 4) return slides.length - 1;
+      let best = 0;
+      slides.forEach((slide, i) => {
+        if (Math.abs(slide.offsetLeft - track.scrollLeft) < Math.abs(slides[best].offsetLeft - track.scrollLeft)) best = i;
+      });
+      return best;
+    };
+    const goTo = (i) => {
+      const target = slides[Math.max(0, Math.min(slides.length - 1, i))];
+      track.scrollTo({ left: Math.min(target.offsetLeft, maxScroll()), behavior: "smooth" });
+    };
+    const update = () => {
+      const i = current();
+      dots.forEach((dot, d) => {
+        dot.classList.toggle("bg-brand", d === i);
+        dot.classList.toggle("w-6", d === i);
+        dot.classList.toggle("bg-slate-600", d !== i);
+        dot.classList.toggle("w-2.5", d !== i);
+        dot.setAttribute("aria-current", d === i ? "true" : "false");
+      });
+      if (prev) prev.disabled = track.scrollLeft <= 4;
+      if (next) next.disabled = track.scrollLeft >= maxScroll() - 4;
+    };
+
+    prev && prev.addEventListener("click", () => goTo(current() - 1));
+    next && next.addEventListener("click", () => goTo(current() + 1));
+    let ticking = false;
+    track.addEventListener("scroll", () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { update(); ticking = false; });
+    });
+    window.addEventListener("resize", update);
+    update();
+  });
+}
+

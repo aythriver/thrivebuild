@@ -163,3 +163,9 @@ body.nav-open {
   transform: translateY(110%);
   pointer-events: none;
 }
+
+/* Testimonial slider: hide the scrollbar but keep swipe and keyboard scrolling */
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+[data-carousel-track] { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { [data-carousel-track] { scroll-behavior: auto; } }
