@@ -218,10 +218,11 @@
       </a>
 
       <!-- Desktop Nav Links -->
-      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-body">
-        <a href="#problem" class="hover:text-ink transition-colors">The Problem</a>
-        <a href="#how-it-works" class="hover:text-ink transition-colors">How It Works</a>
+      <div class="hidden md:flex items-center gap-5 lg:gap-8 text-sm font-medium text-body whitespace-nowrap">
+        <a href="#problem" class="hidden lg:inline hover:text-ink transition-colors">The Problem</a>
+        <a href="#how-it-works" class="hidden lg:inline hover:text-ink transition-colors">How It Works</a>
         <a href="/pricing" class="hover:text-ink transition-colors">Pricing</a>
+        <a href="/case-studies" class="hover:text-ink transition-colors">Case studies</a>
         <a href="#faq" class="hover:text-ink transition-colors">FAQ</a>
       </div>
 
@@ -254,6 +255,7 @@
       <a href="#how-it-works" class="text-base font-medium text-ink py-2 hover:text-brand">How It Works</a>
       <a href="/pricing" class="text-base font-medium text-ink py-2 hover:text-brand">Pricing</a>
       <a href="/solar" class="text-base font-medium text-ink py-2 hover:text-brand">For Solar &amp; Home Energy</a>
+      <a href="/case-studies" class="text-base font-medium text-ink py-2 hover:text-brand">Case studies</a>
       <a href="#faq" class="text-base font-medium text-ink py-2 hover:text-brand">FAQ</a>
       <div class="pt-4 border-t border-line">
         <a href="#book"
@@ -620,92 +622,269 @@
     </section>
 
     <!-- ==========================================================================
-         6. PROOF SECTION
+         6. PROOF SECTION: auto-scrolling case study strip
+         Pure CSS loop (see .cs-marquee in styles.css). Pauses on hover and focus,
+         swipes on touch, and becomes a plain scrollable row with reduced motion.
          ========================================================================== -->
     <section id="proof" class="py-16 md:py-24 bg-surface-dark text-white relative overflow-hidden bg-radial-dark-glow"
       aria-labelledby="proof-heading">
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
 
-        <!-- Section Header -->
-        <div class="max-w-2xl mx-auto text-center mb-14">
-          <p class="text-xs font-semibold text-brand tracking-wider uppercase mb-2">Proof</p>
+        <div class="max-w-2xl mx-auto text-center mb-10 md:mb-12">
+          <p class="text-xs font-semibold text-brand tracking-wider uppercase mb-2">Case studies</p>
           <h2 id="proof-heading" class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">
             Systems running inside real client businesses.
           </h2>
           <p class="text-sm sm:text-base text-slate-300">
-            From a design-build manufacturer to a US solar sales company.
+            From a modular homes manufacturer to a US residential solar sales company.
           </p>
         </div>
 
-        <!-- 3-Stat Metric Row -->
-        <p class="text-center text-xs font-semibold text-slate-400 tracking-wider uppercase mb-4">NE Tiny Homes · Modular design-build</p>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-14 text-center">
-          <div class="bg-surface-dark-card border border-slate-800 rounded-xl p-6 shadow-sm">
-            <p class="text-4xl sm:text-5xl font-bold text-brand mb-2 tabular-nums">100%</p>
-            <p class="text-xs sm:text-sm font-medium text-slate-300">Milestone Payment Visibility</p>
-            <span class="text-[11px] text-slate-400">From contract deposit to framing sign-off</span>
-          </div>
-
-          <div class="bg-surface-dark-card border border-slate-800 rounded-xl p-6 shadow-sm">
-            <p class="text-4xl sm:text-5xl font-bold text-brand mb-2">Zero</p>
-            <p class="text-xs sm:text-sm font-medium text-slate-300">Dropped Handoffs</p>
-            <span class="text-[11px] text-slate-400">Sales, permits and build phases in one flow</span>
-          </div>
-
-          <div class="bg-surface-dark-card border border-slate-800 rounded-xl p-6 shadow-sm">
-            <p class="text-4xl sm:text-5xl font-bold text-brand mb-2">1 Central</p>
-            <p class="text-xs sm:text-sm font-medium text-slate-300">Source of Truth</p>
-            <span class="text-[11px] text-slate-400">Replaced fragmented tools &amp; chats</span>
-          </div>
-        </div>
-
-        <!-- Client results slider (add a new <article> to add a testimonial) -->
-        <div class="relative" data-carousel role="region" aria-roledescription="carousel" aria-label="Client results">
-          <div class="relative flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-1" data-carousel-track>
-
-            <article class="snap-start shrink-0 w-[88%] md:w-[78%] lg:w-[66%] bg-surface-dark-card border border-slate-800 rounded-2xl p-8 sm:p-10 flex flex-col justify-between" aria-roledescription="slide">
-              <blockquote class="text-base sm:text-lg text-slate-200 italic leading-relaxed mb-6">
-            "Before Thrivebuild, our internal operations and handoffs were spread across multiple tools, loose
-            spreadsheets, and frantic message threads. Sam built a complete Monday.com architecture connecting our
-            contracts, permit milestones, build phases, and SOPs into one unified engine. It became our central system
-            for tracking everything we build internally, our entire team finally has full operational control."
-          </blockquote>
-          <cite class="not-italic flex items-center gap-3">
-            <span class="w-10 h-10 rounded-full bg-brand flex items-center justify-center font-bold text-sm text-white"
-              aria-hidden="true">JP</span>
-            <div>
-              <p class="text-sm font-bold text-white">Joe P.</p>
-              <p class="text-xs text-slate-400">President, NE Tiny Homes, Modular Design-Build Manufacturer</p>
-            </div>
-          </cite>
-            </article>
-
-            <article class="snap-start shrink-0 w-[88%] md:w-[78%] lg:w-[66%] bg-surface-dark-card border border-slate-800 rounded-2xl p-8 sm:p-10 flex flex-col justify-between" aria-roledescription="slide">
-              <div>
-                <p class="text-xs font-semibold text-brand tracking-wider uppercase mb-5">
-                  US solar sales company · Since early 2025
-                </p>
-                <p class="text-base sm:text-lg text-slate-200 leading-relaxed">
-                  Since early 2025, Sam has managed this company's monday.com sales CRM: the boards,
-                  Make.com integrations that move jobs between boards, and native monday.com workflows that keep
-                  every stage in order.
-                </p>
+        <div class="cs-marquee -mx-5 sm:mx-0" role="region" aria-label="Case studies, scrolling. Hover or focus to pause.">
+          <div class="cs-track py-1 pl-5 sm:pl-0">
+              <div class="cs-card shrink-0 w-[300px] sm:w-[384px] pr-6">
+                <article class="h-full rounded-2xl overflow-hidden border border-slate-700/70 bg-white/5 flex flex-col">
+                  <div class="aspect-[16/10] bg-slate-50 border-b border-slate-700/70">
+                    <img src="/assets/img/case-studies/us-solar-sales-company.svg" alt="Demo board: a solar sales pipeline, an upsells board and an admin board for funding and job progress" class="w-full h-full object-cover" loading="lazy" width="1200" height="750">
+                  </div>
+                  <div class="p-5 sm:p-6 flex flex-col flex-1">
+                    <span class="self-start inline-flex px-2.5 py-1 rounded-full bg-orange-500/15 text-orange-300 text-[11px] font-semibold tracking-wide uppercase mb-3">Solar sales</span>
+                    <h3 class="text-base sm:text-lg font-bold text-white leading-snug mb-4">One monday.com CRM for sales, funding and upsells</h3>
+                    <a href="/case-studies/us-solar-sales-company" class="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-orange-300 hover:text-white transition-colors">
+                      Read case study <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    </a>
+                  </div>
+                </article>
               </div>
-              <p class="text-xs text-slate-400 mt-6">Client name kept private.</p>
-            </article>
-
-          </div>
-
-          <div class="flex items-center justify-between mt-6" data-carousel-controls>
-            <div class="flex items-center gap-2" data-carousel-dots></div>
-            <div class="flex items-center gap-3">
-              <button type="button" class="w-11 h-11 rounded-full border border-slate-700 text-slate-200 hover:bg-slate-800 hover:text-white flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-default" data-carousel-prev aria-label="Previous"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg></button>
-              <button type="button" class="w-11 h-11 rounded-full border border-slate-700 text-slate-200 hover:bg-slate-800 hover:text-white flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-default" data-carousel-next aria-label="Next"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg></button>
-            </div>
+              <div class="cs-card shrink-0 w-[300px] sm:w-[384px] pr-6">
+                <article class="h-full rounded-2xl overflow-hidden border border-slate-700/70 bg-white/5 flex flex-col">
+                  <div class="aspect-[16/10] bg-slate-50 border-b border-slate-700/70">
+                    <img src="/assets/img/case-studies/ne-tiny-homes.svg" alt="Demo board: contracts, permit milestones, build phases and SOPs connected, with milestone payments from deposit to framing" class="w-full h-full object-cover" loading="lazy" width="1200" height="750">
+                  </div>
+                  <div class="p-5 sm:p-6 flex flex-col flex-1">
+                    <span class="self-start inline-flex px-2.5 py-1 rounded-full bg-orange-500/15 text-orange-300 text-[11px] font-semibold tracking-wide uppercase mb-3">Modular homes</span>
+                    <h3 class="text-base sm:text-lg font-bold text-white leading-snug mb-4">One monday.com system from contract to final build</h3>
+                    <a href="/case-studies/ne-tiny-homes" class="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-orange-300 hover:text-white transition-colors">
+                      Read case study <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div class="cs-card shrink-0 w-[300px] sm:w-[384px] pr-6" data-cs-copy aria-hidden="true">
+                <article class="h-full rounded-2xl overflow-hidden border border-slate-700/70 bg-white/5 flex flex-col">
+                  <div class="aspect-[16/10] bg-slate-50 border-b border-slate-700/70">
+                    <img src="/assets/img/case-studies/us-solar-sales-company.svg" alt="" class="w-full h-full object-cover" loading="lazy" width="1200" height="750">
+                  </div>
+                  <div class="p-5 sm:p-6 flex flex-col flex-1">
+                    <span class="self-start inline-flex px-2.5 py-1 rounded-full bg-orange-500/15 text-orange-300 text-[11px] font-semibold tracking-wide uppercase mb-3">Solar sales</span>
+                    <h3 class="text-base sm:text-lg font-bold text-white leading-snug mb-4">One monday.com CRM for sales, funding and upsells</h3>
+                    <a href="/case-studies/us-solar-sales-company" tabindex="-1" class="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-orange-300 hover:text-white transition-colors">
+                      Read case study <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div class="cs-card shrink-0 w-[300px] sm:w-[384px] pr-6" data-cs-copy aria-hidden="true">
+                <article class="h-full rounded-2xl overflow-hidden border border-slate-700/70 bg-white/5 flex flex-col">
+                  <div class="aspect-[16/10] bg-slate-50 border-b border-slate-700/70">
+                    <img src="/assets/img/case-studies/ne-tiny-homes.svg" alt="" class="w-full h-full object-cover" loading="lazy" width="1200" height="750">
+                  </div>
+                  <div class="p-5 sm:p-6 flex flex-col flex-1">
+                    <span class="self-start inline-flex px-2.5 py-1 rounded-full bg-orange-500/15 text-orange-300 text-[11px] font-semibold tracking-wide uppercase mb-3">Modular homes</span>
+                    <h3 class="text-base sm:text-lg font-bold text-white leading-snug mb-4">One monday.com system from contract to final build</h3>
+                    <a href="/case-studies/ne-tiny-homes" tabindex="-1" class="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-orange-300 hover:text-white transition-colors">
+                      Read case study <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div class="cs-card shrink-0 w-[300px] sm:w-[384px] pr-6" data-cs-copy aria-hidden="true">
+                <article class="h-full rounded-2xl overflow-hidden border border-slate-700/70 bg-white/5 flex flex-col">
+                  <div class="aspect-[16/10] bg-slate-50 border-b border-slate-700/70">
+                    <img src="/assets/img/case-studies/us-solar-sales-company.svg" alt="" class="w-full h-full object-cover" loading="lazy" width="1200" height="750">
+                  </div>
+                  <div class="p-5 sm:p-6 flex flex-col flex-1">
+                    <span class="self-start inline-flex px-2.5 py-1 rounded-full bg-orange-500/15 text-orange-300 text-[11px] font-semibold tracking-wide uppercase mb-3">Solar sales</span>
+                    <h3 class="text-base sm:text-lg font-bold text-white leading-snug mb-4">One monday.com CRM for sales, funding and upsells</h3>
+                    <a href="/case-studies/us-solar-sales-company" tabindex="-1" class="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-orange-300 hover:text-white transition-colors">
+                      Read case study <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div class="cs-card shrink-0 w-[300px] sm:w-[384px] pr-6" data-cs-copy aria-hidden="true">
+                <article class="h-full rounded-2xl overflow-hidden border border-slate-700/70 bg-white/5 flex flex-col">
+                  <div class="aspect-[16/10] bg-slate-50 border-b border-slate-700/70">
+                    <img src="/assets/img/case-studies/ne-tiny-homes.svg" alt="" class="w-full h-full object-cover" loading="lazy" width="1200" height="750">
+                  </div>
+                  <div class="p-5 sm:p-6 flex flex-col flex-1">
+                    <span class="self-start inline-flex px-2.5 py-1 rounded-full bg-orange-500/15 text-orange-300 text-[11px] font-semibold tracking-wide uppercase mb-3">Modular homes</span>
+                    <h3 class="text-base sm:text-lg font-bold text-white leading-snug mb-4">One monday.com system from contract to final build</h3>
+                    <a href="/case-studies/ne-tiny-homes" tabindex="-1" class="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-orange-300 hover:text-white transition-colors">
+                      Read case study <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div class="cs-card shrink-0 w-[300px] sm:w-[384px] pr-6" data-cs-copy aria-hidden="true">
+                <article class="h-full rounded-2xl overflow-hidden border border-slate-700/70 bg-white/5 flex flex-col">
+                  <div class="aspect-[16/10] bg-slate-50 border-b border-slate-700/70">
+                    <img src="/assets/img/case-studies/us-solar-sales-company.svg" alt="" class="w-full h-full object-cover" loading="lazy" width="1200" height="750">
+                  </div>
+                  <div class="p-5 sm:p-6 flex flex-col flex-1">
+                    <span class="self-start inline-flex px-2.5 py-1 rounded-full bg-orange-500/15 text-orange-300 text-[11px] font-semibold tracking-wide uppercase mb-3">Solar sales</span>
+                    <h3 class="text-base sm:text-lg font-bold text-white leading-snug mb-4">One monday.com CRM for sales, funding and upsells</h3>
+                    <a href="/case-studies/us-solar-sales-company" tabindex="-1" class="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-orange-300 hover:text-white transition-colors">
+                      Read case study <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div class="cs-card shrink-0 w-[300px] sm:w-[384px] pr-6" data-cs-copy aria-hidden="true">
+                <article class="h-full rounded-2xl overflow-hidden border border-slate-700/70 bg-white/5 flex flex-col">
+                  <div class="aspect-[16/10] bg-slate-50 border-b border-slate-700/70">
+                    <img src="/assets/img/case-studies/ne-tiny-homes.svg" alt="" class="w-full h-full object-cover" loading="lazy" width="1200" height="750">
+                  </div>
+                  <div class="p-5 sm:p-6 flex flex-col flex-1">
+                    <span class="self-start inline-flex px-2.5 py-1 rounded-full bg-orange-500/15 text-orange-300 text-[11px] font-semibold tracking-wide uppercase mb-3">Modular homes</span>
+                    <h3 class="text-base sm:text-lg font-bold text-white leading-snug mb-4">One monday.com system from contract to final build</h3>
+                    <a href="/case-studies/ne-tiny-homes" tabindex="-1" class="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-orange-300 hover:text-white transition-colors">
+                      Read case study <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    </a>
+                  </div>
+                </article>
+              </div>
           </div>
         </div>
 
+        <div class="text-center mt-10">
+          <a href="/case-studies"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-slate-600 text-white hover:bg-white/10 text-sm font-semibold transition-colors">
+            See all case studies <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+        </div>
 
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FIVERR REVIEWS (exact text, not tied to any case study)
+         ========================================================================== -->
+    <section id="reviews" class="scroll-mt-20 py-16 md:py-24 bg-surface border-y border-line" aria-labelledby="reviews-heading">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="max-w-2xl mx-auto text-center mb-10 md:mb-12">
+          <a href="https://www.fiverr.com/aythriver" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-tint border border-orange-200 text-xs sm:text-[13px] font-semibold text-brand hover:bg-orange-100 transition-colors mb-4">
+            <span class="flex items-center text-amber-500" aria-hidden="true"><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg></span>
+            4.8 average from 118 reviews on Fiverr
+            <span aria-hidden="true">↗</span>
+          </a>
+          <h2 id="reviews-heading" class="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink tracking-tight">
+            What clients say about working with me
+          </h2>
+        </div>
+        <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-2 -mx-5 px-5 sm:mx-0 sm:px-0 md:block md:columns-2 lg:columns-3 md:gap-6 md:overflow-visible md:pb-0"
+          role="list" aria-label="Fiverr reviews">
+          <figure role="listitem" class="snap-start shrink-0 w-[85%] sm:w-[60%] md:w-auto md:mb-6 md:break-inside-avoid rounded-2xl border border-line bg-surface p-6 shadow-sm flex flex-col">
+            <div class="flex items-center gap-0.5 text-amber-500 mb-3" role="img" aria-label="5 out of 5 stars"><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg></div>
+            <blockquote class="text-sm sm:text-base text-ink leading-relaxed">
+              <p>&ldquo;Samuel A. truly IMPRESSED with his strategic thinking and professionalism, delivering top-notch results that exceeded expectations. His quick responsiveness and fluent communication made working together a breeze. HIGHLY recommend!&rdquo;</p>
+            </blockquote>
+            <figcaption class="mt-4 pt-4 border-t border-line flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">
+              <span class="inline-flex items-center gap-1 font-semibold text-emerald-700">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                Verified Fiverr review
+              </span>
+              <span class="text-slate-300" aria-hidden="true">·</span>
+              <span class="text-body">United States</span>
+            </figcaption>
+          </figure>
+          <figure role="listitem" class="snap-start shrink-0 w-[85%] sm:w-[60%] md:w-auto md:mb-6 md:break-inside-avoid rounded-2xl border border-line bg-surface p-6 shadow-sm flex flex-col">
+            <div class="flex items-center gap-0.5 text-amber-500 mb-3" role="img" aria-label="5 out of 5 stars"><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg></div>
+            <blockquote class="text-sm sm:text-base text-ink leading-relaxed">
+              <p>&ldquo;He's an absolute pleasure to deal with and strives to provide project delivery exactly to your requirements. Samuel takes the necessary time to understand our requirements in detail and doesn't rush to send out an order.&rdquo;</p>
+            </blockquote>
+            <figcaption class="mt-4 pt-4 border-t border-line flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">
+              <span class="inline-flex items-center gap-1 font-semibold text-emerald-700">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                Verified Fiverr review
+              </span>
+              <span class="text-slate-300" aria-hidden="true">·</span>
+              <span class="text-body">Australia</span>
+            </figcaption>
+          </figure>
+          <figure role="listitem" class="snap-start shrink-0 w-[85%] sm:w-[60%] md:w-auto md:mb-6 md:break-inside-avoid rounded-2xl border border-line bg-surface p-6 shadow-sm flex flex-col">
+            <div class="flex items-center gap-0.5 text-amber-500 mb-3" role="img" aria-label="5 out of 5 stars"><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg></div>
+            <blockquote class="text-sm sm:text-base text-ink leading-relaxed">
+              <p>&ldquo;I will book him again and again and you should do. The detail, understanding and professionalism was unmatched. I wasn't even sure what I needed but he listened and understood my needs and went above and beyond to deliver.&rdquo;</p>
+            </blockquote>
+            <figcaption class="mt-4 pt-4 border-t border-line flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">
+              <span class="inline-flex items-center gap-1 font-semibold text-emerald-700">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                Verified Fiverr review
+              </span>
+              <span class="text-slate-300" aria-hidden="true">·</span>
+              <span class="text-body">United States</span>
+            </figcaption>
+          </figure>
+          <figure role="listitem" class="snap-start shrink-0 w-[85%] sm:w-[60%] md:w-auto md:mb-6 md:break-inside-avoid rounded-2xl border border-line bg-surface p-6 shadow-sm flex flex-col">
+            <div class="flex items-center gap-0.5 text-amber-500 mb-3" role="img" aria-label="5 out of 5 stars"><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg></div>
+            <blockquote class="text-sm sm:text-base text-ink leading-relaxed">
+              <p>&ldquo;Sam is really good at his job of understanding CRMs. He's helped us develop systems which i simply could not have done without him.&rdquo;</p>
+            </blockquote>
+            <figcaption class="mt-4 pt-4 border-t border-line flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">
+              <span class="inline-flex items-center gap-1 font-semibold text-emerald-700">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                Verified Fiverr review
+              </span>
+              <span class="text-slate-300" aria-hidden="true">·</span>
+              <span class="text-body">United Kingdom</span>
+            </figcaption>
+          </figure>
+          <figure role="listitem" class="snap-start shrink-0 w-[85%] sm:w-[60%] md:w-auto md:mb-6 md:break-inside-avoid rounded-2xl border border-line bg-surface p-6 shadow-sm flex flex-col">
+            <div class="flex items-center gap-0.5 text-amber-500 mb-3" role="img" aria-label="5 out of 5 stars"><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg></div>
+            <blockquote class="text-sm sm:text-base text-ink leading-relaxed">
+              <p>&ldquo;12 out of 10!! Sam was FANTASTIC! He is a true expert in Monday.com and helped me tremendously!! I can not thank him enough for his guidance, professionalism, recommendations and expertise. I highly recommend!!&rdquo;</p>
+            </blockquote>
+            <figcaption class="mt-4 pt-4 border-t border-line flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">
+              <span class="inline-flex items-center gap-1 font-semibold text-emerald-700">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                Verified Fiverr review
+              </span>
+              <span class="text-slate-300" aria-hidden="true">·</span>
+              <span class="text-body">United States</span>
+            </figcaption>
+          </figure>
+          <figure role="listitem" class="snap-start shrink-0 w-[85%] sm:w-[60%] md:w-auto md:mb-6 md:break-inside-avoid rounded-2xl border border-line bg-surface p-6 shadow-sm flex flex-col">
+            <div class="flex items-center gap-0.5 text-amber-500 mb-3" role="img" aria-label="5 out of 5 stars"><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg></div>
+            <blockquote class="text-sm sm:text-base text-ink leading-relaxed">
+              <p>&ldquo;Samuel went above and beyond as he always does. My go-to for any automations on Monday.com&rdquo;</p>
+            </blockquote>
+            <figcaption class="mt-4 pt-4 border-t border-line flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">
+              <span class="inline-flex items-center gap-1 font-semibold text-emerald-700">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                Verified Fiverr review
+              </span>
+              <span class="text-slate-300" aria-hidden="true">·</span>
+              <span class="text-body">United Arab Emirates</span>
+            </figcaption>
+          </figure>
+          <figure role="listitem" class="snap-start shrink-0 w-[85%] sm:w-[60%] md:w-auto md:mb-6 md:break-inside-avoid rounded-2xl border border-line bg-surface p-6 shadow-sm flex flex-col">
+            <div class="flex items-center gap-0.5 text-amber-500 mb-3" role="img" aria-label="5 out of 5 stars"><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg></div>
+            <blockquote class="text-sm sm:text-base text-ink leading-relaxed">
+              <p>&ldquo;Very effective at interpreting our requirements and putting them into action in a timely manner&rdquo;</p>
+            </blockquote>
+            <figcaption class="mt-4 pt-4 border-t border-line flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">
+              <span class="inline-flex items-center gap-1 font-semibold text-emerald-700">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                Verified Fiverr review
+              </span>
+              <span class="text-slate-300" aria-hidden="true">·</span>
+              <span class="text-body">United Kingdom</span>
+            </figcaption>
+          </figure>
+        </div>
+        <p class="md:hidden text-center text-xs text-body mt-3">Swipe to see more reviews</p>
       </div>
     </section>
 
@@ -1155,6 +1334,10 @@
           <a href="/solar" class="hover:text-brand transition-colors">For Solar &amp; Home Energy</a>
           <span class="text-slate-300" aria-hidden="true">·</span>
           <a href="/pricing" class="hover:text-brand transition-colors">Pricing</a>
+          <span class="text-slate-300" aria-hidden="true">·</span>
+          <a href="/case-studies" class="hover:text-brand transition-colors">Case studies</a>
+          <span class="text-slate-300" aria-hidden="true">·</span>
+          <a href="/about" class="hover:text-brand transition-colors">About</a>
         </div>
       </nav>
 
