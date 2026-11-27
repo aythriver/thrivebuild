@@ -197,14 +197,3 @@ body.nav-open {
   .cs-marquee { -webkit-mask-image: none; mask-image: none; scroll-snap-type: x mandatory; }
   .cs-marquee .cs-card { scroll-snap-align: start; }
 }
-
-/* Placeholder figures that still need a real number */
-.confirm {
-  background: #FEF9C3;
-  color: #854D0E;
-  border-radius: 4px;
-  padding: 0 4px;
-  font-weight: 600;
-  -webkit-box-decoration-break: clone;
-          box-decoration-break: clone;
-}
