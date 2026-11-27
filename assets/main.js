@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initCalendlyEmbed();
   initMetaPixelEvents();
   initIntakeForm();
+  initMoneyCheckForm();
   initMobileStickyCta();
   initCarousels();
 });
@@ -300,14 +301,108 @@ function initMetaPixelEvents() {
 }
 
 // ==========================================================================
-// 9. INTAKE FORM HANDLER (FormSubmit AJAX)
-// Posts JSON to FormSubmit, shows confirmation, and fires Meta Pixel Lead on success.
+// 9. LEAD FORMS (FormSubmit AJAX)
+// Shared handler: honeypot check, button state, JSON post to FormSubmit,
+// success/error panels, and Meta Pixel Lead on success. Used by the homepage
+// intake form and the Solar page money check form.
 // ==========================================================================
+const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/767b7119365982ec0d15aab06df33e14";
+
+function initLeadForm({ form, successPanel, errorPanel, submitBtn, buildPayload, onReset }) {
+  if (!form) return;
+
+  const showSuccess = () => {
+    form.reset();
+    if (onReset) onReset();
+    form.classList.add("hidden");
+    if (errorPanel) errorPanel.classList.add("hidden");
+    if (successPanel) {
+      successPanel.classList.remove("hidden");
+      successPanel.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Reset error state
+    if (errorPanel) errorPanel.classList.add("hidden");
+
+    // FormSubmit honeypot spam trap
+    const honeyInput = form.querySelector('input[name="_honey"]');
+    const honeyValue = honeyInput ? honeyInput.value.trim() : "";
+    if (honeyValue) {
+      // Spam detected: silently simulate success without submitting
+      showSuccess();
+      return;
+    }
+
+    const originalBtnText = submitBtn ? submitBtn.textContent : "";
+    const restoreButton = () => {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+      }
+    };
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+    }
+
+    const showError = () => {
+      restoreButton();
+      if (successPanel) successPanel.classList.add("hidden");
+      if (errorPanel) {
+        errorPanel.classList.remove("hidden");
+        errorPanel.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    };
+
+    const payload = {
+      "_honey": honeyValue,
+      "_cc": "aythriver@gmail.com",
+      "_template": "table",
+      "_captcha": "false",
+      ...buildPayload(),
+      "Page URL": window.location.href
+    };
+
+    try {
+      const res = await fetch(FORMSUBMIT_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (res.status === 200) {
+        const data = await res.json().catch(() => ({}));
+        if (data && (data.success === true || data.success === "true")) {
+          restoreButton();
+          showSuccess();
+
+          // Fire Meta Pixel Lead event ONLY after a successful response
+          if (typeof window.fbq === "function") {
+            window.fbq("track", "Lead");
+          }
+          return;
+        }
+      }
+
+      showError();
+    } catch (err) {
+      showError();
+    }
+  });
+}
+
+const fieldValue = (id) => document.getElementById(id)?.value.trim() || "";
+
+// Homepage intake form ("Get a recorded walkthrough")
 function initIntakeForm() {
   const form = document.getElementById("intake-form");
-  const successPanel = document.getElementById("intake-success");
-  const errorPanel = document.getElementById("intake-error");
-  const submitBtn = document.getElementById("intake-submit-btn");
   if (!form) return;
 
   const softwareSelect = document.getElementById("intake-software");
@@ -332,137 +427,65 @@ function initIntakeForm() {
     syncSoftwareOther(false);
   }
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  initLeadForm({
+    form,
+    successPanel: document.getElementById("intake-success"),
+    errorPanel: document.getElementById("intake-error"),
+    submitBtn: document.getElementById("intake-submit-btn"),
+    onReset: () => {
+      if (softwareOtherWrapper) softwareOtherWrapper.classList.add("hidden");
+      if (softwareOtherInput) {
+        softwareOtherInput.required = false;
+        softwareOtherInput.value = "";
+      }
+    },
+    buildPayload: () => {
+      const emailVal = fieldValue("intake-email");
+      const companyVal = fieldValue("intake-company");
+      const rawSoftware = softwareSelect ? softwareSelect.value : "";
+      const otherSoftware = softwareOtherInput ? softwareOtherInput.value.trim() : "";
+      const softwareVal = (rawSoftware === "Other" && otherSoftware)
+        ? `Other: ${otherSoftware}`
+        : (rawSoftware === "Other" ? "Other" : rawSoftware);
 
-    // Reset error state
-    if (errorPanel) {
-      errorPanel.classList.add("hidden");
+      return {
+        "_subject": `New Thrivebuild lead: ${companyVal} (${softwareVal})`,
+        "_replyto": emailVal,
+        "Name": fieldValue("intake-name"),
+        "Email": emailVal,
+        "Company": companyVal,
+        "Website": fieldValue("intake-website"),
+        "City and state": fieldValue("intake-location"),
+        "Team size": document.getElementById("intake-team-size")?.value || "",
+        "How leads reach them": fieldValue("intake-lead-source"),
+        "Biggest headache": document.getElementById("intake-headache")?.value || "",
+        "Software": softwareVal,
+        "Phone": fieldValue("intake-phone"),
+        "Notes": fieldValue("intake-notes")
+      };
     }
+  });
+}
 
-    // FormSubmit honeypot spam trap
-    const honeyInput = form.querySelector('input[name="_honey"]');
-    const honeyValue = honeyInput ? honeyInput.value.trim() : "";
-    if (honeyValue) {
-      // Spam detected: silently simulate success without submitting
-      form.reset();
-      if (softwareOtherWrapper) {
-        softwareOtherWrapper.classList.add("hidden");
-      }
-      form.classList.add("hidden");
-      if (successPanel) {
-        successPanel.classList.remove("hidden");
-        successPanel.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-      return;
-    }
+// Solar page money check form ("Where earned money hides in a solar company")
+function initMoneyCheckForm() {
+  const form = document.getElementById("money-check-form");
+  if (!form) return;
 
-    const originalBtnText = submitBtn ? submitBtn.textContent : "Send me my walkthrough";
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Sending...";
-    }
-
-    const showError = () => {
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalBtnText;
-      }
-      if (successPanel) {
-        successPanel.classList.add("hidden");
-      }
-      if (errorPanel) {
-        errorPanel.classList.remove("hidden");
-        errorPanel.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    };
-
-    // Extract submitted field values
-    const nameVal = document.getElementById("intake-name")?.value.trim() || "";
-    const emailVal = document.getElementById("intake-email")?.value.trim() || "";
-    const companyVal = document.getElementById("intake-company")?.value.trim() || "";
-    const websiteVal = document.getElementById("intake-website")?.value.trim() || "";
-    const locationVal = document.getElementById("intake-location")?.value.trim() || "";
-    const teamSizeVal = document.getElementById("intake-team-size")?.value || "";
-    const leadSourceVal = document.getElementById("intake-lead-source")?.value.trim() || "";
-    const headacheVal = document.getElementById("intake-headache")?.value || "";
-
-    const rawSoftware = softwareSelect ? softwareSelect.value : "";
-    const otherSoftware = softwareOtherInput ? softwareOtherInput.value.trim() : "";
-    const softwareVal = (rawSoftware === "Other" && otherSoftware)
-      ? `Other: ${otherSoftware}`
-      : (rawSoftware === "Other" ? "Other" : rawSoftware);
-
-    const phoneVal = document.getElementById("intake-phone")?.value.trim() || "";
-    const notesVal = document.getElementById("intake-notes")?.value.trim() || "";
-
-    const payload = {
-      "_honey": honeyValue,
-      "_cc": "aythriver@gmail.com",
-      "_subject": `New Thrivebuild lead: ${companyVal} (${softwareVal})`,
-      "_replyto": emailVal,
-      "_template": "table",
-      "_captcha": "false",
-      "Name": nameVal,
-      "Email": emailVal,
-      "Company": companyVal,
-      "Website": websiteVal,
-      "City and state": locationVal,
-      "Team size": teamSizeVal,
-      "How leads reach them": leadSourceVal,
-      "Biggest headache": headacheVal,
-      "Software": softwareVal,
-      "Phone": phoneVal,
-      "Notes": notesVal,
-      "Page URL": window.location.href
-    };
-
-    try {
-      const res = await fetch("https://formsubmit.co/ajax/767b7119365982ec0d15aab06df33e14", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(payload)
-      });
-
-      if (res.status === 200) {
-        const data = await res.json().catch(() => ({}));
-        if (data && (data.success === true || data.success === "true")) {
-          // Success: reset form, show confirmation notice
-          form.reset();
-          if (softwareOtherWrapper) {
-            softwareOtherWrapper.classList.add("hidden");
-          }
-          if (softwareOtherInput) {
-            softwareOtherInput.required = false;
-            softwareOtherInput.value = "";
-          }
-          form.classList.add("hidden");
-          if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalBtnText;
-          }
-          if (errorPanel) {
-            errorPanel.classList.add("hidden");
-          }
-          if (successPanel) {
-            successPanel.classList.remove("hidden");
-            successPanel.scrollIntoView({ behavior: "smooth", block: "center" });
-          }
-
-          // Fire Meta Pixel Lead event ONLY after a successful response
-          if (typeof window.fbq === "function") {
-            window.fbq("track", "Lead");
-          }
-          return;
-        }
-      }
-
-      showError();
-    } catch (err) {
-      showError();
+  initLeadForm({
+    form,
+    successPanel: document.getElementById("money-check-success"),
+    errorPanel: document.getElementById("money-check-error"),
+    submitBtn: document.getElementById("money-check-submit-btn"),
+    buildPayload: () => {
+      const emailVal = fieldValue("money-check-email");
+      return {
+        "_subject": form.querySelector('input[name="_subject"]')?.value || "Money check request",
+        "_replyto": emailVal,
+        "First name": fieldValue("money-check-name"),
+        "Email": emailVal,
+        "Company": fieldValue("money-check-company")
+      };
     }
   });
 }
@@ -478,7 +501,7 @@ function initMobileStickyCta() {
   if (!bar) return;
   document.body.classList.add("has-sticky-cta");
 
-  const targets = ["hero-cta", "book", "intake"].map((id) => document.getElementById(id)).filter(Boolean);
+  const targets = ["hero-cta", "book", "intake", "money-check"].map((id) => document.getElementById(id)).filter(Boolean);
   // Bar starts hidden in the markup; show it straight away if we can't observe
   if (!targets.length || !("IntersectionObserver" in window)) {
     bar.classList.remove("is-hidden");
