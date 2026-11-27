@@ -15,131 +15,135 @@
 
   <!-- Browser Chrome Window Frame -->
   <rect x="0" y="0" width="960" height="600" rx="16" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
-  
+
   <!-- Browser Window Header Bar -->
   <path d="M 0 16 Q 0 0 16 0 L 944 0 Q 960 0 960 16 L 960 48 L 0 48 Z" fill="#FFFFFF"/>
   <line x1="0" y1="48" x2="960" y2="48" stroke="#E2E8F0" stroke-width="1.5"/>
-  
+
   <!-- Window Controls -->
   <circle cx="28" cy="24" r="6" fill="#EF4444"/>
   <circle cx="48" cy="24" r="6" fill="#F59E0B"/>
   <circle cx="68" cy="24" r="6" fill="#10B981"/>
-  
+
   <!-- Browser URL Bar -->
   <rect x="110" y="12" width="560" height="24" rx="6" fill="#F1F5F9"/>
-  <text x="130" y="28" font-family="Inter, sans-serif" font-size="12" fill="#64748B" font-weight="500">https://thrivebuild.monday.com/boards/remodel-pipeline-os</text>
-  
-  <!-- Status Badge Right -->
-  <rect x="790" y="12" width="145" height="24" rx="12" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
-  <circle cx="804" cy="24" r="3.5" fill="#10B981"/>
-  <text x="814" y="28" font-family="Inter, sans-serif" font-size="11" fill="#047857" font-weight="600">Make.com Active</text>
+  <text x="130" y="28" font-family="Inter, sans-serif" font-size="12" fill="#64748B" font-weight="500">Solar install pipeline · example board</text>
 
-  <!-- Main Board Area -->
-  <!-- Left Navigation Rail -->
-  <rect x="0" y="48" width="180" height="552" fill="#FFFFFF"/>
-  <line x1="180" y1="48" x2="180" y2="600" stroke="#E2E8F0" stroke-width="1.5"/>
-  
-  <text x="24" y="80" font-family="Inter, sans-serif" font-size="11" fill="#94A3B8" font-weight="700" letter-spacing="0.5">WORKSPACE</text>
-  
-  <!-- Nav Items -->
-  <rect x="12" y="94" width="156" height="32" rx="6" fill="#FFF7ED"/>
-  <circle cx="28" cy="110" r="4" fill="#C2410C"/>
-  <text x="42" y="114" font-family="Inter, sans-serif" font-size="13" fill="#C2410C" font-weight="600">Active Pipeline</text>
-  
-  <text x="42" y="146" font-family="Inter, sans-serif" font-size="13" fill="#475569" font-weight="500">Lead Speed-to-Call</text>
-  <text x="42" y="178" font-family="Inter, sans-serif" font-size="13" fill="#475569" font-weight="500">Sales → PM Handoff</text>
-  <text x="42" y="210" font-family="Inter, sans-serif" font-size="13" fill="#475569" font-weight="500">Selection Deadlines</text>
-  <text x="42" y="242" font-family="Inter, sans-serif" font-size="13" fill="#475569" font-weight="500">Subcontractor Sync</text>
-  
+  <!-- Demo Badge Right -->
+  <rect x="870" y="12" width="65" height="24" rx="12" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <circle cx="886" cy="24" r="3.5" fill="#94A3B8"/>
+  <text x="896" y="28" font-family="Inter, sans-serif" font-size="11" fill="#475569" font-weight="600">Demo</text>
+
+  <!-- Left Rail: Pipeline Stages -->
+  <rect x="0" y="48" width="196" height="552" fill="#FFFFFF"/>
+  <line x1="196" y1="48" x2="196" y2="600" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <text x="24" y="80" font-family="Inter, sans-serif" font-size="11" fill="#94A3B8" font-weight="700" letter-spacing="0.5">PIPELINE STAGES</text>
+
+  <circle cx="28" cy="110" r="4" fill="#3B82F6"/>
+  <text x="40" y="114" font-family="Inter, sans-serif" font-size="12" fill="#475569" font-weight="500">New lead</text>
+  <circle cx="28" cy="140" r="4" fill="#F59E0B"/>
+  <text x="40" y="144" font-family="Inter, sans-serif" font-size="12" fill="#475569" font-weight="500">Site survey booked</text>
+  <circle cx="28" cy="170" r="4" fill="#8B5CF6"/>
+  <text x="40" y="174" font-family="Inter, sans-serif" font-size="12" fill="#475569" font-weight="500">Proposal sent</text>
+  <rect x="12" y="186" width="172" height="28" rx="6" fill="#FFF7ED"/>
+  <circle cx="28" cy="200" r="4" fill="#C2410C"/>
+  <text x="40" y="204" font-family="Inter, sans-serif" font-size="12" fill="#C2410C" font-weight="600">Signed</text>
+  <circle cx="28" cy="230" r="4" fill="#0EA5E9"/>
+  <text x="40" y="234" font-family="Inter, sans-serif" font-size="11.5" fill="#475569" font-weight="500">Permit and interconnection</text>
+  <circle cx="28" cy="260" r="4" fill="#14B8A6"/>
+  <text x="40" y="264" font-family="Inter, sans-serif" font-size="12" fill="#475569" font-weight="500">Install</text>
+  <circle cx="28" cy="290" r="4" fill="#10B981"/>
+  <text x="40" y="294" font-family="Inter, sans-serif" font-size="12" fill="#475569" font-weight="500">PTO</text>
+  <circle cx="28" cy="320" r="4" fill="#64748B"/>
+  <text x="40" y="324" font-family="Inter, sans-serif" font-size="12" fill="#475569" font-weight="500">Paid</text>
+
   <!-- Board Header -->
-  <rect x="180" y="48" width="780" height="60" fill="#FFFFFF"/>
-  <line x1="180" y1="108" x2="960" y2="108" stroke="#E2E8F0" stroke-width="1.5"/>
-  
-  <text x="206" y="84" font-family="Inter, sans-serif" font-size="18" fill="#0F172A" font-weight="700">Residential Remodel Operating System</text>
-  <rect x="710" y="66" width="110" height="28" rx="6" fill="#F1F5F9"/>
-  <text x="724" y="84" font-family="Inter, sans-serif" font-size="12" fill="#334155" font-weight="600">Automations (18)</text>
+  <rect x="196" y="48" width="764" height="60" fill="#FFFFFF"/>
+  <line x1="196" y1="108" x2="960" y2="108" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <text x="220" y="84" font-family="Inter, sans-serif" font-size="18" fill="#0F172A" font-weight="700">Solar Install Pipeline</text>
+  <rect x="726" y="66" width="94" height="28" rx="6" fill="#F1F5F9"/>
+  <text x="740" y="84" font-family="Inter, sans-serif" font-size="12" fill="#334155" font-weight="600">Automations</text>
   <rect x="830" y="66" width="105" height="28" rx="6" fill="#0F172A"/>
   <text x="848" y="84" font-family="Inter, sans-serif" font-size="12" fill="#FFFFFF" font-weight="600">+ New Lead</text>
 
-  <!-- Pipeline Kanban Columns -->
-  <!-- Column 1: New Leads (<3m response) -->
-  <g transform="translate(204, 124)">
-    <rect x="0" y="0" width="232" height="456" rx="8" fill="#F1F5F9"/>
-    <!-- Col Header -->
+  <!-- Column 1: New lead -->
+  <g transform="translate(216, 124)">
+    <rect x="0" y="0" width="226" height="456" rx="8" fill="#F1F5F9"/>
     <rect x="12" y="12" width="10" height="10" rx="3" fill="#3B82F6"/>
-    <text x="30" y="22" font-family="Inter, sans-serif" font-size="13" fill="#0F172A" font-weight="700">New Inquiries</text>
-    <rect x="194" y="10" width="24" height="18" rx="9" fill="#E2E8F0"/>
-    <text x="202" y="23" font-family="Inter, sans-serif" font-size="11" fill="#475569" font-weight="600">3</text>
-    
+    <text x="30" y="22" font-family="Inter, sans-serif" font-size="13" fill="#0F172A" font-weight="700">New lead</text>
+    <rect x="188" y="10" width="24" height="18" rx="9" fill="#E2E8F0"/>
+    <text x="196" y="23" font-family="Inter, sans-serif" font-size="11" fill="#475569" font-weight="600">2</text>
+
     <!-- Card 1 -->
-    <rect x="10" y="42" width="212" height="120" rx="8" fill="#FFFFFF" filter="url(#cardShadow)"/>
-    <rect x="22" y="54" width="76" height="18" rx="4" fill="#EFF6FF"/>
-    <text x="28" y="67" font-family="Inter, sans-serif" font-size="10" fill="#2563EB" font-weight="600">KITCHEN GUTFIT</text>
-    <text x="22" y="88" font-family="Inter, sans-serif" font-size="13" fill="#0F172A" font-weight="600">Harrison Residence</text>
-    <text x="22" y="104" font-family="Inter, sans-serif" font-size="11" fill="#64748B">Est. Budget: $145,000</text>
-    <rect x="22" y="118" width="108" height="20" rx="10" fill="#ECFDF5"/>
-    <text x="28" y="132" font-family="Inter, sans-serif" font-size="10" fill="#059669" font-weight="600">Auto-SMS in 42s</text>
-    <circle cx="196" cy="128" r="10" fill="#E2E8F0"/>
-    <text x="192" y="132" font-family="Inter, sans-serif" font-size="10" fill="#475569" font-weight="600">MH</text>
+    <rect x="10" y="42" width="206" height="120" rx="8" fill="#FFFFFF" filter="url(#cardShadow)"/>
+    <rect x="22" y="54" width="132" height="18" rx="4" fill="#EFF6FF"/>
+    <text x="28" y="67" font-family="Inter, sans-serif" font-size="10" fill="#2563EB" font-weight="600">8 KW SOLAR + BATTERY</text>
+    <text x="22" y="88" font-family="Inter, sans-serif" font-size="13" fill="#0F172A" font-weight="600">Sarah M.</text>
+    <text x="22" y="104" font-family="Inter, sans-serif" font-size="11" fill="#64748B">Web form · 2 min ago</text>
+    <rect x="22" y="118" width="104" height="20" rx="10" fill="#ECFDF5"/>
+    <text x="28" y="132" font-family="Inter, sans-serif" font-size="10" fill="#059669" font-weight="600">Text reply sent</text>
+    <circle cx="190" cy="128" r="10" fill="#E2E8F0"/>
+    <text x="184" y="132" font-family="Inter, sans-serif" font-size="10" fill="#475569" font-weight="600">SM</text>
 
     <!-- Card 2 -->
-    <rect x="10" y="172" width="212" height="120" rx="8" fill="#FFFFFF" filter="url(#cardShadow)"/>
-    <rect x="22" y="184" width="86" height="18" rx="4" fill="#FDF4FF"/>
-    <text x="28" y="197" font-family="Inter, sans-serif" font-size="10" fill="#9333EA" font-weight="600">MASTER SUITE</text>
-    <text x="22" y="218" font-family="Inter, sans-serif" font-size="13" fill="#0F172A" font-weight="600">Vance Remodel</text>
-    <text x="22" y="234" font-family="Inter, sans-serif" font-size="11" fill="#64748B">Est. Budget: $210,000</text>
+    <rect x="10" y="172" width="206" height="120" rx="8" fill="#FFFFFF" filter="url(#cardShadow)"/>
+    <rect x="22" y="184" width="82" height="18" rx="4" fill="#FDF4FF"/>
+    <text x="28" y="197" font-family="Inter, sans-serif" font-size="10" fill="#9333EA" font-weight="600">EV CHARGER</text>
+    <text x="22" y="218" font-family="Inter, sans-serif" font-size="13" fill="#0F172A" font-weight="600">James T.</text>
+    <text x="22" y="234" font-family="Inter, sans-serif" font-size="11" fill="#64748B">Referral · today</text>
     <rect x="22" y="248" width="112" height="20" rx="10" fill="#FFF7ED"/>
-    <text x="28" y="262" font-family="Inter, sans-serif" font-size="10" fill="#C2410C" font-weight="600">Map Call Booked</text>
-    <circle cx="196" cy="258" r="10" fill="#E2E8F0"/>
-    <text x="192" y="262" font-family="Inter, sans-serif" font-size="10" fill="#475569" font-weight="600">RK</text>
+    <text x="28" y="262" font-family="Inter, sans-serif" font-size="10" fill="#C2410C" font-weight="600">Follow-up 2 of 5</text>
+    <circle cx="190" cy="258" r="10" fill="#E2E8F0"/>
+    <text x="185" y="262" font-family="Inter, sans-serif" font-size="10" fill="#475569" font-weight="600">JT</text>
   </g>
 
-  <!-- Column 2: Scope & Estimating -->
-  <g transform="translate(452, 124)">
-    <rect x="0" y="0" width="232" height="456" rx="8" fill="#F1F5F9"/>
+  <!-- Column 2: Site survey booked -->
+  <g transform="translate(456, 124)">
+    <rect x="0" y="0" width="226" height="456" rx="8" fill="#F1F5F9"/>
     <rect x="12" y="12" width="10" height="10" rx="3" fill="#F59E0B"/>
-    <text x="30" y="22" font-family="Inter, sans-serif" font-size="13" fill="#0F172A" font-weight="700">Estimating &amp; Selections</text>
-    <rect x="194" y="10" width="24" height="18" rx="9" fill="#E2E8F0"/>
-    <text x="202" y="23" font-family="Inter, sans-serif" font-size="11" fill="#475569" font-weight="600">2</text>
-    
+    <text x="30" y="22" font-family="Inter, sans-serif" font-size="13" fill="#0F172A" font-weight="700">Site survey booked</text>
+    <rect x="188" y="10" width="24" height="18" rx="9" fill="#E2E8F0"/>
+    <text x="196" y="23" font-family="Inter, sans-serif" font-size="11" fill="#475569" font-weight="600">1</text>
+
     <!-- Card 1 -->
-    <rect x="10" y="42" width="212" height="130" rx="8" fill="#FFFFFF" filter="url(#cardShadow)"/>
-    <rect x="22" y="54" width="94" height="18" rx="4" fill="#EFF6FF"/>
-    <text x="28" y="67" font-family="Inter, sans-serif" font-size="10" fill="#2563EB" font-weight="600">FULL 2-STORY GUT</text>
-    <text x="22" y="88" font-family="Inter, sans-serif" font-size="13" fill="#0F172A" font-weight="600">Delaney Estate</text>
-    <text x="22" y="104" font-family="Inter, sans-serif" font-size="11" fill="#64748B">Contract: $395,000</text>
-    <rect x="22" y="118" width="126" height="20" rx="10" fill="#FEF3C7"/>
-    <text x="28" y="132" font-family="Inter, sans-serif" font-size="10" fill="#B45309" font-weight="600">Tile Selections Approved</text>
-    <rect x="22" y="144" width="168" height="6" rx="3" fill="#E2E8F0"/>
-    <rect x="22" y="144" width="140" height="6" rx="3" fill="#10B981"/>
+    <rect x="10" y="42" width="206" height="130" rx="8" fill="#FFFFFF" filter="url(#cardShadow)"/>
+    <rect x="22" y="54" width="78" height="18" rx="4" fill="#EFF6FF"/>
+    <text x="28" y="67" font-family="Inter, sans-serif" font-size="10" fill="#2563EB" font-weight="600">6 KW SOLAR</text>
+    <text x="22" y="88" font-family="Inter, sans-serif" font-size="13" fill="#0F172A" font-weight="600">Priya K.</text>
+    <text x="22" y="104" font-family="Inter, sans-serif" font-size="11" fill="#64748B">Survey: Thu 10:00 AM</text>
+    <rect x="22" y="118" width="122" height="20" rx="10" fill="#FEF3C7"/>
+    <text x="28" y="132" font-family="Inter, sans-serif" font-size="10" fill="#B45309" font-weight="600">Reminder scheduled</text>
+    <rect x="22" y="148" width="168" height="6" rx="3" fill="#E2E8F0"/>
+    <rect x="22" y="148" width="56" height="6" rx="3" fill="#F59E0B"/>
   </g>
 
-  <!-- Column 3: Sale-to-Job Handoff (Key Differentiator) -->
-  <g transform="translate(700, 124)">
-    <rect x="0" y="0" width="236" height="456" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+  <!-- Column 3: Signed (handoff to install) -->
+  <g transform="translate(696, 124)">
+    <rect x="0" y="0" width="240" height="456" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
     <rect x="12" y="12" width="10" height="10" rx="3" fill="#C2410C"/>
-    <text x="30" y="22" font-family="Inter, sans-serif" font-size="13" fill="#9A3412" font-weight="700">Sale → PM Handoff</text>
-    <rect x="198" y="10" width="24" height="18" rx="9" fill="#FFEDD5"/>
-    <text x="206" y="23" font-family="Inter, sans-serif" font-size="11" fill="#9A3412" font-weight="700">1</text>
-    
-    <!-- Hero Handoff Card -->
-    <rect x="10" y="42" width="216" height="175" rx="8" fill="#FFFFFF" filter="url(#cardShadow)"/>
-    <rect x="22" y="54" width="105" height="18" rx="4" fill="#FFEDD5"/>
-    <text x="28" y="67" font-family="Inter, sans-serif" font-size="10" fill="#C2410C" font-weight="700">HANDOFF TRIGGERED</text>
-    <text x="22" y="88" font-family="Inter, sans-serif" font-size="14" fill="#0F172A" font-weight="700">Patterson Project</text>
-    <text x="22" y="104" font-family="Inter, sans-serif" font-size="11" fill="#64748B">Contract Signed: $185,000</text>
-    
-    <!-- Checklist items automated -->
+    <text x="30" y="22" font-family="Inter, sans-serif" font-size="13" fill="#9A3412" font-weight="700">Signed</text>
+    <rect x="202" y="10" width="24" height="18" rx="9" fill="#FFEDD5"/>
+    <text x="210" y="23" font-family="Inter, sans-serif" font-size="11" fill="#9A3412" font-weight="700">1</text>
+
+    <!-- Handoff Card -->
+    <rect x="10" y="42" width="220" height="175" rx="8" fill="#FFFFFF" filter="url(#cardShadow)"/>
+    <rect x="22" y="54" width="132" height="18" rx="4" fill="#FFEDD5"/>
+    <text x="28" y="67" font-family="Inter, sans-serif" font-size="10" fill="#C2410C" font-weight="700">10 KW SOLAR + BATTERY</text>
+    <text x="22" y="88" font-family="Inter, sans-serif" font-size="14" fill="#0F172A" font-weight="700">Emma L.</text>
+    <text x="22" y="104" font-family="Inter, sans-serif" font-size="11" fill="#64748B">Contract signed · financing approved</text>
+
     <circle cx="28" cy="124" r="5" fill="#10B981"/>
-    <text x="38" y="128" font-family="Inter, sans-serif" font-size="10" fill="#334155">Drive folder &amp; drawings created</text>
-    
+    <text x="38" y="128" font-family="Inter, sans-serif" font-size="10" fill="#334155">Survey photos attached to job</text>
+
     <circle cx="28" cy="142" r="5" fill="#10B981"/>
-    <text x="38" y="146" font-family="Inter, sans-serif" font-size="10" fill="#334155">Production board populated</text>
-    
+    <text x="38" y="146" font-family="Inter, sans-serif" font-size="10" fill="#334155">Permit and interconnection tasks set</text>
+
     <circle cx="28" cy="160" r="5" fill="#10B981"/>
-    <text x="38" y="164" font-family="Inter, sans-serif" font-size="10" fill="#334155">PM intro &amp; trade invites sent</text>
-    
-    <rect x="22" y="180" width="192" height="24" rx="4" fill="#0F172A"/>
-    <text x="56" y="196" font-family="Inter, sans-serif" font-size="11" fill="#FFFFFF" font-weight="600">Zero Dropped Scope ✓</text>
+    <text x="38" y="164" font-family="Inter, sans-serif" font-size="10" fill="#334155">Homeowner update text queued</text>
+
+    <rect x="22" y="180" width="196" height="24" rx="4" fill="#0F172A"/>
+    <text x="120" y="196" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#FFFFFF" font-weight="600">Install checklist created</text>
   </g>
 </svg>

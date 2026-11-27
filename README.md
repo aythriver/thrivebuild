@@ -1,6 +1,16 @@
-# Thrivebuild.co - Remodeling Systems Consultancy
+# Thrivebuild.co - CRM Systems for Solar and Home Energy Companies
 
-A high-converting, single-page marketing website built from scratch to turn residential remodeling and design-build contractors ($1M–$10M revenue) arriving from LinkedIn and cold outreach into booked 20-minute "Workflow Map" calls.
+Marketing website for Thrivebuild, which builds lead follow-up, job handoff and payment tracking systems for solar and home energy companies (solar, battery storage, EV chargers). The message: more signed installs from the leads they already have. Visitors arriving from LinkedIn and cold outreach are turned into booked 20-minute "Workflow Map" calls.
+
+## Offer
+
+Two ways to work with us: **Fix & Connect** (fix the CRM you already have, from $500) and **Full System** (built end to end, from $1,500 setup). Full systems come in three tiers (see `pricing.html`):
+
+| Tier | Tagline | Price |
+| :--- | :--- | :--- |
+| Lead Recovery Engine | Stop losing new leads to faster installers | $1,500 setup + $297 / month |
+| Close and Collect System | Sign more, get paid faster | $3,000 setup + $297 / month |
+| Install Growth Partner | We run and improve the whole system with you, month by month | $5,500 setup + $397 / month |
 
 Zero build step required. Deploy instantly by dragging this folder onto Netlify.
 
@@ -26,8 +36,8 @@ Search for `[` or `EXAMPLE COPY` in `index.html` to find every customizable slot
 | *(Active)* | `assets/main.js` (`CONFIG.CALENDLY_URL`) | Connected to `https://calendly.com/samthriver/workflow`. |
 | *(Active)* | `assets/main.js` (`CONFIG.CONTACT_EMAIL`) | Contact email connected to `sam@thrivebuild.co`. |
 | *(Active)* | `index.html` line 976 | LinkedIn profile connected to `https://www.linkedin.com/in/sam-adebayo`. |
-| *(Active)* | `index.html` Lines 590–666 | Case study connected to NE Tiny Homes (Joe P. / Joe Pagnani). |
-| *(Active)* | `assets/main.js` (`CONFIG.FOOTER_LOCATION`) | Location set to `Remote · Serving remodelers in the US, Canada, UK and Australia`. |
+| *(Active)* | `index.html` proof section | Client case studies and testimonial. |
+| *(Active)* | `assets/main.js` (`CONFIG.FOOTER_LOCATION`) | Location set to `Remote · Serving solar and home energy companies in the US, Canada, UK and Australia`. |
 | *(Active)* | `assets/main.js` (`CONFIG.LINKEDIN_URL`) | Company LinkedIn connected to `https://www.linkedin.com/company/thrivebuild-co`. |
 
 ---
@@ -42,7 +52,7 @@ const CONFIG = {
   CALENDLY_URL: "https://calendly.com/samthriver/workflow",
   CONTACT_EMAIL: "sam@thrivebuild.co",
   FORM_URL: "#intake",
-  FOOTER_LOCATION: "Remote · Serving remodelers in the US, Canada, UK and Australia",
+  FOOTER_LOCATION: "Remote · Serving solar and home energy companies in the US, Canada, UK and Australia",
   LINKEDIN_URL: "https://www.linkedin.com/company/thrivebuild-co",
 };
 ```
