@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thrivebuild blog</title>
+    <link>https://thrivebuild.co/blog</link>
+    <description>Practical guides for owners of solar and home energy companies.</description>
+    <language>en</language>
+    <atom:link href="https://thrivebuild.co/blog/rss.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Fri, 27 Nov 2026 09:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Solar lead response time: how fast should you reply?</title>
+      <link>https://thrivebuild.co/blog/solar-lead-response-time</link>
+      <guid isPermaLink="true">https://thrivebuild.co/blog/solar-lead-response-time</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Solar lead response time decides who gets the first real conversation. Here is how to set a target, cover evenings and track it in your CRM.</description>
+      <author>sam@thrivebuild.co (Sam Adebayo)</author>
+      <category>Speed to lead</category>
+      <category>Lead follow-up</category>
+    </item>
+  </channel>
+</rss>
