@@ -128,3 +128,17 @@ If you later want an instant 99+ Lighthouse performance score:
    ```
 2. In `index.html`, remove `<script src="https://cdn.tailwindcss.com"></script>` and the inline `tailwind.config` block.
 3. Update the stylesheet link to point to `<link rel="stylesheet" href="assets/dist.css">`.
+
+## Blog
+
+Posts are Markdown files in `content/posts/YYYY-MM-DD-slug.md`. To publish, add one file and push. Vercel runs `node scripts/build-blog.js` on every deploy (see `vercel.json`), which builds:
+
+- `blog/<slug>.html` and `blog/index.html`
+- `blog/rss.xml`
+- the blog entries in `sitemap.xml`
+- the "Latest from the blog" section on the homepage
+
+Run the same command locally before committing, and commit the generated files too, so the site still works if the build step is skipped. The script has no dependencies.
+
+- Writing rules: `content/BLOG-RULES.md`. The build checks the rules it can and stops on errors.
+- Topic backlog: `content/blog-topics.md`. Mark a topic `[x]` when its post is published.
